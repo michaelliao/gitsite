@@ -1,0 +1,36 @@
+<!-- book content -->
+<div id="gsi-chapter">
+    <div id="gsi-chapter-content">
+        {{ chapter.content | safe }}
+    </div>
+    <hr class="gsc-border">
+    <div id="gsi-chapter-prev-next" class="flex flex-row mt-4">
+        <div id="gsi-chapter-prev" class="basis-1/2 mr-2 text-left">
+            {% if prevChapter %}
+            <a href="/books/{{ prevChapter.uri }}.html" onclick="return gs_index_item_show(event)"
+                class="inline-block border border-sky-600 hover:border-sky-500 dark:border-sky-400 hover:dark:border-sky-300 rounded px-3 py-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                </svg>
+                {{ prevChapter.title }}
+            </a>
+            {% endif %}
+        </div>
+        <div id="gsi-chapter-next" class="basis-1/2 ml-2 text-right">
+            {% if nextChapter %}
+            <a href="/books/{{ nextChapter.uri }}.html" onclick="return gs_index_item_show(event)"
+                class="inline-block border border-sky-600 hover:border-sky-500 dark:border-sky-400 hover:dark:border-sky-300 rounded px-3 py-1">
+                {{ nextChapter.title }}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                </svg>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!--// book content -->

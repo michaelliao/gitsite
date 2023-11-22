@@ -1,0 +1,58 @@
+<!-- custom js -->
+<script>
+    function isDarkMode() {
+        let colorScheme = localStorage.getItem('color-scheme');
+        if (colorScheme !== null) {
+            return colorScheme === 'dark';
+        }
+        // detect system dark mode:
+        return window.matchMedia !== undefined && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function setDarkMode(isDark) {
+        console.log(`set color scheme: ${isDark ? 'dark' : 'light'}`);
+        localStorage.setItem('color-scheme', isDark ? 'dark' : 'light');
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        } else {
+            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('dark');
+        }
+    }
+
+    (function () {
+        setDarkMode(isDarkMode());
+    })();
+
+    function showSearch() {
+        document.getElementById('gsi-search').classList.remove('hidden');
+    }
+
+    function hideSearch() {
+        document.getElementById('gsi-search').classList.add('hidden');
+    }
+
+    function showOffcanvas() {
+        document.getElementById('gsi-offcanvas').classList.remove('hidden');
+        let indexDom = document.getElementById('gsi-index');
+        document.getElementById('gsi-offcanvas-index').prepend(indexDom);
+        window.gs_status.show_offcanvas = true;
+        const popup = document.getElementById('gsi-offcanvas-popup');
+        if (popup.animate) {
+            popup.animate([{ left: "0px" }], 200).onfinish = () => popup.classList.add('gsc-offcanvas-popup-show');
+        } else {
+            // animation not supported:
+            popup.classList.add('gsc-offcanvas-popup-show');
+        }
+    }
+
+    function hideOffcanvas() {
+        document.getElementById('gsi-offcanvas').classList.add('hidden');
+        document.getElementById('gsi-offcanvas-popup').classList.remove('gsc-offcanvas-popup-show');
+        let indexDom = document.getElementById('gsi-index');
+        document.getElementById('gsi-sidebar').prepend(indexDom);
+        window.gs_status.show_offcanvas = false;
+    }
+</script>
+<!-- // custom js -->

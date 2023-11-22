@@ -1,0 +1,288 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    :root {
+        --header-bar-height: 59px;
+        --footer-bar-height: 59px;
+        --side-bar-width: 301px;
+    }
+
+    /* light/dark mode */
+
+    .light .gsc-hidden-on-light {
+        @apply hidden;
+    }
+
+    .dark .gsc-hidden-on-dark {
+        @apply hidden;
+    }
+
+    /* global text, bg, link, etc. */
+
+    .gsc-text {
+        @apply text-slate-500 dark:text-slate-400;
+    }
+
+    .gsc-bg {
+        @apply bg-slate-50 dark:bg-slate-900;
+    }
+
+    .gsc-border {
+        @apply border-slate-200 dark:border-slate-600;
+    }
+
+    .gsc-container {
+        @apply max-w-screen-2xl mx-auto px-4;
+    }
+
+    .gsc-backdrop {
+        @apply bg-slate-400/50 dark:bg-slate-900/50 backdrop-blur-sm;
+    }
+
+    .gsc-popup {
+        @apply bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700;
+    }
+
+    /* id element */
+
+    #gsi-header {
+        @apply sticky z-10 h-[var(--header-bar-height)] overflow-hidden top-0 left-0 right-0 w-full;
+    }
+
+    #gsi-sidebar {
+        @apply max-md:hidden md:w-[var(--side-bar-width)] fixed gsc-bg gsc-border z-10 py-4 pl-4 h-[calc(100vh-var(--header-bar-height))] top-[var(--header-bar-height)] left-[max(0rem,calc(50%-768px))] overflow-y-scroll border-r;
+    }
+
+    #gsi-content {
+        @apply min-h-[calc(100vh-var(--header-bar-height)-var(--footer-bar-height))] py-4 md:ml-[var(--side-bar-width)];
+    }
+
+    #gsi-footer {
+        @apply h-[var(--footer-bar-height)] md:ml-[var(--side-bar-width)] border-t gsc-border overflow-hidden;
+    }
+
+    a {
+        @apply text-sky-600 hover:text-sky-500 dark:text-sky-400 hover:dark:text-sky-300;
+    }
+
+    a > svg {
+        @apply inline-block w-5 h-5 mt-[-3px];
+    }
+
+    a > img.inline {
+        @apply mt-[-3px];
+    }
+
+    nav.gsc-nav > ul > li {
+        @apply h-[calc(var(--header-bar-height)-1px)];
+    }
+
+    nav.gsc-nav-main > ul > li > a {
+        @apply inline-block py-4 border-b-2 border-transparent whitespace-nowrap;
+    }
+
+    nav.gsc-nav-main > ul > li > a.gsc-active {
+        @apply border-sky-600 hover:border-sky-500;
+    }
+
+    #gsi-index > h3 {
+        @apply pl-1 pt-1 pb-1 text-sm font-semibold uppercase;
+    }
+
+    #gsi-index div.gsc-index-item {
+        @apply relative;
+    }
+
+    #gsi-index div.gsc-index-item > div.gsc-index-item-children {
+        @apply relative ml-2 pl-2 border-l gsc-border;
+    }
+
+    #gsi-index div.gsc-index-item > a > span.gsc-index-item-action {
+        @apply cursor-pointer w-3 h-3 block absolute right-1 mx-1 top-1/2;
+        transform: translateY(-50%);
+    }
+
+    #gsi-index div.gsc-index-item > a {
+        @apply block relative my-1 pl-1 pr-5 py-1 truncate hover:bg-slate-200 dark:hover:bg-slate-700;
+    }
+
+    #gsi-index div.gsc-index-item > a > span.gsc-index-item-marker {
+        @apply tabular-nums;
+    }
+
+    #gsi-index div.gsc-index-item > a:not(:has(span.gsc-index-item-action)) {
+        @apply pr-1;
+    }
+
+    #gsi-index div.gsc-index-item > a.gsc-active {
+        @apply bg-slate-200 dark:bg-slate-700;
+    }
+
+    #gsi-index div.gsc-index-item > a.gsc-active > span.gsc-index-item-title {
+        @apply font-semibold;
+    }
+
+    #gsi-index div.gsc-index-item-closed > div.gsc-index-item-children {
+        @apply hidden;
+    }
+
+    #gsi-index div.gsc-index-item-open > div.gsc-index-item-children {
+        @apply block;
+    }
+
+    #gsi-index div.gsc-index-item-closed > a > span.gsc-index-item-open {
+        @apply hidden;
+    }
+
+    #gsi-index div.gsc-index-item-open > a > span.gsc-index-item-closed {
+        @apply hidden;
+    }
+
+    #gsi-content h1 {
+        @apply text-[2rem] leading-[2rem] my-4 font-semibold;
+    }
+
+    #gsi-content h2 {
+        @apply text-[1.75rem] leading-[1.75rem] my-4 font-semibold;
+    }
+
+    #gsi-content h3 {
+        @apply text-[1.5rem] leading-[1.5rem] my-4 font-semibold;
+    }
+
+    #gsi-content h4 {
+        @apply text-[1.25rem] leading-[1.25rem] my-4 font-semibold;
+    }
+
+    #gsi-content h5 {
+        @apply my-4 font-semibold;
+    }
+
+    #gsi-content h6 {
+        @apply my-4 font-semibold;
+    }
+
+    #gsi-content p {
+        @apply my-4 leading-7
+    }
+
+    #gsi-content :not(pre)>code {
+        @apply rounded border text-sm p-1 mx-1;
+    }
+
+    #gsi-content em {
+        @apply font-semibold italic px-1;
+    }
+
+    #gsi-content table {
+        @apply w-full text-left my-4 border-collapse rounded;
+    }
+
+    #gsi-content table tr {
+        @apply border-b;
+    }
+
+    #gsi-content table tbody tr {
+        @apply hover:bg-slate-100;
+    }
+
+    #gsi-content table th,td {
+        @apply p-2;
+    }
+
+    #gsi-content blockquote {
+        @apply border-l-4 border-slate-300 italic text-slate-500 my-4 px-2;
+    }
+
+    #gsi-content div.alert {
+        @apply border-l-4 px-4 my-4;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+    #gsi-content div.alert-success {
+        @apply border-green-700 text-green-800 bg-green-50;
+    }
+
+    #gsi-content div.alert-info {
+        @apply border-blue-700 text-blue-800 bg-blue-50;
+    }
+
+    #gsi-content div.alert-warning {
+        @apply border-yellow-700 text-yellow-800 bg-yellow-50;
+    }
+
+    #gsi-content div.alert-danger {
+        @apply border-red-700 text-red-800 bg-red-50;
+    }
+
+    #gsi-content pre {
+        @apply whitespace-pre-wrap break-all my-4 p-2 rounded border bg-slate-50;
+    }
+
+    #gsi-content pre.ascii {
+        @apply p-0 border-0 bg-transparent;
+        font-family: JetBrainsMono;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    #gsi-content pre.ascii>code {
+        font-family: JetBrainsMono;
+    }
+
+    #gsi-content div.question {
+        @apply my-4;
+    }
+
+    #gsi-content div.question input {
+        @apply focus:shadow-transparent;
+    }
+
+    #gsi-content div.question > p {
+        @apply mt-4 mb-1;
+    }
+
+    #gsi-content div.question button.question {
+        @apply px-2 py-1 text-sm rounded border border-sky-600 text-sky-500;
+    }
+
+    #gsi-content div.question button.question  {
+        @apply before:content-['提交'];
+    }
+
+    #gsi-content div.question button.question > span {
+        @apply hidden;
+    }
+
+    #gsi-content div.question span.question.correct {
+        @apply text-green-800 before:content-['正确!'];
+    }
+
+    #gsi-content div.question span.question.correct > span {
+        @apply hidden;
+    }
+
+    #gsi-content div.question span.question.wrong {
+        @apply text-red-800 before:content-['错误!'];
+    }
+
+    #gsi-content div.question span.question.wrong > span {
+        @apply hidden;
+    }
+
+    /* offcanvas */
+    #gsi-offcanvas {
+        @apply z-30 fixed top-0 left-0 right-0 bottom-0;
+    }
+
+    .gsc-offcanvas-popup {
+        @apply border-r fixed top-0 left-[calc(0px-var(--side-bar-width))] bottom-0 w-[var(--side-bar-width)] p-4;
+    }
+
+    .gsc-offcanvas-popup-show {
+        left: 0 !important;
+    }
+}
