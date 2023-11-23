@@ -56,11 +56,11 @@
     }
 
     #gsi-content {
-        @apply min-h-[calc(100vh-var(--header-bar-height)-var(--footer-bar-height))] py-4 md:ml-[var(--side-bar-width)];
+        @apply min-h-[calc(100vh-var(--header-bar-height)-var(--footer-bar-height))] py-4;
     }
 
     #gsi-footer {
-        @apply h-[var(--footer-bar-height)] md:ml-[var(--side-bar-width)] border-t gsc-border overflow-hidden;
+        @apply h-[var(--footer-bar-height)] border-t gsc-border overflow-hidden;
     }
 
     a {
