@@ -23,7 +23,7 @@
         }
     </style>
 
-    {% if production == true %}
+    {% if mode == 'build' %}
     <link rel="stylesheet" href="/static/custom-tailwind.css">
     {% else %}
     <!-- for development only -->
