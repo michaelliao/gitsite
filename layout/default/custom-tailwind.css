@@ -6,7 +6,8 @@
     :root {
         --header-bar-height: 59px;
         --footer-bar-height: 59px;
-        --side-bar-width: 301px;
+        --side-bar-width: 317px;
+        --blog-info-width: 260px;
     }
 
     /* light/dark mode */
@@ -30,7 +31,7 @@
     }
 
     .gsc-border {
-        @apply border-slate-200 dark:border-slate-600;
+        @apply border-slate-300 dark:border-slate-600;
     }
 
     .gsc-container {
@@ -48,7 +49,7 @@
     /* id element */
 
     #gsi-header {
-        @apply sticky z-10 h-[var(--header-bar-height)] top-0 left-0 right-0 w-full;
+        @apply sticky z-10 h-[var(--header-bar-height)] top-0 left-0 right-0 w-full drop-shadow-[0_4px_4px_rgba(0,0,0,0.1)];
     }
 
     #gsi-sidebar {
@@ -65,6 +66,10 @@
 
     a {
         @apply text-sky-600 hover:text-sky-500 dark:text-sky-400 hover:dark:text-sky-300;
+    }
+
+    .gsc-link-border {
+        @apply border-sky-600 hover:border-sky-500 dark:border-sky-400 hover:dark:border-sky-300;
     }
 
     a > svg {
@@ -186,6 +191,26 @@
         @apply font-semibold italic px-[2px];
     }
 
+    #gsi-content ul {
+        @apply text-base list-disc list-inside;
+    }
+
+    #gsi-content li {
+        @apply leading-6;
+    }
+
+    #gsi-content ol {
+        @apply text-base list-decimal list-inside;
+    }
+
+    #gsi-content li ul {
+        @apply text-base ml-6;
+    }
+
+    #gsi-content li ol {
+        @apply text-base ml-6;
+    }
+
     #gsi-content table {
         @apply w-full text-left my-4 border-collapse rounded;
     }
@@ -285,6 +310,32 @@
 
     #gsi-content div.question span.question.wrong > span {
         @apply hidden;
+    }
+
+    /********** blog list **********/
+
+    .gsc-blogs {
+        @apply border-l gsc-border md:ml-[var(--blog-info-width)];
+    }
+
+    .gsc-blog-circle {
+        @apply absolute left-[-6px] top-[16px] w-[11px] h-[11px] block rounded-full;
+    }
+
+    .gsc-blog-info-left {
+        @apply text-base max-md:hidden md:absolute md:-left-[var(--blog-info-width)] md:pr-8 md:text-right md:w-[var(--blog-info-width)];
+    }
+
+    .gsc-blog-info-right {
+        @apply md:hidden text-base pt-2;
+    }
+
+    #gsi-blog-title {
+        @apply my-8;
+    }
+
+    #gsi-blog-content > h1 {
+        @apply first:hidden;
     }
 
     /********** offcanvas **********/
