@@ -1,0 +1,48 @@
+{% extends "__base__.html" %}
+
+{% block title %}
+Blogs
+{% endblock %}
+
+{% block main %}
+<div class="text-center my-10">
+    <h1 class="text-4xl font-semibold">{{ blogs.title }}</h1>
+</div>
+<div class="gsc-blogs">
+    {% for blog in blogs %}
+    <div class="gsc-blog relative pt-[10px] pb-8">
+        <div class="gsc-blog-circle border-2 gsc-border gsc-bg">
+        </div>
+        <div class="gsc-blog-info-left">
+            <script>
+                document.write(new Date('{{ blog.date }}').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }));
+            </script>
+        </div>
+        <div class="text-base pl-8">
+            <div class="font-semibold">
+                <a href="{{ blog.uri }}">{{ blog.title }}</a>
+            </div>
+            <div class="gsc-blog-info-right">
+                <script>
+                    document.write(new Date('{{ blog.date }}').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }));
+                </script>
+            </div>
+            <div class="pt-2">{{ blog.summaryContent | safe }}</div>
+            <div class="pt-2">
+                <a href="{{ blog.uri }}">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div id="gsi-footer">
+    {% include "__footer__.html" %}
+</div>
+{% endblock %}
