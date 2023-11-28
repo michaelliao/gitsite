@@ -10,6 +10,10 @@
         --blog-info-width: 260px;
     }
 
+    html {
+        scroll-padding-top: var(--header-bar-height);
+    }
+
     /* light/dark mode */
 
     .light .gsc-hidden-on-light {
@@ -233,6 +237,26 @@
 
     #gsi-content blockquote {
         @apply border-l-4 border-slate-300 dark:border-slate-500 italic my-4 px-2;
+    }
+
+    #gsi-content hr.footnotes-sep {
+        @apply my-4 gsc-border border-dashed;
+    }
+
+    #gsi-content section.footnotes {
+        @apply my-4;
+    }
+
+    #gsi-content li.footnote-item {
+        @apply my-2;
+    }
+
+    #gsi-content li.footnote-item p {
+        @apply inline;
+    }
+
+    #gsi-content a.footnote-backref {
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     #gsi-content div.alert {
