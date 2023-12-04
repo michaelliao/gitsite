@@ -98,6 +98,11 @@
             console.log('popup' + this);
         }
     </script>
+    <script src="/static/lunr.js"></script>
+    <script src="/static/search-index.js"></script>
+    <script>
+        window.searcher = lunr.Index.load(window.__search__.index);
+    </script>
 </head>
 
 <body class="gsc-text gsc-bg">
