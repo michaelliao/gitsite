@@ -1,0 +1,43 @@
+site:
+  title: GitSite
+  description: GitSite is a static web site generator for Git.
+  keywords: gitsite, git, static web site, html
+  theme: default
+  navigation:
+    - title: User Guide
+      type: book
+      ref: gitsite-guide
+    - title: Blogs
+      type: blog
+    - title: About
+      type: page
+      ref: about
+    - title: Github
+      type: link
+      ref: https://github.com/michaelliao/gitsite
+      external: true
+  contact:
+    name: Michael Liao
+    github: https://github.com/michaelliao/gitsite
+    twitter: https://twitter.com/liaoxuefeng
+  blogs:
+    title: Latest Updates
+  books:
+    index-marker: true
+
+  search:
+    # search by lunr or semantic:
+    engine: lunr
+    lunr-languages:
+      - en
+      - zh
+    semantic-model: https://huggingface.co/Xenova/bge-small-zh/resolve/main/
+
+build:
+  # copy special files under root dir:
+  copy:
+    - favicon.ico
+    - robots.txt
+    - ads.txt
+
+  # you can add any items:
