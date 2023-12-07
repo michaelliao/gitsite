@@ -1,0 +1,14 @@
+{% extends "__base__.html" %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block main %}
+<div id="gsi-content" class="text-center">
+    {{ htmlContent | safe }}
+</div>
+<div id="gsi-footer">
+    {% include "__footer__.html" %}
+</div>
+{% endblock %}
