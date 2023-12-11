@@ -94,9 +94,73 @@
             window.gs_status.show_offcanvas = false;
         }
 
-        function showPopupMenu() {
-            console.log('popup' + this);
+        function initPopupMenu(dom) {
+            const popup = dom.nextElementSibling;
+            if (popup && popup.classList.contains('gsc-popup-menu-container')) {
+                console.log('init popup menu: ' + dom);
+                popup.tabIndex = 0;
+                dom.addEventListener('mouseenter', function () {
+                    console.log('a.mouseenter ~~~');
+                    popup.classList.remove('hidden');
+                    popup.__focus = false;
+                });
+                dom.addEventListener('mouseleave', function () {
+                    console.log('a.mouseleave -->');
+                    setTimeout(function () {
+                        if (!popup.__focus) {
+                            popup.classList.add('hidden');
+                        }
+                    }, 250);
+                });
+                dom.addEventListener('click', (e) => {
+                    console.log('a.click ~~~');
+                    if (popup.__focus) {
+                        popup.classList.add('hidden');
+                        popup.__focus = false;
+                    } else {
+                        popup.classList.remove('hidden');
+                        popup.__focus = true;
+                        popup.focus();
+                    }
+                });
+                popup.addEventListener('mouseenter', (e) => {
+                    console.log('popup.mouseenter ~~~');
+                    popup.__focus = true;
+                });
+                popup.addEventListener('mouseleave', (e) => {
+                    console.log('popup.mouseleave -->');
+                    popup.classList.add('hidden');
+                    popup.__focus = false;
+                });
+                popup.addEventListener('focusout', (e) => {
+                    console.log('popup.focusout -->');
+                    popup.classList.add('hidden');
+                    popup.__focus = false;
+                })
+            } else {
+                console.warn('cannot init popup menu: ' + dom);
+            }
         }
+
+        function documentReady(fn) {
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                setTimeout(fn, 0);
+            } else {
+                document.addEventListener('DOMContentLoaded', fn);
+            }
+        }
+
+        documentReady(() => {
+            console.log('init popup menu...');
+            const doms = document.getElementsByClassName('gsc-popup-menu');
+            for (let dom of doms) {
+                initPopupMenu(dom);
+            }
+        });
+
+        documentReady(() => {
+            console.log('document ready.');
+        });
     </script>
     <script src="/static/lunr.js"></script>
     <script src="/static/search-index.js"></script>
@@ -111,9 +175,10 @@
             <div class="relative flex items-center">
                 <div class="relative flex items-center">
                     <nav class="gsc-nav gsc-nav-main font-semibold">
-                        <ul class="flex">
+                        <!-- nav for small device -->
+                        <ul class="max-md:flex md:hidden">
                             {% if book_index %}
-                            <li class="mr-4 max-md:list-item md:hidden">
+                            <li class="mr-4 list-item">
                                 <a href="#0" onclick="showOffcanvas();return false;"
                                     class="block py-4 border-b-2 border-transparent">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -124,18 +189,71 @@
                                 </a>
                             </li>
                             {% endif %}
-                            <li class="mr-4 max-md:list-item md:hidden">
+
+                            <!-- logo -->
+                            <li class="mr-4 list-item">
                                 <a href="/" class="inline-block py-4">
                                     <img src="/static/logo.svg" class="inline-block max-w-none h-6">
                                 </a>
                             </li>
+                            <!--// logo -->
+
+                            <!-- nav menu -->
+                            {% if site.navigation %}
+                            <li class="mr-4 list-item relative">
+                                <a class="gsc-popup-menu inline-block py-4" href="#0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="inline-block w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+
+                                <div class="gsc-popup-menu-container hidden left-0">
+                                    <ul>
+                                        {% for nav in site.navigation %}
+                                        {% if nav.type == 'book' %}
+                                        <li class="block">
+                                            <a href="/books/{{ nav.ref }}/index.html">{{ nav.title }}</a>
+                                        </li>
+                                        {% elif nav.type == 'page' %}
+                                        <li class="block">
+                                            <a href="/pages/{{ nav.ref }}/index.html">{{ nav.title }}</a>
+                                        </li>
+                                        {% elif nav.type == 'blog' %}
+                                        <li class="block">
+                                            <a href="/blogs/index.html">{{ nav.title }}</a>
+                                        </li>
+                                        {% elif nav.type == 'link' %}
+                                        <li class="block">
+                                            <a href="{{ nav.ref }}" {% if nav.external %} target="_blank" {% endif %}>
+                                                {{ nav.title }}
+                                            </a>
+                                        </li>
+                                        {% else %}
+                                        <li class="block"><a href="#0">INVALID {{ nav.type }}</a></li>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </li>
+                            {% endif %}
+                            <!--// nav menu -->
+                        </ul>
+                        <!--// nav for small device -->
+
+                        <!-- nav for desktop -->
+                        <ul class="max-md:hidden md:flex">
+                            <!-- logo -->
                             <li class="mr-4 md:list-item max-md:hidden">
                                 <a href="/" class="inline-block py-4">
                                     <img src="/static/logo.svg" class="inline-block max-w-none h-6">
                                     {{ site.title }}
                                 </a>
                             </li>
-                            <!-- navigation -->
+                            <!--// logo -->
+
+                            <!-- nav menu -->
                             {% if site.navigation %}
                             {% for nav in site.navigation %}
                             {% if nav.type == 'book' %}
@@ -161,35 +279,49 @@
                             {% endif %}
                             {% endfor %}
                             {% endif %}
-                            <!--// navigation -->
-                            <li class="mr-4 relative"><!-- more menu -->
-                                <a class="inline-block py-4" href="#0" onclick="showPopupMenu();return false;">
+
+                            {% if site.navigation %}
+                            <li id="gsi-nav-more" class="mr-4 relative"><!-- more menu -->
+                                <a class="gsc-popup-menu inline-block py-4" href="#0">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="inline-block w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                     </svg>
                                 </a>
-
-                                <div
-                                    class="gsc-popup-menu hidden absolute translate-y-[calc(var(--header-bar-height)-8px)] z-20 top-0 right-0 py-2 rounded shadow-md bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600">
+                                <div class="gsc-popup-menu-container hidden right-0">
                                     <ul>
+                                        {% for nav in site.navigation %}
+                                        {% if nav.type == 'book' %}
                                         <li class="block">
-                                            <a href="#0"
-                                                class="block whitespace-nowrap px-4 py-2 w-full hover:bg-sky-100 dark:hover:bg-sky-800">
-                                                Light Gray
+                                            <a href="/books/{{ nav.ref }}/index.html">{{ nav.title }}</a>
+                                        </li>
+                                        {% elif nav.type == 'page' %}
+                                        <li class="block">
+                                            <a href="/pages/{{ nav.ref }}/index.html">{{ nav.title }}</a>
+                                        </li>
+                                        {% elif nav.type == 'blog' %}
+                                        <li class="block">
+                                            <a href="/blogs/index.html">{{ nav.title }}</a>
+                                        </li>
+                                        {% elif nav.type == 'link' %}
+                                        <li class="block">
+                                            <a href="{{ nav.ref }}" {% if nav.external %} target="_blank" {% endif %}>
+                                                {{ nav.title }}
                                             </a>
                                         </li>
-                                        <li class="block">
-                                            <a href="#0"
-                                                class="block whitespace-nowrap px-4 py-2 w-full hover:bg-sky-100 dark:hover:bg-sky-800">
-                                                Light Gray Hello
-                                            </a>
-                                        </li>
+                                        {% else %}
+                                        <li class="block"><a href="#0">INVALID {{ nav.type }}</a></li>
+                                        {% endif %}
+                                        {% endfor %}
                                     </ul>
                                 </div>
-                            </li>
+                            </li><!--// more menu -->
+                            {% endif %}
+
+                            <!--// nav menu -->
                         </ul>
+                        <!--// nav for desktop -->
                     </nav>
                 </div>
                 <script>
@@ -256,7 +388,7 @@
     </div>
 
     <div id="gsi-offcanvas" onclick="hideOffcanvas()" class="hidden gsc-backdrop">
-        <div id="gsi-offcanvas-popup" onclick="event.stopPropagation()" class="gsc-popup gsc-offcanvas-popup">
+        <div id="gsi-offcanvas-popup" onclick="event.stopPropagation()" class="gsc-popup-container gsc-offcanvas-popup">
             <div id="gsi-offcanvas-index"></div>
         </div>
     </div>
@@ -264,7 +396,7 @@
     <div id="gsi-search" onclick="hideSearch()" class="hidden gsc-backdrop z-30 fixed top-0 left-0 right-0 bottom-0">
         <div class="gsc-container">
             <div onclick="event.stopPropagation()"
-                class="gsc-popup border shadow rounded-md w-[90%] min-h-[90%] mt-[5%] mx-auto">
+                class="gsc-popup-container border shadow rounded-md w-[90%] min-h-[90%] mt-[5%] mx-auto">
                 <div class="p-4 sm:p-6 md:p-8 border-b border-slate-200 dark:border-slate-700">
                     <input type="text"
                         class="block w-full border-0 bg-transparent text-gray-800 placeholder:text-gray-400 rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:text-sm sm:leading-6"

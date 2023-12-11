@@ -46,8 +46,16 @@
         @apply bg-slate-400/50 dark:bg-slate-900/50 backdrop-blur-sm;
     }
 
-    .gsc-popup {
+    .gsc-popup-container {
         @apply bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700;
+    }
+
+    .gsc-popup-menu-container {
+        @apply absolute translate-y-[calc(var(--header-bar-height)-8px)] z-20 top-0 py-2 rounded shadow-md bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600;
+    }
+
+    .gsc-popup-menu-container > ul > li > a {
+        @apply block whitespace-nowrap px-4 py-2 w-full hover:bg-sky-100 dark:hover:bg-sky-800;
     }
 
     /* id element */
