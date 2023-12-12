@@ -347,11 +347,11 @@
     /********** blog list **********/
 
     .gsc-blogs {
-        @apply border-l gsc-border md:ml-[var(--blog-info-width)];
+        @apply gsc-border md:border-l md:ml-[var(--blog-info-width)];
     }
 
     .gsc-blog-circle {
-        @apply absolute left-[-6px] top-[16px] w-[11px] h-[11px] block rounded-full;
+        @apply absolute left-[-6px] top-[16px] w-[11px] h-[11px] md:block max-md:hidden rounded-full;
     }
 
     .gsc-blog-info-left {

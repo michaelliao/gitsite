@@ -24,7 +24,7 @@
     <hr class="gsc-border">
 
     <div id="gsi-blog-prev-next" class="flex flex-row mt-4">
-        <div id="gsi-blog-prev" class="basis-1/3 text-left">
+        <div id="gsi-blog-prev" class="max-md:basis-1/3 md:basis-2/5 text-left">
             {% if prevBlog %}
             <a href="{{ prevBlog.uri }}" class="inline-block my-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -36,7 +36,7 @@
             </a>
             {% endif %}
         </div>
-        <div id="gsi-blog-up" class="basis-1/3 ml-2 mr-2 text-center">
+        <div id="gsi-blog-up" class="max-md:basis-1/3 md:basis-1/5 ml-2 mr-2 text-center">
             <a href="../index.html" class="inline-block my-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
@@ -46,7 +46,7 @@
                 Contents
             </a>
         </div>
-        <div id="gsi-blog-next" class="basis-1/3 text-right">
+        <div id="gsi-blog-next" class="max-md:basis-1/3 md:basis-2/5 text-right">
             {% if nextBlog %}
             <a href="{{ nextBlog.uri }}" class="inline-block my-2">
                 {{ nextBlog.title }}
