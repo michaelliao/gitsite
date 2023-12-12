@@ -60,9 +60,16 @@
             }
         }
 
+        // set dark mode immediately:
         (function () {
             setDarkMode(isDarkMode());
         })();
+
+        function getOuterWidth(dom) {
+            const s = window.getComputedStyle(dom);
+            const t = parseFloat(s.width) + parseFloat(s.marginLeft) + parseFloat(s.marginRight);
+            return isNaN(t) ? 0 : Math.ceil(t);
+        }
 
         function showSearch() {
             document.getElementById('gsi-search').classList.remove('hidden');
@@ -142,6 +149,7 @@
             }
         }
 
+        // equivalent of $(document).ready(fn):
         function documentReady(fn) {
             if (document.readyState === 'complete' || document.readyState === 'interactive') {
                 setTimeout(fn, 0);
@@ -151,16 +159,91 @@
         }
 
         documentReady(() => {
+            console.log('auto select nav menu...');
+            const gs_path_prefix = (p) => {
+                if (p.endsWith('/index.html')) {
+                    return p.substring(0, p.length - 10);
+                }
+                return p;
+            }
+            const urlPathPrefix = gs_path_prefix(location.href);
+            document.querySelectorAll('nav.gsc-nav li.gsc-nav-li a').forEach(a => {
+                if (urlPathPrefix.startsWith(gs_path_prefix(a.href))) {
+                    a.classList.add('gsc-active');
+                }
+            });
+        });
+
+        documentReady(() => {
             console.log('init popup menu...');
-            const doms = document.getElementsByClassName('gsc-popup-menu');
+            const doms = document.querySelectorAll('.gsc-popup-menu');
             for (let dom of doms) {
                 initPopupMenu(dom);
             }
         });
 
         documentReady(() => {
-            console.log('document ready.');
+            console.log('init auto resize nav bar...');
+            const resizeNavigationMenu = () => {
+                if (!window.matchMedia("(min-width: 768px)").matches) {
+                    return;
+                }
+                const
+                    containerWidth = document.querySelector('#gsi-header div.gsc-container').offsetWidth,
+                    menuMore = document.querySelector('#gsi-nav-menu-more'),
+                    navRightWidth = document.getElementById('gsi-header-nav-right').offsetWidth;
+                let info = window.__nav_resize;
+                if (!info) {
+                    const
+                        menuItems = document.querySelectorAll('#gsi-nav-menu>li.gsc-nav-li'),
+                        widthOfItems = [];
+                    menuItems.forEach((dom) => {
+                        widthOfItems.push(getOuterWidth(dom));
+                    });
+                    info = {
+                        menuItems: menuItems,
+                        moreItems: document.querySelectorAll('#gsi-nav-menu-more div.gsc-popup-menu-container ul>li'),
+                        widthOfLogo: getOuterWidth(document.querySelector('#gsi-nav-menu li.gsc-nav-logo')),
+                        widthOfMore: getOuterWidth(document.querySelector('#gsi-nav-menu li#gsi-nav-menu-more')),
+                        widthOfItems: widthOfItems,
+                        totalWidthOfItems: widthOfItems.reduce((s, x) => s + x, 0)
+                    };
+                    window.__nav_resize = info;
+                    console.log(`calculate resize info: ${JSON.stringify(info)}`);
+                }
+                console.log(`resize: container=${containerWidth}, items=${info.totalWidthOfItems}, right=${navRightWidth}`);
+                // resize:
+                menuMore.classList.add('invisible');
+                let widthLeft = containerWidth - navRightWidth - info.widthOfLogo - info.widthOfMore - 30;
+                let showMore = false;
+                for (let i = 0; i < info.widthOfItems.length; i++) {
+                    if (showMore) {
+                        console.log(`hide ${i}`);
+                        info.menuItems[i].style.display = 'none';
+                        info.moreItems[i].style.display = '';
+                    } else {
+                        let w = info.widthOfItems[i];
+                        console.log(`${widthLeft} >= ${w} ?`);
+                        if (widthLeft >= w) {
+                            console.log(`show ${i}`);
+                            info.menuItems[i].style.display = '';
+                            info.moreItems[i].style.display = 'none';
+                            widthLeft -= w;
+                        } else {
+                            console.log(`hide ${i}`);
+                            showMore = true;
+                            menuMore.classList.remove('invisible');
+                            info.menuItems[i].style.display = 'none';
+                            info.moreItems[i].style.display = '';
+                        }
+                    }
+                }
+            };
+            window.addEventListener('resize', resizeNavigationMenu);
+            window.addEventListener('orientationchange', resizeNavigationMenu);
+            resizeNavigationMenu();
         });
+
     </script>
     <script src="/static/lunr.js"></script>
     <script src="/static/search-index.js"></script>
@@ -172,11 +255,11 @@
 <body class="gsc-text gsc-bg">
     <div id="gsi-header" class="gsc-bg border-b gsc-border">
         <div class="gsc-container">
-            <div class="relative flex items-center">
-                <div class="relative flex items-center">
+            <div id="gsi-header-nav" class="relative flex items-center">
+                <div id="gsi-header-nav-main" class="relative flex items-center mr-auto">
                     <nav class="gsc-nav gsc-nav-main font-semibold">
                         <!-- nav for small device -->
-                        <ul class="max-md:flex md:hidden">
+                        <ul id="gsi-nav-menu-small" class="max-md:flex md:hidden">
                             {% if book_index %}
                             <li class="mr-4 list-item">
                                 <a href="#0" onclick="showOffcanvas();return false;"
@@ -243,9 +326,9 @@
                         <!--// nav for small device -->
 
                         <!-- nav for desktop -->
-                        <ul class="max-md:hidden md:flex">
+                        <ul id="gsi-nav-menu" class="max-md:hidden md:flex">
                             <!-- logo -->
-                            <li class="mr-4 md:list-item max-md:hidden">
+                            <li class="gsc-nav-logo mr-4 list-item">
                                 <a href="/" class="inline-block py-4">
                                     <img src="/static/logo.svg" class="inline-block max-w-none h-6">
                                     {{ site.title }}
@@ -275,13 +358,13 @@
                                 </a>
                             </li>
                             {% else %}
-                            <li class="gsc-nav-li mr-4"><a href="#0">INVALID {{ nav.type }}</a></li>
+                            <li class="gsc-nav-li mr-4"><a href="#0">ERROR: INVALID {{ nav.type }}</a></li>
                             {% endif %}
                             {% endfor %}
                             {% endif %}
 
                             {% if site.navigation %}
-                            <li id="gsi-nav-more" class="mr-4 relative"><!-- more menu -->
+                            <li id="gsi-nav-menu-more" class="relative mr-4 invisible"><!-- more menu -->
                                 <a class="gsc-popup-menu inline-block py-4" href="#0">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="inline-block w-6 h-6">
@@ -311,7 +394,7 @@
                                             </a>
                                         </li>
                                         {% else %}
-                                        <li class="block"><a href="#0">INVALID {{ nav.type }}</a></li>
+                                        <li class="block"><a href="#0">ERROR: INVALID {{ nav.type }}</a></li>
                                         {% endif %}
                                         {% endfor %}
                                     </ul>
@@ -324,21 +407,7 @@
                         <!--// nav for desktop -->
                     </nav>
                 </div>
-                <script>
-                    const gs_path_prefix = (p) => {
-                        if (p.endsWith('/index.html')) {
-                            return p.substring(0, p.length - 10);
-                        }
-                        return p;
-                    }
-                    const urlPathPrefix = gs_path_prefix(location.href);
-                    document.querySelectorAll('nav.gsc-nav li.gsc-nav-li a').forEach(a => {
-                        if (urlPathPrefix.startsWith(gs_path_prefix(a.href))) {
-                            a.classList.add('gsc-active');
-                        }
-                    });
-                </script>
-                <div class="relative flex items-center ml-auto">
+                <div id="gsi-header-nav-right" class="relative flex items-center">
                     <nav class="gsc-nav gsc-nav-right font-semibold">
                         <ul class="flex space-x-4">
                             <!-- search -->
