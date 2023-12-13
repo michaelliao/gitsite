@@ -23,7 +23,7 @@
     </style>
 
     {% if __mode__ == 'build' %}
-    <link rel="stylesheet" href="/static/custom-tailwind.css">
+    <link rel="stylesheet" href="/static/default-tailwind.css">
     {% else %}
     <!-- for development only -->
     <script src="https://cdn.tailwindcss.com/3.3.5?plugins=forms,typography,aspect-ratio"></script>
@@ -33,10 +33,13 @@
         }
     </script>
     <style type="text/tailwindcss">
-        {% include "custom-tailwind.css" %}
+        {% include "default-tailwind.css" %}
     </style>
     <!--// development only -->
     {% endif %}
+
+    <link rel="stylesheet" href="/static/custom.css">
+
 
     <script>
         function isDarkMode() {
