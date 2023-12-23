@@ -110,12 +110,10 @@
                 console.log('init popup menu: ' + dom);
                 popup.tabIndex = 0;
                 dom.addEventListener('mouseenter', function () {
-                    console.log('a.mouseenter ~~~');
                     popup.classList.remove('hidden');
                     popup.__focus = false;
                 });
                 dom.addEventListener('mouseleave', function () {
-                    console.log('a.mouseleave -->');
                     setTimeout(function () {
                         if (!popup.__focus) {
                             popup.classList.add('hidden');
@@ -123,7 +121,6 @@
                     }, 250);
                 });
                 dom.addEventListener('click', (e) => {
-                    console.log('a.click ~~~');
                     if (popup.__focus) {
                         popup.classList.add('hidden');
                         popup.__focus = false;
@@ -134,16 +131,13 @@
                     }
                 });
                 popup.addEventListener('mouseenter', (e) => {
-                    console.log('popup.mouseenter ~~~');
                     popup.__focus = true;
                 });
                 popup.addEventListener('mouseleave', (e) => {
-                    console.log('popup.mouseleave -->');
                     popup.classList.add('hidden');
                     popup.__focus = false;
                 });
                 popup.addEventListener('focusout', (e) => {
-                    console.log('popup.focusout -->');
                     popup.classList.add('hidden');
                     popup.__focus = false;
                 })
@@ -221,19 +215,15 @@
                 let showMore = false;
                 for (let i = 0; i < info.widthOfItems.length; i++) {
                     if (showMore) {
-                        console.log(`hide ${i}`);
                         info.menuItems[i].style.display = 'none';
                         info.moreItems[i].style.display = '';
                     } else {
                         let w = info.widthOfItems[i];
-                        console.log(`${widthLeft} >= ${w} ?`);
                         if (widthLeft >= w) {
-                            console.log(`show ${i}`);
                             info.menuItems[i].style.display = '';
                             info.moreItems[i].style.display = 'none';
                             widthLeft -= w;
                         } else {
-                            console.log(`hide ${i}`);
                             showMore = true;
                             menuMore.classList.remove('invisible');
                             info.menuItems[i].style.display = 'none';
@@ -246,12 +236,21 @@
             window.addEventListener('orientationchange', resizeNavigationMenu);
             resizeNavigationMenu();
         });
-
     </script>
     <script src="/static/lunr.js"></script>
+    {% if site.search.languages.length > 1 %}
+    <script src="/static/lunr.stemmer.support.js"></script>
+    <script src="/static/lunr.multi.js"></script>
+    <script src="/static/tinyseg.js"></script>
+    {% for lang in site.search.languages %}
+    {% if lang != 'en' %}
+    <script src="/static/lunr.{{ lang }}.js"></script>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
     <script src="/static/search-index.js"></script>
     <script>
-        window.searcher = lunr.Index.load(window.__search__.index);
+        window.__searcher__ = lunr.Index.load(window.__search__.index);
     </script>
 </head>
 
