@@ -9,10 +9,26 @@ site:
       ref: gitsite-guide
     - title: Blogs
       type: blog
-    - title: About
+    - title: About GitSite
       type: page
       ref: about
     - title: Github
+      type: link
+      ref: https://github.com/michaelliao/gitsite
+      external: true
+    - title: Go To GitLab
+      type: link
+      ref: https://github.com/michaelliao/gitsite
+      external: true
+    - title: Build Your Own Sqlite From Scratch
+      type: link
+      ref: https://github.com/michaelliao/gitsite
+      external: true
+    - title: Git Repository
+      type: link
+      ref: https://github.com/michaelliao/gitsite
+      external: true
+    - title: Discuss
       type: link
       ref: https://github.com/michaelliao/gitsite
       external: true
@@ -28,16 +44,15 @@ site:
   search:
     # search by lunr or semantic:
     engine: lunr
-    lunr-languages:
+    languages:
       - en
       - zh
-    semantic-model: https://huggingface.co/Xenova/bge-small-zh/resolve/main/
 
 build:
-  # copy special files under root dir:
+  # copy special files under root dir (ignore if not found):
   copy:
     - favicon.ico
     - robots.txt
     - ads.txt
 
-  # you can add any items:
+# you can add any items:
