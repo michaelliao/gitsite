@@ -372,19 +372,46 @@
 
     /********** mermaid svg **********/
 
+    .svg-mermaid-fill-error {
+        @apply fill-red-800 dark:fill-red-400;
+    }
+
+    .svg-mermaid-stroke-error {
+        @apply stroke-red-800 dark:stroke-red-400;
+    }
+
+    .svg-mermaid-stroke-primary {
+        @apply stroke-gray-500 dark:stroke-gray-200;
+    }
+
+    .svg-mermaid-fill-primary {
+        @apply fill-gray-200 dark:fill-gray-800;
+    }
+
+    .svg-mermaid-fill-contract {
+        @apply fill-gray-800 dark:fill-gray-200;
+    }
+
+    .svg-mermaid-text {
+        @apply text-gray-800 dark:text-gray-300;
+    }
+
+    .svg-mermaid-bg {
+        @apply bg-gray-300 dark:bg-gray-700;
+    }
+
     svg.mermaid {
-        font-family: "trebuchet ms", verdana, arial, sans-serif !important;
-        font-size: 14px;
-        fill: #333;
+        font-family: "trebuchet ms", verdana, arial, sans-serif;
+        font-size: 16px;
+        @apply svg-mermaid-fill-primary leading-none;
     }
 
     svg.mermaid .error-icon {
-        fill: #552222;
+        @apply svg-mermaid-fill-error;
     }
 
     svg.mermaid .error-text {
-        fill: #552222;
-        stroke: #552222;
+        @apply svg-mermaid-fill-error svg-mermaid-stroke-error;
     }
 
     svg.mermaid .edge-thickness-normal {
@@ -408,38 +435,30 @@
     }
 
     svg.mermaid .marker {
-        fill: #333333;
-        stroke: #333333;
+        @apply svg-mermaid-stroke-primary svg-mermaid-fill-primary;
     }
 
     svg.mermaid .marker.cross {
-        stroke: #333333;
-    }
-
-    svg.mermaid svg.mermaid {
-        font-family: "trebuchet ms", verdana, arial, sans-serif;
-        font-size: 16px;
+        @apply svg-mermaid-stroke-primary;
     }
 
     svg.mermaid .label {
-        font-family: "trebuchet ms", verdana, arial, sans-serif;
-        color: #333;
+        @apply svg-mermaid-text;
     }
 
     svg.mermaid .cluster-label text {
-        fill: #333;
+        @apply svg-mermaid-fill-primary;
     }
 
     svg.mermaid .cluster-label span,
     svg.mermaid p {
-        color: #333;
+        @apply svg-mermaid-text;
     }
 
     svg.mermaid .label text,
     svg.mermaid span,
     svg.mermaid p {
-        fill: #333;
-        color: #333;
+        @apply svg-mermaid-fill-primary svg-mermaid-text;
     }
 
     svg.mermaid .node rect,
@@ -447,8 +466,7 @@
     svg.mermaid .node ellipse,
     svg.mermaid .node polygon,
     svg.mermaid .node path {
-        fill: #ECECFF;
-        stroke: #9370DB;
+        @apply svg-mermaid-fill-primary svg-mermaid-stroke-primary;
         stroke-width: 1px;
     }
 
@@ -465,32 +483,31 @@
     }
 
     svg.mermaid .arrowheadPath {
-        fill: #333333;
+        @apply svg-mermaid-fill-primary;
     }
 
     svg.mermaid .edgePath .path {
-        stroke: #333333;
+        @apply svg-mermaid-stroke-primary;
         stroke-width: 2.0px;
     }
 
     svg.mermaid .flowchart-link {
-        stroke: #333333;
         fill: none;
+        @apply svg-mermaid-stroke-primary;
     }
 
     svg.mermaid .edgeLabel {
-        background-color: #e8e8e8;
         text-align: center;
+        @apply svg-mermaid-bg svg-mermaid-text;
     }
 
     svg.mermaid .edgeLabel rect {
         opacity: 0.5;
-        background-color: #e8e8e8;
-        fill: #e8e8e8;
+        @apply svg-mermaid-bg svg-mermaid-fill-primary;
     }
 
     svg.mermaid .labelBkg {
-        background-color: rgba(232, 232, 232, 0.5);
+        @apply svg-mermaid-bg; 
     }
 
     svg.mermaid .cluster rect {
@@ -500,12 +517,12 @@
     }
 
     svg.mermaid .cluster text {
-        fill: #333;
+        @apply svg-mermaid-fill-primary;
     }
 
     svg.mermaid .cluster span,
     svg.mermaid p {
-        color: #333;
+        @apply svg-mermaid-text;
     }
 
     svg.mermaid div.mermaidTooltip {
@@ -513,7 +530,6 @@
         text-align: center;
         max-width: 200px;
         padding: 2px;
-        font-family: "trebuchet ms", verdana, arial, sans-serif;
         font-size: 12px;
         background: hsl(80, 100%, 96.2745098039%);
         border: 1px solid #aaaa33;
@@ -525,6 +541,6 @@
     svg.mermaid .flowchartTitleText {
         text-anchor: middle;
         font-size: 18px;
-        fill: #333;
+        @apply svg-mermaid-fill-contract;
     }
 }
