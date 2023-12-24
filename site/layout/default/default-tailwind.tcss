@@ -27,15 +27,15 @@
     /* global text, bg, link, etc. */
 
     .gsc-text {
-        @apply text-slate-600 dark:text-slate-300;
+        @apply text-gray-800 dark:text-gray-300;
     }
 
     .gsc-bg {
-        @apply bg-slate-50 dark:bg-slate-900;
+        @apply bg-gray-50 dark:bg-gray-900;
     }
 
     .gsc-border {
-        @apply border-slate-300 dark:border-slate-600;
+        @apply border-gray-300 dark:border-gray-600;
     }
 
     .gsc-container {
@@ -43,15 +43,15 @@
     }
 
     .gsc-backdrop {
-        @apply bg-slate-400/50 dark:bg-slate-900/50 backdrop-blur-sm;
+        @apply bg-gray-400/50 dark:bg-gray-900/50 backdrop-blur-sm;
     }
 
     .gsc-popup-container {
-        @apply bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700;
+        @apply bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700;
     }
 
     .gsc-popup-menu-container {
-        @apply absolute translate-y-[calc(var(--header-bar-height)-12px)] z-20 top-0 py-2 rounded shadow-md bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600;
+        @apply absolute translate-y-[calc(var(--header-bar-height)-12px)] z-20 top-0 py-2 rounded shadow-md bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600;
     }
 
     .gsc-popup-menu-container > ul > li > a {
@@ -118,7 +118,7 @@
     }
 
     #gsi-index div.gsc-index-item > a {
-        @apply block relative my-1 pl-1 pr-5 py-1 truncate hover:bg-slate-200 dark:hover:bg-slate-700;
+        @apply block relative my-1 pl-1 pr-5 py-1 truncate hover:bg-gray-200 dark:hover:bg-gray-700;
     }
 
     #gsi-index div.gsc-index-item > a > span.gsc-index-item-marker {
@@ -130,7 +130,7 @@
     }
 
     #gsi-index div.gsc-index-item > a.gsc-active {
-        @apply bg-slate-200 dark:bg-slate-700;
+        @apply bg-gray-200 dark:bg-gray-700;
     }
 
     #gsi-index div.gsc-index-item > a.gsc-active > span.gsc-index-item-title {
@@ -196,7 +196,7 @@
     }
 
     #gsi-content :not(pre)>code {
-        @apply rounded text-sm text-slate-600 dark:text-slate-100 bg-slate-200 dark:bg-slate-700 py-1 px-2 mx-1;
+        @apply rounded text-sm text-gray-600 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 py-1 px-2 mx-1;
     }
 
     #gsi-content em {
@@ -228,11 +228,11 @@
     }
 
     #gsi-content table tr {
-        @apply border-b border-slate-300 dark:border-slate-500;
+        @apply border-b border-gray-300 dark:border-gray-500;
     }
 
     #gsi-content table tbody tr {
-        @apply hover:bg-slate-100 dark:hover:bg-slate-800;
+        @apply hover:bg-gray-100 dark:hover:bg-gray-800;
     }
 
     #gsi-content table th,td {
@@ -240,11 +240,11 @@
     }
 
     #gsi-content hr {
-        @apply border-slate-300 dark:border-slate-500;
+        @apply border-gray-300 dark:border-gray-500;
     }
 
     #gsi-content blockquote {
-        @apply border-l-4 border-slate-300 dark:border-slate-500 italic my-4 px-2;
+        @apply border-l-4 border-gray-300 dark:border-gray-500 italic my-4 px-2;
     }
 
     #gsi-content hr.footnotes-sep {
@@ -290,7 +290,7 @@
     }
 
     #gsi-content pre {
-        @apply whitespace-pre-wrap break-all my-4 p-2 rounded border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800;
+        @apply whitespace-pre-wrap break-all my-4 p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
     }
 
     #gsi-content pre.ascii {
