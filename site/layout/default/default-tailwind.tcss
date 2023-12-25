@@ -372,46 +372,61 @@
 
     /********** mermaid svg **********/
 
-    .svg-mermaid-fill-error {
-        @apply fill-red-800 dark:fill-red-400;
+    /* begin for apply */
+
+    .svg-mermaid-fill-yellow {
+        @apply fill-yellow-100 dark:fill-yellow-800;
+    }
+    .svg-mermaid-stroke-yellow {
+        @apply stroke-yellow-400 dark:stroke-yellow-600;
     }
 
-    .svg-mermaid-stroke-error {
+    .svg-mermaid-fill-red {
+        @apply fill-red-800 dark:fill-red-400;
+    }
+    .svg-mermaid-stroke-red {
         @apply stroke-red-800 dark:stroke-red-400;
     }
 
-    .svg-mermaid-stroke-primary {
+    .svg-mermaid-stroke-dark {
         @apply stroke-gray-500 dark:stroke-gray-200;
     }
-
-    .svg-mermaid-fill-primary {
-        @apply fill-gray-200 dark:fill-gray-800;
-    }
-
-    .svg-mermaid-fill-contract {
+    .svg-mermaid-fill-dark {
         @apply fill-gray-800 dark:fill-gray-200;
     }
 
-    .svg-mermaid-text {
+    .svg-mermaid-fill-light {
+        @apply fill-gray-200 dark:fill-gray-800;
+    }
+    .svg-mermaid-stroke-light {
+        @apply stroke-gray-200 dark:stroke-gray-500;
+    }
+
+    .svg-mermaid-text-dark {
         @apply text-gray-800 dark:text-gray-300;
+    }
+    .svg-mermaid-text-light {
+        @apply text-gray-300 dark:text-gray-800;
     }
 
     .svg-mermaid-bg {
         @apply bg-gray-300 dark:bg-gray-700;
     }
 
+    /* end for apply */
+
     svg.mermaid {
         font-family: "trebuchet ms", verdana, arial, sans-serif;
         font-size: 16px;
-        @apply svg-mermaid-fill-primary leading-none;
+        @apply svg-mermaid-fill-light leading-none;
     }
 
     svg.mermaid .error-icon {
-        @apply svg-mermaid-fill-error;
+        @apply svg-mermaid-fill-red;
     }
 
     svg.mermaid .error-text {
-        @apply svg-mermaid-fill-error svg-mermaid-stroke-error;
+        @apply svg-mermaid-fill-red svg-mermaid-stroke-red;
     }
 
     svg.mermaid .edge-thickness-normal {
@@ -435,30 +450,30 @@
     }
 
     svg.mermaid .marker {
-        @apply svg-mermaid-stroke-primary svg-mermaid-fill-primary;
+        @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
     }
 
     svg.mermaid .marker.cross {
-        @apply svg-mermaid-stroke-primary;
+        @apply svg-mermaid-stroke-dark;
     }
 
     svg.mermaid .label {
-        @apply svg-mermaid-text;
+        @apply svg-mermaid-text-dark;
     }
 
     svg.mermaid .cluster-label text {
-        @apply svg-mermaid-fill-primary;
+        @apply svg-mermaid-fill-light;
     }
 
     svg.mermaid .cluster-label span,
     svg.mermaid p {
-        @apply svg-mermaid-text;
+        @apply svg-mermaid-text-dark;
     }
 
     svg.mermaid .label text,
     svg.mermaid span,
     svg.mermaid p {
-        @apply svg-mermaid-fill-primary svg-mermaid-text;
+        @apply svg-mermaid-fill-light svg-mermaid-text-dark;
     }
 
     svg.mermaid .node rect,
@@ -466,7 +481,7 @@
     svg.mermaid .node ellipse,
     svg.mermaid .node polygon,
     svg.mermaid .node path {
-        @apply svg-mermaid-fill-primary svg-mermaid-stroke-primary;
+        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
         stroke-width: 1px;
     }
 
@@ -483,27 +498,27 @@
     }
 
     svg.mermaid .arrowheadPath {
-        @apply svg-mermaid-fill-primary;
+        @apply svg-mermaid-fill-light;
     }
 
     svg.mermaid .edgePath .path {
-        @apply svg-mermaid-stroke-primary;
+        @apply svg-mermaid-stroke-dark;
         stroke-width: 2.0px;
     }
 
     svg.mermaid .flowchart-link {
         fill: none;
-        @apply svg-mermaid-stroke-primary;
+        @apply svg-mermaid-stroke-dark;
     }
 
     svg.mermaid .edgeLabel {
         text-align: center;
-        @apply svg-mermaid-bg svg-mermaid-text;
+        @apply svg-mermaid-bg svg-mermaid-text-dark;
     }
 
     svg.mermaid .edgeLabel rect {
         opacity: 0.5;
-        @apply svg-mermaid-bg svg-mermaid-fill-primary;
+        @apply svg-mermaid-bg svg-mermaid-fill-light;
     }
 
     svg.mermaid .labelBkg {
@@ -517,12 +532,12 @@
     }
 
     svg.mermaid .cluster text {
-        @apply svg-mermaid-fill-primary;
+        @apply svg-mermaid-fill-light;
     }
 
     svg.mermaid .cluster span,
     svg.mermaid p {
-        @apply svg-mermaid-text;
+        @apply svg-mermaid-text-dark;
     }
 
     svg.mermaid div.mermaidTooltip {
@@ -541,6 +556,118 @@
     svg.mermaid .flowchartTitleText {
         text-anchor: middle;
         font-size: 18px;
-        @apply svg-mermaid-fill-contract;
+        @apply svg-mermaid-fill-dark;
+    }
+
+    svg.mermaid .actor {
+        @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
+    }
+
+    svg.mermaid text.actor>tspan {
+        @apply svg-mermaid-fill-dark;
+        stroke: none;
+    }
+
+    svg.mermaid .actor-line {
+        @apply svg-mermaid-stroke-dark;
+    }
+
+    svg.mermaid .messageLine0 {
+        stroke-width: 1.5;
+        stroke-dasharray: none;
+        @apply svg-mermaid-stroke-dark;
+    }
+
+    svg.mermaid .messageLine1 {
+        stroke-width: 1.5;
+        stroke-dasharray: 2, 2;
+        @apply svg-mermaid-stroke-dark;
+    }
+    
+    svg.mermaid #arrowhead path {
+        @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
+    }
+
+    svg.mermaid .sequenceNumber {
+        @apply svg-mermaid-fill-dark;
+    }
+    
+    svg.mermaid #sequencenumber {
+        @apply svg-mermaid-fill-light;
+    }
+
+    svg.mermaid #crosshead path {
+        @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
+    }
+
+    svg.mermaid .messageText {
+        @apply svg-mermaid-fill-dark;
+        stroke: none;
+    }
+
+    svg.mermaid .labelBox {
+        @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
+    }
+    
+    svg.mermaid .labelText,
+    svg.mermaid .labelText>tspan {
+        @apply svg-mermaid-fill-light;
+        stroke: none;
+    }
+
+    svg.mermaid .loopText,
+    svg.mermaid .loopText>tspan {
+        @apply svg-mermaid-fill-light;
+        stroke: none;
+    }
+    
+    svg.mermaid .loopLine {
+        stroke-width: 2px;
+        stroke-dasharray: 4, 2;
+        @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
+    }
+
+    svg.mermaid .note {
+        @apply svg-mermaid-stroke-yellow svg-mermaid-fill-yellow;
+    }
+    
+    svg.mermaid .noteText,
+    svg.mermaid .noteText>tspan {
+        @apply svg-mermaid-fill-dark;
+        stroke: none;
+    }
+    
+    svg.mermaid .activation0 {
+        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    }
+    
+    svg.mermaid .activation1 {
+        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    }
+    
+    svg.mermaid .activation2 {
+        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    }
+    
+    svg.mermaid .actorPopupMenu {
+        position: absolute;
+    }
+    
+    svg.mermaid .actorPopupMenuPanel {
+        position: absolute;
+        @apply svg-mermaid-fill-light;
+    }
+    
+    svg.mermaid .actor-man line {
+        @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+    }
+    
+    svg.mermaid .actor-man circle {
+        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    }
+    
+    svg.mermaid line {
+        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+        stroke-width: 2px;
     }
 }
