@@ -33,6 +33,9 @@ site:
       type: link
       ref: https://github.com/michaelliao/gitsite
       external: true
+  comment:
+    disqus:
+      name: gitsite
   contact:
     name: Michael Liao
     github: https://github.com/michaelliao/gitsite
