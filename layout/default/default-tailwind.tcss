@@ -190,9 +190,11 @@
     #gsi-content a[target="_blank"]:after {
         @apply ml-[2px] w-4 h-4 inline-block content-[''];
 
+        /* change a.text-color-xxx to bg-color-xxx */
+        @apply bg-sky-600 hover:bg-sky-500 dark:bg-sky-400 hover:dark:bg-sky-300;
+
         /* svg color won't work as content, so use mask + bg color instead */
 
-        @apply bg-sky-600 hover:bg-sky-500 dark:bg-sky-400 hover:dark:bg-sky-300;
         mask-size: contain;
         mask-position: bottom;
         mask-repeat: no-repeat;
