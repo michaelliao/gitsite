@@ -4,6 +4,12 @@
 {{ chapter.title }} - {{ book_index.title }}
 {% endblock %}
 
+{% block script %}
+<script>
+    window.gs_status.title_suffix = '{{ book_index.title | replace("\'", "&#39;") | safe }}';
+</script>
+{% endblock %}
+
 {% block main %}
 <div id="gsi-sidebar">
     {% include "book_index.html" %}

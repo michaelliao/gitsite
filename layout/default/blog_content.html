@@ -1,0 +1,48 @@
+<!-- blog content -->
+<div id="gsi-blog-title">
+    <h1>{{ blog.title }}</h1>
+</div>
+<div id="gsi-blog-info" class="my-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="gsc-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+    </svg>
+
+    <time datetime="{{ blog.date }}">{{ blog.date }}</time>
+</div>
+<div id="gsi-blog-content">
+    {{ blog.content | safe }}
+</div>
+
+<hr class="gsc-border">
+
+<div id="gsi-blog-prev-next" class="flex flex-row mt-4">
+    <div id="gsi-blog-prev" class="basis-1/2 text-left">
+        {% if blog.prev %}
+        <a href="{{ blog.prev.uri }}" onclick="gs_load_blog('{{ blog.prev.uri }}',true);return false;"
+            class="inline-block my-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+            </svg>
+            {{ blog.prev.title }}
+        </a>
+        {% endif %}
+    </div>
+    <div id="gsi-blog-next" class="basis-1/2 text-right">
+        {% if blog.next %}
+        <a href="{{ blog.next.uri }}" onclick="gs_load_blog('{{ blog.next.uri }}',true);return false;"
+            class="inline-block my-2">
+            {{ blog.next.title }}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+            </svg>
+        </a>
+        {% endif %}
+    </div>
+</div>
+<!--// blog content -->

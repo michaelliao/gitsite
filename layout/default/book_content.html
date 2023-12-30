@@ -1,5 +1,8 @@
 <!-- book content -->
 <div id="gsi-chapter">
+    <div id="gsi-chapter-title">
+        <h1>{{ chapter.title }}</h1>
+    </div>
     <div id="gsi-chapter-content">
         {{ chapter.content | safe }}
     </div>
@@ -7,7 +10,8 @@
     <div id="gsi-chapter-prev-next" class="flex flex-row mt-4">
         <div id="gsi-chapter-prev" class="basis-1/2 mr-2 text-left">
             {% if prevChapter %}
-            <a href="/books/{{ prevChapter.uri }}/index.html" onclick="return gs_index_item_show(event)"
+            <a href="/books/{{ prevChapter.uri }}/index.html"
+                onclick="gs_load_chapter('/books/{{ prevChapter.uri }}/index.html',true);return false;"
                 class="inline-block my-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor">
@@ -20,7 +24,8 @@
         </div>
         <div id="gsi-chapter-next" class="basis-1/2 ml-2 text-right">
             {% if nextChapter %}
-            <a href="/books/{{ nextChapter.uri }}/index.html" onclick="return gs_index_item_show(event)"
+            <a href="/books/{{ nextChapter.uri }}/index.html"
+                onclick="gs_load_chapter('/books/{{ nextChapter.uri }}/index.html',true);return false;"
                 class="inline-block my-2">
                 {{ nextChapter.title }}
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

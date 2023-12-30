@@ -65,7 +65,8 @@
         gs_load_chapter_content(uri).then((html) => {
             if (version === window.gs_status.current_chapter_version) {
                 console.log(`loaded ok: ${uri}`);
-                document.getElementById('gsi-content').innerHTML = html;
+                document.querySelector('#gsi-content').innerHTML = html;
+                document.title = document.querySelector('#gsi-chapter-title h1').innerHTML + ' - ' + window.gs_status.title_suffix;
             }
         }).catch(err => {
             console.error(err);
@@ -97,7 +98,7 @@
 {% set icon_open = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>' %}
 {% macro index_item(node) %}
 <div class="gsc-index-item gsc-index-item-closed">
-    <a href="/books/{{ node.uri }}/index.html" onclick="gs_load_chapter('/books/{{ node.uri }}/index.html',true);return false;">
+    <a class="truncate" href="/books/{{ node.uri }}/index.html" onclick="gs_load_chapter('/books/{{ node.uri }}/index.html',true);return false;">
         {% if site.books and site.books.indexMarker %}
         <span class="gsc-index-item-marker">{{ node.marker }}.</span>
         {% endif %}

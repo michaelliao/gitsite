@@ -252,6 +252,8 @@
     <script>
         window.__searcher__ = lunr.Index.load(window.__search__.index);
     </script>
+    {% block script %}
+    {% endblock %}
 </head>
 
 <body class="gsc-text gsc-bg">
@@ -262,7 +264,7 @@
                     <nav class="gsc-nav gsc-nav-main font-semibold">
                         <!-- nav for small device -->
                         <ul id="gsi-nav-menu-small" class="max-md:flex md:hidden">
-                            {% if book_index %}
+                            {% if sidebar %}
                             <li class="mr-4 list-item">
                                 <a href="#0" onclick="showOffcanvas();return false;"
                                     class="block py-4 border-b-2 border-transparent">

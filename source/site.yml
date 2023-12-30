@@ -3,6 +3,7 @@ site:
   description: GitSite is a static web site generator for Git.
   keywords: gitsite, git, static web site, html
   theme: default
+  locale: en-US
   navigation:
     - title: User Guide
       type: book
@@ -36,8 +37,6 @@ site:
     name: Michael Liao
     github: https://github.com/michaelliao/gitsite
     twitter: https://twitter.com/liaoxuefeng
-  blogs:
-    title: Latest Updates
   books:
     index-marker: true
 

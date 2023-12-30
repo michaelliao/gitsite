@@ -85,7 +85,11 @@
     }
 
     a > svg {
-        @apply inline-block w-5 h-5 mt-[-2px];
+        @apply inline-block w-5 h-5 mt-[-3px];
+    }
+
+    svg.gsc-icon {
+        @apply inline-block w-5 h-5 mt-[-3px];
     }
 
     nav.gsc-nav > ul > li {
@@ -118,7 +122,7 @@
     }
 
     #gsi-index div.gsc-index-item > a {
-        @apply block relative my-1 pl-1 pr-5 py-1 truncate hover:bg-gray-200 dark:hover:bg-gray-700;
+        @apply block relative my-1 pl-1 pr-5 py-1 hover:bg-gray-200 dark:hover:bg-gray-700;
     }
 
     #gsi-index div.gsc-index-item > a > span.gsc-index-item-marker {
@@ -328,26 +332,10 @@
         @apply text-red-800 dark:text-red-500;
     }
 
-    /********** blog list **********/
-
-    .gsc-blogs {
-        @apply gsc-border md:border-l md:ml-[var(--blog-info-width)];
-    }
-
-    .gsc-blog-circle {
-        @apply absolute left-[-6px] top-[16px] w-[11px] h-[11px] md:block max-md:hidden rounded-full;
-    }
-
-    .gsc-blog-info-left {
-        @apply text-base max-md:hidden md:absolute md:-left-[var(--blog-info-width)] md:pr-8 md:text-right md:w-[var(--blog-info-width)];
-    }
-
-    .gsc-blog-info-right {
-        @apply md:hidden text-base pt-2;
-    }
+    /********** blogs **********/
 
     #gsi-blog-title {
-        @apply my-8;
+        @apply mb-8;
     }
 
     #gsi-blog-content > h1 {
@@ -361,7 +349,7 @@
     }
 
     .gsc-offcanvas-popup {
-        @apply border-r fixed top-0 left-[calc(0px-var(--side-bar-width))] bottom-0 w-[var(--side-bar-width)] p-4;
+        @apply overflow-y-auto border-r fixed top-0 left-[calc(0px-var(--side-bar-width))] bottom-0 w-[var(--side-bar-width)] p-4;
     }
 
     .gsc-offcanvas-popup-show {
