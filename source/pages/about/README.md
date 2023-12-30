@@ -2,11 +2,20 @@
 
 Integer ullamcorper nulla ut risus mattis vehicula. Etiam sollicitudin lorem a scelerisque efficitur. Nulla volutpat semper tellus, vel fringilla diam sollicitudin sed. Aenean laoreet sapien eu aliquet pulvinar. Etiam consequat mi non nulla iaculis egestas. Sed a diam euismod, euismod mauris eget, eleifend magna. In consequat a ex vel semper.
 
+```emoji
+Hello, :wave:
+:smile: Haha
+```
+
 Vivamus ultrices at est eu lacinia. Maecenas sollicitudin a magna sed dictum. Duis finibus suscipit vulputate. Donec id felis et velit placerat ultricies in in ex. Proin sollicitudin pellentesque finibus. Donec in ipsum rhoncus, luctus felis in, vestibulum nisi. Vestibulum eros elit, placerat ut nibh auctor, commodo finibus augue.
 
 ![](html5.png)
 
 Vestibulum non blandit ante. Phasellus gravida luctus blandit. Duis quis egestas sem. Sed sagittis odio aliquam gravida hendrerit. Maecenas quis odio sed ex dapibus pretium a at lacus. Aenean consequat eu justo fringilla rutrum. Sed non urna vel leo vestibulum laoreet vulputate nec dolor. Sed ornare a turpis ut facilisis. In tristique vitae ligula a pretium.
+
+```qrcode ecl-m w-256 p-0 info link
+https://gitsite.org
+```
 
 Pellentesque molestie elit vel velit tincidunt placerat. In posuere mollis purus commodo lobortis. Morbi ut porttitor odio. Nunc eu erat nec mi viverra vestibulum. Nullam ut auctor lorem, ac sagittis odio. Morbi ultrices tellus ut dui venenatis, iaculis dapibus tellus porttitor. Integer pulvinar arcu a felis rutrum, id ultricies libero elementum. Cras odio urna, tempus a vulputate a, tincidunt at nunc. Mauris et nulla vitae metus suscipit sodales. Sed gravida velit sed risus pharetra cursus. Mauris iaculis vitae enim et vulputate. Donec finibus, sapien vitae rhoncus scelerisque, nisi diam bibendum turpis, a consectetur purus lorem et urna. Sed eleifend eu turpis placerat consequat. Ut bibendum sit amet nunc rhoncus ornare.
 
