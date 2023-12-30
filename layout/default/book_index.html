@@ -65,7 +65,7 @@
         gs_load_chapter_content(uri).then((html) => {
             if (version === window.gs_status.current_chapter_version) {
                 console.log(`loaded ok: ${uri}`);
-                document.querySelector('#gsi-content').innerHTML = html;
+                setInnerHTML(document.querySelector('#gsi-content'), html);
                 document.title = document.querySelector('#gsi-chapter-title h1').innerHTML + ' - ' + window.gs_status.title_suffix;
             }
         }).catch(err => {

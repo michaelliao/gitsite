@@ -44,7 +44,7 @@
         gs_load_blog_content(uri).then((html) => {
             if (version === window.gs_status.current_blog_version) {
                 console.log(`loaded ok: ${uri}`);
-                document.querySelector('#gsi-content').innerHTML = html;
+                setInnerHTML(document.querySelector('#gsi-content'), html);
                 document.title = document.querySelector('#gsi-blog-title h1').innerHTML + ' - ' + window.gs_status.title_suffix;
             }
         }).catch(err => {
