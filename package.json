@@ -1,6 +1,0 @@
-{
-  "type": "module",
-  "devDependencies": {
-    "gitsite-cli": "^1.0.7"
-  }
-}
