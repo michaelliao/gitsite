@@ -13,6 +13,9 @@ site:
     - title: About GitSite
       type: page
       ref: about
+    - title: Not Found
+      type: link
+      ref: /404
     - title: Github
       type: link
       ref: https://github.com/michaelliao/gitsite

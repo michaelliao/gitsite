@@ -123,8 +123,8 @@
 {% endmacro %}
 -->
 <div id="gsi-index">
-    <h3>{{ book_index.title }}</h3>
-    {% for item in book_index.children %}
+    <h3>{{ book.title }}</h3>
+    {% for item in book.children %}
     {{ index_item(item) }}
     {% endfor %}
 </div>

@@ -1,12 +1,12 @@
 {% extends "__base__.html" %}
 
 {% block title %}
-{{ chapter.title }} - {{ book_index.title }}
+{{ chapter.title }} - {{ book.title }}
 {% endblock %}
 
 {% block script %}
 <script>
-    window.gs_status.title_suffix = '{{ book_index.title | replace("\'", "&#39;") | safe }}';
+    window.gs_status.title_suffix = '{{ book.title | replace("\'", "&#39;") | safe }}';
 </script>
 {% endblock %}
 
