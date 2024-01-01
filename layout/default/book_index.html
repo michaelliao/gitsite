@@ -84,7 +84,6 @@
 
     // set open/closed:
     function gs_index_item_collapse(e, fromState, toState) {
-        console.log(e.target);
         e.stopPropagation && e.stopPropagation();
         // div.gsc-index-item > a > span.gsc-index-item-open-or-closed:click 
         let node = gs_find_parent_node(e.target, 'div');
