@@ -230,19 +230,20 @@
     }
 
     #gsi-content table {
-        @apply w-full text-left my-4 border-collapse rounded;
+        @apply w-full text-left my-4 border-collapse;
     }
 
     #gsi-content table tr {
-        @apply border-b border-gray-300 dark:border-gray-500;
+        @apply border-t border-b gsc-border;
     }
 
     #gsi-content table tbody tr {
         @apply hover:bg-gray-100 dark:hover:bg-gray-800;
     }
 
-    #gsi-content table th,td {
-        @apply p-2;
+    #gsi-content table th,
+    #gsi-content table td {
+        @apply p-2 border-l last:border-r gsc-border;
     }
 
     #gsi-content hr {
@@ -274,26 +275,57 @@
     }
 
     #gsi-content div.alert {
-        @apply border-l-4 px-4 my-4;
-        padding-top: 1px;
-        padding-bottom: 1px;
+        @apply border-l-4 border-t border-r border-b rounded px-4 py-2 my-4;
     }
 
-    #gsi-content div.alert-success {
-        @apply border-green-500 text-green-800 dark:text-green-100 bg-green-100 dark:bg-green-900;
+    #gsi-content div.alert > p {
+        @apply my-2;
     }
 
-    #gsi-content div.alert-info {
-        @apply border-blue-500 text-blue-800 dark:text-blue-100 bg-blue-100 dark:bg-blue-900;
+    #gsi-content div.alert > p:first-child > svg {
+        @apply inline-block w-5 h-5 mt-[-3px];
+    }
+
+    #gsi-content div.alert-note {
+        @apply border-blue-700 dark:border-blue-500;
+    }
+
+    #gsi-content div.alert-note > p:first-child {
+        @apply text-blue-700 dark:text-blue-500;
+    }
+
+    #gsi-content div.alert-tip {
+        @apply border-green-700 dark:border-green-500;
+    }
+
+    #gsi-content div.alert-tip > p:first-child {
+        @apply text-green-700 dark:text-green-500;
+    }
+
+    #gsi-content div.alert-important {
+        @apply border-purple-700 dark:border-purple-500;
+    }
+
+    #gsi-content div.alert-important > p:first-child {
+        @apply text-purple-700 dark:text-purple-500;
     }
 
     #gsi-content div.alert-warning {
-        @apply border-yellow-500 text-yellow-800 dark:text-yellow-100 bg-yellow-100 dark:bg-yellow-900;
+        @apply border-yellow-700 dark:border-yellow-500;
     }
 
-    #gsi-content div.alert-danger {
-        @apply border-red-500 text-red-800 dark:text-red-100 bg-red-100 dark:bg-red-900;
+    #gsi-content div.alert-warning > p:first-child {
+        @apply text-yellow-700 dark:text-yellow-500;
     }
+
+    #gsi-content div.alert-caution {
+        @apply border-red-700 dark:border-red-500;
+    }
+
+    #gsi-content div.alert-caution > p:first-child {
+        @apply text-red-700 dark:text-red-500;
+    }
+
 
     #gsi-content pre {
         @apply whitespace-pre-wrap break-all my-4 p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
@@ -360,6 +392,14 @@
 
     /********** footer **********/
 
+    /********** begin qrcode **********/
+
+    div.qrcode-wrapper svg {
+        display: inline-block;
+    }
+
+    /********** end qrcode **********/
+
     /********** mermaid svg **********/
 
     /* begin for apply */
@@ -405,9 +445,12 @@
 
     /* end for apply */
 
+    /* mermaid global */
+
     svg.mermaid {
         font-family: "trebuchet ms", verdana, arial, sans-serif;
         font-size: 16px;
+        display: inline-block;
         @apply svg-mermaid-fill-light leading-none;
     }
 
@@ -419,135 +462,142 @@
         @apply svg-mermaid-fill-red svg-mermaid-stroke-red;
     }
 
-    svg.mermaid .edge-thickness-normal {
+    
+
+    /* end mermaid global */
+
+    /* mermaid flowchart */
+
+    svg.mermaid-flowchart .edge-thickness-normal {
         stroke-width: 2px;
     }
 
-    svg.mermaid .edge-thickness-thick {
+    svg.mermaid-flowchart .edge-thickness-thick {
         stroke-width: 3.5px;
     }
 
-    svg.mermaid .edge-pattern-solid {
+    svg.mermaid-flowchart .edge-pattern-solid {
         stroke-dasharray: 0;
     }
 
-    svg.mermaid .edge-pattern-dashed {
+    svg.mermaid-flowchart .edge-pattern-dashed {
         stroke-dasharray: 3;
     }
 
-    svg.mermaid .edge-pattern-dotted {
+    svg.mermaid-flowchart .edge-pattern-dotted {
         stroke-dasharray: 2;
     }
 
-    svg.mermaid .marker {
+    svg.mermaid-flowchart .marker {
         @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
     }
 
-    svg.mermaid .marker.cross {
+    svg.mermaid-flowchart .marker.cross {
         @apply svg-mermaid-stroke-dark;
     }
 
-    svg.mermaid .label {
+    svg.mermaid-flowchart .label {
         @apply svg-mermaid-text-dark;
     }
 
-    svg.mermaid .cluster-label text {
+    svg.mermaid-flowchart .cluster-label text {
         @apply svg-mermaid-fill-light;
     }
 
-    svg.mermaid .cluster-label span,
-    svg.mermaid p {
+    svg.mermaid-flowchart .cluster-label span,
+    svg.mermaid-flowchart p {
         @apply svg-mermaid-text-dark;
     }
 
-    svg.mermaid .label text,
-    svg.mermaid span,
-    svg.mermaid p {
+    svg.mermaid-flowchart .label text,
+    svg.mermaid-flowchart span,
+    svg.mermaid-flowchart p {
         @apply svg-mermaid-fill-light svg-mermaid-text-dark;
     }
 
-    svg.mermaid .node rect,
-    svg.mermaid .node circle,
-    svg.mermaid .node ellipse,
-    svg.mermaid .node polygon,
-    svg.mermaid .node path {
+    svg.mermaid-flowchart .node rect,
+    svg.mermaid-flowchart .node circle,
+    svg.mermaid-flowchart .node ellipse,
+    svg.mermaid-flowchart .node polygon,
+    svg.mermaid-flowchart .node path {
         @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
         stroke-width: 1px;
     }
 
-    svg.mermaid .flowchart-label text {
+    svg.mermaid-flowchart .flowchart-label text {
         text-anchor: middle;
     }
 
-    svg.mermaid .node .label {
+    svg.mermaid-flowchart .node .label {
         text-align: center;
     }
 
-    svg.mermaid .node.clickable {
+    svg.mermaid-flowchart .node.clickable {
         cursor: pointer;
     }
 
-    svg.mermaid .arrowheadPath {
+    svg.mermaid-flowchart .arrowheadPath {
         @apply svg-mermaid-fill-light;
     }
 
-    svg.mermaid .edgePath .path {
+    svg.mermaid-flowchart .edgePath .path {
         @apply svg-mermaid-stroke-dark;
         stroke-width: 2.0px;
     }
 
-    svg.mermaid .flowchart-link {
-        fill: none;
+    svg.mermaid-flowchart .flowchart-link {
         @apply svg-mermaid-stroke-dark;
+        fill: none;
     }
 
-    svg.mermaid .edgeLabel {
-        text-align: center;
+    svg.mermaid-flowchart .edgeLabel {
         @apply svg-mermaid-bg svg-mermaid-text-dark;
+        text-align: center;
     }
 
-    svg.mermaid .edgeLabel rect {
-        opacity: 0.5;
+    svg.mermaid-flowchart .edgeLabel rect {
         @apply svg-mermaid-bg svg-mermaid-fill-light;
+        opacity: 0.5;
     }
 
-    svg.mermaid .labelBkg {
+    svg.mermaid-flowchart .labelBkg {
         @apply svg-mermaid-bg; 
     }
 
-    svg.mermaid .cluster rect {
-        fill: #ffffde;
-        stroke: #aaaa33;
+    svg.mermaid-flowchart .cluster rect {
+        @apply svg-mermaid-fill-light svg-mermaid-stroke-yellow;
         stroke-width: 1px;
     }
 
-    svg.mermaid .cluster text {
+    svg.mermaid-flowchart .cluster text {
         @apply svg-mermaid-fill-light;
     }
 
-    svg.mermaid .cluster span,
-    svg.mermaid p {
+    svg.mermaid-flowchart .cluster span,
+    svg.mermaid-flowchart p {
         @apply svg-mermaid-text-dark;
     }
 
-    svg.mermaid div.mermaidTooltip {
+    svg.mermaid-flowchart div.mermaidTooltip {
+        @apply svg-mermaid-bg;
         position: absolute;
         text-align: center;
         max-width: 200px;
         padding: 2px;
         font-size: 12px;
-        background: hsl(80, 100%, 96.2745098039%);
         border: 1px solid #aaaa33;
         border-radius: 2px;
         pointer-events: none;
         z-index: 100;
     }
 
-    svg.mermaid .flowchartTitleText {
+    svg.mermaid-flowchart .flowchartTitleText {
+        @apply svg-mermaid-fill-dark;
         text-anchor: middle;
         font-size: 18px;
-        @apply svg-mermaid-fill-dark;
     }
+
+    /* end mermaid flowchart */
 
     svg.mermaid .actor {
         @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;

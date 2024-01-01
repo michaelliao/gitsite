@@ -1,12 +1,12 @@
 {% extends "__base__.html" %}
 
 {% block title %}
-{{ blog.title }} - {{ site.blogs.title }}
+{{ blog.title }} - {{ site.blogs.title }} - {{ site.title }}
 {% endblock %}
 
 {% block script %}
 <script>
-    window.gs_status.title_suffix = '{{ site.blogs.title | replace("\'", "&#39;") | safe }}';
+    window.gs_status.title_suffix = {{ site.blogs.title | dump | safe }} + " - " + {{ site.title | dump | safe }};
 </script>
 {% endblock %}
 
