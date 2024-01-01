@@ -2,712 +2,713 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-    :root {
-        --header-bar-height: 59px;
-        --footer-bar-height: 59px;
-        --side-bar-width: 317px;
-        --blog-info-width: 260px;
-    }
 
-    html {
-        scroll-padding-top: var(--header-bar-height);
-    }
+:root {
+    --header-bar-height: 59px;
+    --footer-bar-height: 59px;
+    --side-bar-width: 317px;
+    --blog-info-width: 260px;
+}
 
-    /* light/dark mode */
-
-    .light .gsc-hidden-on-light {
-        @apply hidden;
-    }
-
-    .dark .gsc-hidden-on-dark {
-        @apply hidden;
-    }
-
-    /* global text, bg, link, etc. */
+html {
+    scroll-padding-top: var(--header-bar-height);
+}
 
-    .gsc-text {
-        @apply text-gray-800 dark:text-gray-300;
-    }
+/* light/dark mode */
 
-    .gsc-bg {
-        @apply bg-gray-50 dark:bg-gray-900;
-    }
+.light .gsc-hidden-on-light {
+    @apply hidden;
+}
 
-    .gsc-border {
-        @apply border-gray-300 dark:border-gray-600;
-    }
+.dark .gsc-hidden-on-dark {
+    @apply hidden;
+}
 
-    .gsc-container {
-        @apply max-w-screen-2xl mx-auto px-4;
-    }
+/* global text, bg, link, etc. */
 
-    .gsc-backdrop {
-        @apply bg-gray-400/50 dark:bg-gray-900/50 backdrop-blur-sm;
-    }
+.gsc-text {
+    @apply text-gray-800 dark:text-gray-300;
+}
 
-    .gsc-popup-container {
-        @apply bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700;
-    }
+.gsc-bg {
+    @apply bg-gray-50 dark:bg-gray-900;
+}
 
-    .gsc-popup-menu-container {
-        @apply absolute translate-y-[calc(var(--header-bar-height)-12px)] z-20 top-0 py-2 rounded shadow-md bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600;
-    }
+.gsc-border {
+    @apply border-gray-300 dark:border-gray-600;
+}
 
-    .gsc-popup-menu-container > ul > li > a {
-        @apply block whitespace-nowrap px-4 py-2 w-full hover:bg-sky-100 dark:hover:bg-sky-800;
-    }
+.gsc-container {
+    @apply max-w-screen-2xl mx-auto px-4;
+}
 
-    /* id element */
+.gsc-backdrop {
+    @apply bg-gray-400/50 dark:bg-gray-900/50 backdrop-blur-sm;
+}
 
-    #gsi-header {
-        @apply sticky z-10 h-[var(--header-bar-height)] top-0 left-0 right-0 w-full drop-shadow-[0_4px_4px_rgba(0,0,0,0.1)];
-    }
+.gsc-popup-container {
+    @apply bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+}
 
-    #gsi-sidebar {
-        @apply max-md:hidden md:w-[var(--side-bar-width)] fixed gsc-bg gsc-border py-4 pl-4 h-[calc(100vh-var(--header-bar-height))] top-[var(--header-bar-height)] left-[max(0rem,calc(50%-768px))] overflow-y-scroll border-r;
-    }
+.gsc-popup-menu-container {
+    @apply absolute translate-y-[calc(var(--header-bar-height)-12px)] z-20 top-0 py-2 rounded shadow-md bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600;
+}
 
-    #gsi-content {
-        @apply min-h-[calc(100vh-var(--header-bar-height)-var(--footer-bar-height))] py-4;
-    }
+.gsc-popup-menu-container > ul > li > a {
+    @apply block whitespace-nowrap px-4 py-2 w-full hover:bg-sky-100 dark:hover:bg-sky-800;
+}
 
-    #gsi-footer {
-        @apply h-[var(--footer-bar-height)] border-t gsc-border overflow-hidden;
-    }
+/* id element */
 
-    a {
-        @apply text-sky-600 hover:text-sky-500 dark:text-sky-400 hover:dark:text-sky-300;
-    }
+#gsi-header {
+    @apply sticky z-10 h-[var(--header-bar-height)] top-0 left-0 right-0 w-full drop-shadow-[0_4px_4px_rgba(0,0,0,0.1)];
+}
 
-    .gsc-link-border {
-        @apply border-sky-600 hover:border-sky-500 dark:border-sky-400 hover:dark:border-sky-300;
-    }
+#gsi-sidebar {
+    @apply max-md:hidden md:w-[var(--side-bar-width)] fixed gsc-bg gsc-border py-4 pl-4 h-[calc(100vh-var(--header-bar-height))] top-[var(--header-bar-height)] left-[max(0rem,calc(50%-768px))] overflow-y-scroll border-r;
+}
 
-    a > svg {
-        @apply inline-block w-5 h-5 mt-[-3px];
-    }
+#gsi-content {
+    @apply min-h-[calc(100vh-var(--header-bar-height)-var(--footer-bar-height))] py-4;
+}
 
-    svg.gsc-icon {
-        @apply inline-block w-5 h-5 mt-[-3px];
-    }
+#gsi-footer {
+    @apply h-[var(--footer-bar-height)] border-t gsc-border overflow-hidden;
+}
 
-    nav.gsc-nav > ul > li {
-        @apply h-[calc(var(--header-bar-height)-1px)];
-    }
+a {
+    @apply text-sky-600 hover:text-sky-500 dark:text-sky-400 hover:dark:text-sky-300;
+}
 
-    nav.gsc-nav-main > ul > li > a {
-        @apply block py-4 border-b-2 border-transparent whitespace-nowrap;
-    }
+.gsc-link-border {
+    @apply border-sky-600 hover:border-sky-500 dark:border-sky-400 hover:dark:border-sky-300;
+}
 
-    nav.gsc-nav-main > ul > li > a.gsc-active {
-        @apply border-sky-600 hover:border-sky-500;
-    }
+a > svg {
+    @apply inline-block w-5 h-5 mt-[-3px];
+}
 
-    #gsi-index > h3 {
-        @apply pl-1 pt-1 pb-1 text-sm font-semibold uppercase;
-    }
+svg.gsc-icon {
+    @apply inline-block w-5 h-5 mt-[-3px];
+}
 
-    #gsi-index div.gsc-index-item {
-        @apply relative;
-    }
+nav.gsc-nav > ul > li {
+    @apply h-[calc(var(--header-bar-height)-1px)];
+}
 
-    #gsi-index div.gsc-index-item > div.gsc-index-item-children {
-        @apply relative ml-2 pl-2 border-l gsc-border;
-    }
+nav.gsc-nav-main > ul > li > a {
+    @apply block py-4 border-b-2 border-transparent whitespace-nowrap;
+}
 
-    #gsi-index div.gsc-index-item > a > span.gsc-index-item-action {
-        @apply cursor-pointer w-3 h-3 block absolute right-1 mx-1 top-1/2;
-        transform: translateY(-50%);
-    }
+nav.gsc-nav-main > ul > li > a.gsc-active {
+    @apply border-sky-600 hover:border-sky-500;
+}
 
-    #gsi-index div.gsc-index-item > a {
-        @apply block relative my-1 pl-1 pr-5 py-1 hover:bg-gray-200 dark:hover:bg-gray-700;
-    }
+#gsi-index > h3 {
+    @apply pl-1 pt-1 pb-1 text-sm font-semibold uppercase;
+}
 
-    #gsi-index div.gsc-index-item > a > span.gsc-index-item-marker {
-        @apply tabular-nums;
-    }
+#gsi-index div.gsc-index-item {
+    @apply relative;
+}
 
-    #gsi-index div.gsc-index-item > a:not(:has(span.gsc-index-item-action)) {
-        @apply pr-1;
-    }
+#gsi-index div.gsc-index-item > div.gsc-index-item-children {
+    @apply relative ml-2 pl-2 border-l gsc-border;
+}
 
-    #gsi-index div.gsc-index-item > a.gsc-active {
-        @apply bg-gray-200 dark:bg-gray-700;
-    }
+#gsi-index div.gsc-index-item > a > span.gsc-index-item-action {
+    @apply cursor-pointer w-3 h-3 block absolute right-1 mx-1 top-1/2;
+    transform: translateY(-50%);
+}
 
-    #gsi-index div.gsc-index-item > a.gsc-active > span.gsc-index-item-title {
-        @apply font-semibold;
-    }
+#gsi-index div.gsc-index-item > a {
+    @apply block relative my-1 pl-1 pr-5 py-1 hover:bg-gray-200 dark:hover:bg-gray-700;
+}
 
-    #gsi-index div.gsc-index-item-closed > div.gsc-index-item-children {
-        @apply hidden;
-    }
+#gsi-index div.gsc-index-item > a > span.gsc-index-item-marker {
+    @apply tabular-nums;
+}
 
-    #gsi-index div.gsc-index-item-open > div.gsc-index-item-children {
-        @apply block;
-    }
+#gsi-index div.gsc-index-item > a:not(:has(span.gsc-index-item-action)) {
+    @apply pr-1;
+}
 
-    #gsi-index div.gsc-index-item-closed > a > span.gsc-index-item-open {
-        @apply hidden;
-    }
+#gsi-index div.gsc-index-item > a.gsc-active {
+    @apply bg-gray-200 dark:bg-gray-700;
+}
 
-    #gsi-index div.gsc-index-item-open > a > span.gsc-index-item-closed {
-        @apply hidden;
-    }
+#gsi-index div.gsc-index-item > a.gsc-active > span.gsc-index-item-title {
+    @apply font-semibold;
+}
 
-    /********** markdown content style **********/
+#gsi-index div.gsc-index-item-closed > div.gsc-index-item-children {
+    @apply hidden;
+}
 
-    #gsi-content h1 {
-        @apply my-4 font-semibold text-4xl;
-    }
+#gsi-index div.gsc-index-item-open > div.gsc-index-item-children {
+    @apply block;
+}
 
-    #gsi-content h2 {
-        @apply my-4 font-semibold text-3xl;
-    }
+#gsi-index div.gsc-index-item-closed > a > span.gsc-index-item-open {
+    @apply hidden;
+}
 
-    #gsi-content h3 {
-        @apply my-4 font-semibold text-2xl;
-    }
+#gsi-index div.gsc-index-item-open > a > span.gsc-index-item-closed {
+    @apply hidden;
+}
 
-    #gsi-content h4 {
-        @apply my-4 font-semibold text-xl;
-    }
+/********** markdown content style **********/
 
-    #gsi-content h5 {
-        @apply my-4 font-semibold text-lg;
-    }
+#gsi-content h1 {
+    @apply my-4 font-semibold text-4xl;
+}
 
-    #gsi-content h6 {
-        @apply my-4 font-semibold text-base;
-    }
+#gsi-content h2 {
+    @apply my-4 font-semibold text-3xl;
+}
 
-    #gsi-content p {
-        @apply my-4 leading-7
-    }
+#gsi-content h3 {
+    @apply my-4 font-semibold text-2xl;
+}
 
-    #gsi-content a[target="_blank"]:after {
-        @apply ml-[2px] w-4 h-4 inline-block content-[''];
+#gsi-content h4 {
+    @apply my-4 font-semibold text-xl;
+}
 
-        /* change a.text-color-xxx to bg-color-xxx */
-        @apply bg-sky-600 hover:bg-sky-500 dark:bg-sky-400 hover:dark:bg-sky-300;
+#gsi-content h5 {
+    @apply my-4 font-semibold text-lg;
+}
 
-        /* svg color won't work as content, so use mask + bg color instead */
+#gsi-content h6 {
+    @apply my-4 font-semibold text-base;
+}
 
-        mask-size: contain;
-        mask-position: bottom;
-        mask-repeat: no-repeat;
-        mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzAwMDAwMCI+PHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTMuNSA2SDUuMjVBMi4yNSAyLjI1IDAgMDAzIDguMjV2MTAuNUEyLjI1IDIuMjUgMCAwMDUuMjUgMjFoMTAuNUEyLjI1IDIuMjUgMCAwMDE4IDE4Ljc1VjEwLjVtLTEwLjUgNkwyMSAzbTAgMGgtNS4yNU0yMSAzdjUuMjUiIC8+PC9zdmc+);
-    }
+#gsi-content p {
+    @apply my-4 leading-7
+}
 
-    #gsi-content :not(pre)>code {
-        @apply rounded text-sm text-gray-600 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 py-1 px-2 mx-1;
-    }
+#gsi-content a[target="_blank"]:after {
+    @apply ml-[2px] w-4 h-4 inline-block content-[''];
 
-    #gsi-content em {
-        @apply font-semibold italic px-[2px];
-    }
+    /* change a.text-color-xxx to bg-color-xxx */
+    @apply bg-sky-600 hover:bg-sky-500 dark:bg-sky-400 hover:dark:bg-sky-300;
 
-    #gsi-content ul {
-        @apply text-base list-disc list-inside;
-    }
+    /* svg color won't work as content, so use mask + bg color instead */
 
-    #gsi-content li {
-        @apply leading-6;
-    }
+    mask-size: contain;
+    mask-position: bottom;
+    mask-repeat: no-repeat;
+    mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzAwMDAwMCI+PHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTMuNSA2SDUuMjVBMi4yNSAyLjI1IDAgMDAzIDguMjV2MTAuNUEyLjI1IDIuMjUgMCAwMDUuMjUgMjFoMTAuNUEyLjI1IDIuMjUgMCAwMDE4IDE4Ljc1VjEwLjVtLTEwLjUgNkwyMSAzbTAgMGgtNS4yNU0yMSAzdjUuMjUiIC8+PC9zdmc+);
+}
 
-    #gsi-content ol {
-        @apply text-base list-decimal list-inside;
-    }
+#gsi-content :not(pre)>code {
+    @apply rounded text-sm text-gray-600 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 py-1 px-2 mx-1;
+}
 
-    #gsi-content li ul {
-        @apply text-base ml-6;
-    }
+#gsi-content em {
+    @apply font-semibold italic px-[2px];
+}
 
-    #gsi-content li ol {
-        @apply text-base ml-6;
-    }
+#gsi-content ul {
+    @apply text-base list-disc list-inside;
+}
 
-    #gsi-content table {
-        @apply w-full text-left my-4 border-collapse;
-    }
+#gsi-content li {
+    @apply leading-6;
+}
 
-    #gsi-content table tr {
-        @apply border-t border-b gsc-border;
-    }
+#gsi-content ol {
+    @apply text-base list-decimal list-inside;
+}
 
-    #gsi-content table tbody tr {
-        @apply hover:bg-gray-100 dark:hover:bg-gray-800;
-    }
+#gsi-content li ul {
+    @apply text-base ml-6;
+}
 
-    #gsi-content table th,
-    #gsi-content table td {
-        @apply p-2 border-l last:border-r gsc-border;
-    }
+#gsi-content li ol {
+    @apply text-base ml-6;
+}
 
-    #gsi-content hr {
-        @apply border-gray-300 dark:border-gray-500;
-    }
+#gsi-content table {
+    @apply w-full text-left my-4 border-collapse;
+}
 
-    #gsi-content blockquote {
-        @apply border-l-4 border-gray-300 dark:border-gray-500 italic my-4 px-2;
-    }
+#gsi-content table tr {
+    @apply border-t border-b gsc-border;
+}
 
-    #gsi-content hr.footnotes-sep {
-        @apply my-4 gsc-border border-dashed;
-    }
+#gsi-content table tbody tr {
+    @apply hover:bg-gray-100 dark:hover:bg-gray-800;
+}
 
-    #gsi-content section.footnotes {
-        @apply my-4;
-    }
+#gsi-content table th,
+#gsi-content table td {
+    @apply p-2 border-l last:border-r gsc-border;
+}
 
-    #gsi-content li.footnote-item {
-        @apply my-2;
-    }
-
-    #gsi-content li.footnote-item p {
-        @apply inline;
-    }
+#gsi-content hr {
+    @apply border-gray-300 dark:border-gray-500;
+}
 
-    #gsi-content a.footnote-backref {
-        font-family: Arial, Helvetica, sans-serif;
-    }
+#gsi-content blockquote {
+    @apply border-l-4 border-gray-300 dark:border-gray-500 italic my-4 px-2;
+}
 
-    #gsi-content div.alert {
-        @apply border-l-4 border-t border-r border-b rounded px-4 py-2 my-4;
-    }
+#gsi-content hr.footnotes-sep {
+    @apply my-4 gsc-border border-dashed;
+}
 
-    #gsi-content div.alert > p {
-        @apply my-2;
-    }
+#gsi-content section.footnotes {
+    @apply my-4;
+}
 
-    #gsi-content div.alert > p:first-child > svg {
-        @apply inline-block w-5 h-5 mt-[-3px];
-    }
+#gsi-content li.footnote-item {
+    @apply my-2;
+}
 
-    #gsi-content div.alert-note {
-        @apply border-blue-700 dark:border-blue-500;
-    }
+#gsi-content li.footnote-item p {
+    @apply inline;
+}
 
-    #gsi-content div.alert-note > p:first-child {
-        @apply text-blue-700 dark:text-blue-500;
-    }
+#gsi-content a.footnote-backref {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    #gsi-content div.alert-tip {
-        @apply border-green-700 dark:border-green-500;
-    }
+#gsi-content div.alert {
+    @apply border-l-4 border-t border-r border-b rounded px-4 py-2 my-4;
+}
 
-    #gsi-content div.alert-tip > p:first-child {
-        @apply text-green-700 dark:text-green-500;
-    }
+#gsi-content div.alert > p {
+    @apply my-2;
+}
 
-    #gsi-content div.alert-important {
-        @apply border-purple-700 dark:border-purple-500;
-    }
+#gsi-content div.alert > p:first-child > svg {
+    @apply inline-block w-5 h-5 mt-[-3px];
+}
 
-    #gsi-content div.alert-important > p:first-child {
-        @apply text-purple-700 dark:text-purple-500;
-    }
+#gsi-content div.alert-note {
+    @apply border-blue-700 dark:border-blue-500;
+}
 
-    #gsi-content div.alert-warning {
-        @apply border-yellow-700 dark:border-yellow-500;
-    }
+#gsi-content div.alert-note > p:first-child {
+    @apply text-blue-700 dark:text-blue-500;
+}
 
-    #gsi-content div.alert-warning > p:first-child {
-        @apply text-yellow-700 dark:text-yellow-500;
-    }
+#gsi-content div.alert-tip {
+    @apply border-green-700 dark:border-green-500;
+}
 
-    #gsi-content div.alert-caution {
-        @apply border-red-700 dark:border-red-500;
-    }
+#gsi-content div.alert-tip > p:first-child {
+    @apply text-green-700 dark:text-green-500;
+}
 
-    #gsi-content div.alert-caution > p:first-child {
-        @apply text-red-700 dark:text-red-500;
-    }
+#gsi-content div.alert-important {
+    @apply border-purple-700 dark:border-purple-500;
+}
 
+#gsi-content div.alert-important > p:first-child {
+    @apply text-purple-700 dark:text-purple-500;
+}
 
-    #gsi-content pre {
-        @apply whitespace-pre-wrap break-all my-4 p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
-    }
+#gsi-content div.alert-warning {
+    @apply border-yellow-700 dark:border-yellow-500;
+}
 
-    #gsi-content pre.ascii {
-        @apply p-0 border-0 bg-transparent;
-        font-family: JetBrainsMono;
-        font-size: 14px;
-        line-height: 18px;
-    }
-
-    #gsi-content pre.ascii>code {
-        font-family: JetBrainsMono;
-    }
-
-    #gsi-content div.question {
-        @apply my-4;
-    }
+#gsi-content div.alert-warning > p:first-child {
+    @apply text-yellow-700 dark:text-yellow-500;
+}
 
-    #gsi-content div.question input {
-        @apply focus:shadow-transparent;
-    }
+#gsi-content div.alert-caution {
+    @apply border-red-700 dark:border-red-500;
+}
 
-    #gsi-content div.question > p {
-        @apply mt-4 mb-1;
-    }
-
-    #gsi-content div.question button.question {
-        @apply px-2 py-1 mr-2 text-sm rounded border border-sky-600 text-sky-500;
-    }
-
-    #gsi-content div.question span.question.correct {
-        @apply text-green-800 dark:text-green-500;
-    }
- 
-    #gsi-content div.question span.question.wrong {
-        @apply text-red-800 dark:text-red-500;
-    }
+#gsi-content div.alert-caution > p:first-child {
+    @apply text-red-700 dark:text-red-500;
+}
 
-    /********** blogs **********/
 
-    #gsi-blog-title {
-        @apply mb-8;
-    }
+#gsi-content pre {
+    @apply whitespace-pre-wrap break-all my-4 p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
+}
 
-    #gsi-blog-content > h1 {
-        @apply first:hidden;
-    }
+#gsi-content pre.ascii {
+    @apply p-0 border-0 bg-transparent;
+    font-family: JetBrainsMono;
+    font-size: 14px;
+    line-height: 18px;
+}
 
-    /********** offcanvas **********/
+#gsi-content pre.ascii>code {
+    font-family: JetBrainsMono;
+}
 
-    #gsi-offcanvas {
-        @apply z-30 fixed top-0 left-0 right-0 bottom-0;
-    }
+#gsi-content div.question {
+    @apply my-4;
+}
 
-    .gsc-offcanvas-popup {
-        @apply overflow-y-auto border-r fixed top-0 left-[calc(0px-var(--side-bar-width))] bottom-0 w-[var(--side-bar-width)] p-4;
-    }
+#gsi-content div.question input {
+    @apply focus:shadow-transparent;
+}
 
-    .gsc-offcanvas-popup-show {
-        left: 0 !important;
-    }
+#gsi-content div.question > p {
+    @apply mt-4 mb-1;
+}
 
-    /********** footer **********/
+#gsi-content div.question button.question {
+    @apply px-2 py-1 mr-2 text-sm rounded border border-sky-600 text-sky-500;
+}
 
-    /********** begin qrcode **********/
+#gsi-content div.question span.question.correct {
+    @apply text-green-800 dark:text-green-500;
+}
 
-    div.qrcode-wrapper svg {
-        display: inline-block;
-    }
+#gsi-content div.question span.question.wrong {
+    @apply text-red-800 dark:text-red-500;
+}
 
-    /********** end qrcode **********/
+/********** blogs **********/
 
-    /********** mermaid svg **********/
+#gsi-blog-title {
+    @apply mb-8;
+}
 
-    /* begin for apply */
+#gsi-blog-content > h1 {
+    @apply first:hidden;
+}
 
-    .svg-mermaid-fill-yellow {
-        @apply fill-yellow-100 dark:fill-yellow-800;
-    }
-    .svg-mermaid-stroke-yellow {
-        @apply stroke-yellow-400 dark:stroke-yellow-600;
-    }
+/********** offcanvas **********/
 
-    .svg-mermaid-fill-red {
-        @apply fill-red-800 dark:fill-red-400;
-    }
-    .svg-mermaid-stroke-red {
-        @apply stroke-red-800 dark:stroke-red-400;
-    }
+#gsi-offcanvas {
+    @apply z-30 fixed top-0 left-0 right-0 bottom-0;
+}
 
-    .svg-mermaid-stroke-dark {
-        @apply stroke-gray-500 dark:stroke-gray-200;
-    }
-    .svg-mermaid-fill-dark {
-        @apply fill-gray-800 dark:fill-gray-200;
-    }
-
-    .svg-mermaid-fill-light {
-        @apply fill-gray-200 dark:fill-gray-800;
-    }
-    .svg-mermaid-stroke-light {
-        @apply stroke-gray-200 dark:stroke-gray-500;
-    }
-
-    .svg-mermaid-text-dark {
-        @apply text-gray-800 dark:text-gray-300;
-    }
-    .svg-mermaid-text-light {
-        @apply text-gray-300 dark:text-gray-800;
-    }
-
-    .svg-mermaid-bg {
-        @apply bg-gray-300 dark:bg-gray-700;
-    }
-
-    /* end for apply */
-
-    /* mermaid global */
-
-    svg.mermaid {
-        font-family: "trebuchet ms", verdana, arial, sans-serif;
-        font-size: 16px;
-        display: inline-block;
-        @apply svg-mermaid-fill-light leading-none;
-    }
-
-    svg.mermaid .error-icon {
-        @apply svg-mermaid-fill-red;
-    }
-
-    svg.mermaid .error-text {
-        @apply svg-mermaid-fill-red svg-mermaid-stroke-red;
-    }
-
-    
-
-    /* end mermaid global */
-
-    /* mermaid flowchart */
-
-    svg.mermaid-flowchart .edge-thickness-normal {
-        stroke-width: 2px;
-    }
-
-    svg.mermaid-flowchart .edge-thickness-thick {
-        stroke-width: 3.5px;
-    }
-
-    svg.mermaid-flowchart .edge-pattern-solid {
-        stroke-dasharray: 0;
-    }
-
-    svg.mermaid-flowchart .edge-pattern-dashed {
-        stroke-dasharray: 3;
-    }
-
-    svg.mermaid-flowchart .edge-pattern-dotted {
-        stroke-dasharray: 2;
-    }
-
-    svg.mermaid-flowchart .marker {
-        @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
-    }
-
-    svg.mermaid-flowchart .marker.cross {
-        @apply svg-mermaid-stroke-dark;
-    }
-
-    svg.mermaid-flowchart .label {
-        @apply svg-mermaid-text-dark;
-    }
-
-    svg.mermaid-flowchart .cluster-label text {
-        @apply svg-mermaid-fill-light;
-    }
-
-    svg.mermaid-flowchart .cluster-label span,
-    svg.mermaid-flowchart p {
-        @apply svg-mermaid-text-dark;
-    }
-
-    svg.mermaid-flowchart .label text,
-    svg.mermaid-flowchart span,
-    svg.mermaid-flowchart p {
-        @apply svg-mermaid-fill-light svg-mermaid-text-dark;
-    }
-
-    svg.mermaid-flowchart .node rect,
-    svg.mermaid-flowchart .node circle,
-    svg.mermaid-flowchart .node ellipse,
-    svg.mermaid-flowchart .node polygon,
-    svg.mermaid-flowchart .node path {
-        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-        stroke-width: 1px;
-    }
-
-    svg.mermaid-flowchart .flowchart-label text {
-        text-anchor: middle;
-    }
-
-    svg.mermaid-flowchart .node .label {
-        text-align: center;
-    }
-
-    svg.mermaid-flowchart .node.clickable {
-        cursor: pointer;
-    }
-
-    svg.mermaid-flowchart .arrowheadPath {
-        @apply svg-mermaid-fill-light;
-    }
-
-    svg.mermaid-flowchart .edgePath .path {
-        @apply svg-mermaid-stroke-dark;
-        stroke-width: 2.0px;
-    }
-
-    svg.mermaid-flowchart .flowchart-link {
-        @apply svg-mermaid-stroke-dark;
-        fill: none;
-    }
-
-    svg.mermaid-flowchart .edgeLabel {
-        @apply svg-mermaid-bg svg-mermaid-text-dark;
-        text-align: center;
-    }
-
-    svg.mermaid-flowchart .edgeLabel rect {
-        @apply svg-mermaid-bg svg-mermaid-fill-light;
-        opacity: 0.5;
-    }
-
-    svg.mermaid-flowchart .labelBkg {
-        @apply svg-mermaid-bg; 
-    }
-
-    svg.mermaid-flowchart .cluster rect {
-        @apply svg-mermaid-fill-light svg-mermaid-stroke-yellow;
-        stroke-width: 1px;
-    }
-
-    svg.mermaid-flowchart .cluster text {
-        @apply svg-mermaid-fill-light;
-    }
-
-    svg.mermaid-flowchart .cluster span,
-    svg.mermaid-flowchart p {
-        @apply svg-mermaid-text-dark;
-    }
-
-    svg.mermaid-flowchart div.mermaidTooltip {
-        @apply svg-mermaid-bg;
-        position: absolute;
-        text-align: center;
-        max-width: 200px;
-        padding: 2px;
-        font-size: 12px;
-        border: 1px solid #aaaa33;
-        border-radius: 2px;
-        pointer-events: none;
-        z-index: 100;
-    }
-
-    svg.mermaid-flowchart .flowchartTitleText {
-        @apply svg-mermaid-fill-dark;
-        text-anchor: middle;
-        font-size: 18px;
-    }
-
-    /* end mermaid flowchart */
-
-    svg.mermaid .actor {
-        @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
-    }
-
-    svg.mermaid text.actor>tspan {
-        @apply svg-mermaid-fill-dark;
-        stroke: none;
-    }
-
-    svg.mermaid .actor-line {
-        @apply svg-mermaid-stroke-dark;
-    }
-
-    svg.mermaid .messageLine0 {
-        stroke-width: 1.5;
-        stroke-dasharray: none;
-        @apply svg-mermaid-stroke-dark;
-    }
-
-    svg.mermaid .messageLine1 {
-        stroke-width: 1.5;
-        stroke-dasharray: 2, 2;
-        @apply svg-mermaid-stroke-dark;
-    }
-    
-    svg.mermaid #arrowhead path {
-        @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
-    }
-
-    svg.mermaid .sequenceNumber {
-        @apply svg-mermaid-fill-dark;
-    }
-    
-    svg.mermaid #sequencenumber {
-        @apply svg-mermaid-fill-light;
-    }
-
-    svg.mermaid #crosshead path {
-        @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
-    }
-
-    svg.mermaid .messageText {
-        @apply svg-mermaid-fill-dark;
-        stroke: none;
-    }
-
-    svg.mermaid .labelBox {
-        @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
-    }
-    
-    svg.mermaid .labelText,
-    svg.mermaid .labelText>tspan {
-        @apply svg-mermaid-fill-light;
-        stroke: none;
-    }
-
-    svg.mermaid .loopText,
-    svg.mermaid .loopText>tspan {
-        @apply svg-mermaid-fill-light;
-        stroke: none;
-    }
-    
-    svg.mermaid .loopLine {
-        stroke-width: 2px;
-        stroke-dasharray: 4, 2;
-        @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
-    }
-
-    svg.mermaid .note {
-        @apply svg-mermaid-stroke-yellow svg-mermaid-fill-yellow;
-    }
-    
-    svg.mermaid .noteText,
-    svg.mermaid .noteText>tspan {
-        @apply svg-mermaid-fill-dark;
-        stroke: none;
-    }
-    
-    svg.mermaid .activation0 {
-        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-    }
-    
-    svg.mermaid .activation1 {
-        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-    }
-    
-    svg.mermaid .activation2 {
-        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-    }
-    
-    svg.mermaid .actorPopupMenu {
-        position: absolute;
-    }
-    
-    svg.mermaid .actorPopupMenuPanel {
-        position: absolute;
-        @apply svg-mermaid-fill-light;
-    }
-    
-    svg.mermaid .actor-man line {
-        @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
-    }
-    
-    svg.mermaid .actor-man circle {
-        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-    }
-    
-    svg.mermaid line {
-        @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-        stroke-width: 2px;
-    }
+.gsc-offcanvas-popup {
+    @apply overflow-y-auto border-r fixed top-0 left-[calc(0px-var(--side-bar-width))] bottom-0 w-[var(--side-bar-width)] p-4;
+}
+
+.gsc-offcanvas-popup-show {
+    left: 0 !important;
+}
+
+/********** footer **********/
+
+/********** begin qrcode **********/
+
+div.qrcode-wrapper svg {
+    display: inline-block;
+}
+
+/********** end qrcode **********/
+
+/********** mermaid svg **********/
+
+/* begin for apply */
+
+.svg-mermaid-fill-yellow {
+    @apply fill-yellow-100 dark:fill-yellow-800;
+}
+.svg-mermaid-stroke-yellow {
+    @apply stroke-yellow-400 dark:stroke-yellow-600;
+}
+
+.svg-mermaid-fill-red {
+    @apply fill-red-800 dark:fill-red-400;
+}
+.svg-mermaid-stroke-red {
+    @apply stroke-red-800 dark:stroke-red-400;
+}
+
+.svg-mermaid-stroke-dark {
+    @apply stroke-gray-500 dark:stroke-gray-200;
+}
+.svg-mermaid-fill-dark {
+    @apply fill-gray-800 dark:fill-gray-200;
+}
+
+.svg-mermaid-fill-light {
+    @apply fill-gray-200 dark:fill-gray-800;
+}
+.svg-mermaid-stroke-light {
+    @apply stroke-gray-200 dark:stroke-gray-500;
+}
+
+.svg-mermaid-text-dark {
+    @apply text-gray-800 dark:text-gray-300;
+}
+.svg-mermaid-text-light {
+    @apply text-gray-300 dark:text-gray-800;
+}
+
+.svg-mermaid-bg {
+    @apply bg-gray-300 dark:bg-gray-700;
+}
+
+/* end for apply */
+
+/* mermaid global */
+
+svg.mermaid {
+    font-family: "trebuchet ms", verdana, arial, sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    @apply svg-mermaid-fill-light leading-none;
+}
+
+svg.mermaid .error-icon {
+    @apply svg-mermaid-fill-red;
+}
+
+svg.mermaid .error-text {
+    @apply svg-mermaid-fill-red svg-mermaid-stroke-red;
+}
+
+
+
+/* end mermaid global */
+
+/* mermaid flowchart */
+
+svg.mermaid-flowchart .edge-thickness-normal {
+    stroke-width: 2px;
+}
+
+svg.mermaid-flowchart .edge-thickness-thick {
+    stroke-width: 3.5px;
+}
+
+svg.mermaid-flowchart .edge-pattern-solid {
+    stroke-dasharray: 0;
+}
+
+svg.mermaid-flowchart .edge-pattern-dashed {
+    stroke-dasharray: 3;
+}
+
+svg.mermaid-flowchart .edge-pattern-dotted {
+    stroke-dasharray: 2;
+}
+
+svg.mermaid-flowchart .marker {
+    @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
+}
+
+svg.mermaid-flowchart .marker.cross {
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-flowchart .label {
+    @apply svg-mermaid-text-dark;
+}
+
+svg.mermaid-flowchart .cluster-label text {
+    @apply svg-mermaid-fill-light;
+}
+
+svg.mermaid-flowchart .cluster-label span,
+svg.mermaid-flowchart p {
+    @apply svg-mermaid-text-dark;
+}
+
+svg.mermaid-flowchart .label text,
+svg.mermaid-flowchart span,
+svg.mermaid-flowchart p {
+    @apply svg-mermaid-fill-light svg-mermaid-text-dark;
+}
+
+svg.mermaid-flowchart .node rect,
+svg.mermaid-flowchart .node circle,
+svg.mermaid-flowchart .node ellipse,
+svg.mermaid-flowchart .node polygon,
+svg.mermaid-flowchart .node path {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    stroke-width: 1px;
+}
+
+svg.mermaid-flowchart .flowchart-label text {
+    text-anchor: middle;
+}
+
+svg.mermaid-flowchart .node .label {
+    text-align: center;
+}
+
+svg.mermaid-flowchart .node.clickable {
+    cursor: pointer;
+}
+
+svg.mermaid-flowchart .arrowheadPath {
+    @apply svg-mermaid-fill-light;
+}
+
+svg.mermaid-flowchart .edgePath .path {
+    @apply svg-mermaid-stroke-dark;
+    stroke-width: 2.0px;
+}
+
+svg.mermaid-flowchart .flowchart-link {
+    @apply svg-mermaid-stroke-dark;
+    fill: none;
+}
+
+svg.mermaid-flowchart .edgeLabel {
+    @apply svg-mermaid-bg svg-mermaid-text-dark;
+    text-align: center;
+}
+
+svg.mermaid-flowchart .edgeLabel rect {
+    @apply svg-mermaid-bg svg-mermaid-fill-light;
+    opacity: 0.5;
+}
+
+svg.mermaid-flowchart .labelBkg {
+    @apply svg-mermaid-bg; 
+}
+
+svg.mermaid-flowchart .cluster rect {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-yellow;
+    stroke-width: 1px;
+}
+
+svg.mermaid-flowchart .cluster text {
+    @apply svg-mermaid-fill-light;
+}
+
+svg.mermaid-flowchart .cluster span,
+svg.mermaid-flowchart p {
+    @apply svg-mermaid-text-dark;
+}
+
+svg.mermaid-flowchart div.mermaidTooltip {
+    @apply svg-mermaid-bg;
+    position: absolute;
+    text-align: center;
+    max-width: 200px;
+    padding: 2px;
+    font-size: 12px;
+    border: 1px solid #aaaa33;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+svg.mermaid-flowchart .flowchartTitleText {
+    @apply svg-mermaid-fill-dark;
+    text-anchor: middle;
+    font-size: 18px;
+}
+
+/* end mermaid flowchart */
+
+/* mermaid sequence diagram */
+
+svg.mermaid-sequencediagram .actor {
+    @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
+}
+
+svg.mermaid-sequencediagram text.actor>tspan {
+    @apply svg-mermaid-fill-dark;
+    stroke: none;
+}
+
+svg.mermaid-sequencediagram .actor-line {
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequencediagram .messageLine0 {
+    stroke-width: 1.5;
+    stroke-dasharray: none;
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequencediagram .messageLine1 {
+    stroke-width: 1.5;
+    stroke-dasharray: 2, 2;
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequencediagram #arrowhead path {
+    @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
+}
+
+svg.mermaid-sequencediagram .sequenceNumber {
+    @apply svg-mermaid-fill-dark;
+}
+
+svg.mermaid-sequencediagram #sequencenumber {
+    @apply svg-mermaid-fill-light;
+}
+
+svg.mermaid-sequencediagram #crosshead path {
+    @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
+}
+
+svg.mermaid-sequencediagram .messageText {
+    @apply svg-mermaid-fill-dark;
+    stroke: none;
+}
+
+svg.mermaid-sequencediagram .labelBox {
+    @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
+}
+
+svg.mermaid-sequencediagram .labelText,
+svg.mermaid-sequencediagram .labelText>tspan {
+    @apply svg-mermaid-fill-light;
+    stroke: none;
+}
+
+svg.mermaid-sequencediagram .loopText,
+svg.mermaid-sequencediagram .loopText>tspan {
+    @apply svg-mermaid-fill-light;
+    stroke: none;
+}
+
+svg.mermaid-sequencediagram .loopLine {
+    stroke-width: 2px;
+    stroke-dasharray: 4, 2;
+    @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
+}
+
+svg.mermaid-sequencediagram .note {
+    @apply svg-mermaid-stroke-yellow svg-mermaid-fill-yellow;
+}
+
+svg.mermaid-sequencediagram .noteText,
+svg.mermaid-sequencediagram .noteText>tspan {
+    @apply svg-mermaid-fill-dark;
+    stroke: none;
+}
+
+svg.mermaid-sequencediagram .activation0 {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequencediagram .activation1 {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequencediagram .activation2 {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequencediagram .actorPopupMenu {
+    position: absolute;
+}
+
+svg.mermaid-sequencediagram .actorPopupMenuPanel {
+    position: absolute;
+    @apply svg-mermaid-fill-light;
+}
+
+svg.mermaid-sequencediagram .actor-man line {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequencediagram .actor-man circle {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequencediagram line {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    stroke-width: 2px;
 }
