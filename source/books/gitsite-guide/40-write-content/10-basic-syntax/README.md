@@ -1,4 +1,4 @@
-# Basic Syntax
+# Basic syntax
 
 ## Headings
 
@@ -34,7 +34,7 @@ A first-level heading has 1 `#` symbol, a second-level heading has 2 `#` symbols
 
 ###### Heading 6
 
-## Styling Text
+## Styling text
 
 ---
 
@@ -48,7 +48,7 @@ You can indicate emphasis with bold, italic, strikethrough, subscript, or supers
 | Subscript     | `<sub> </sub>` | `This is a <sub>subscript</sub> text.`   | This is a <sub>subscript</sub> text.   |
 | Superscript   | `<sup> </sup>` | `This is a <sup>superscript</sup> text.` | This is a <sup>superscript</sup> text. |
 
-## Quoting Text
+## Quoting text
 
 ---
 
@@ -57,24 +57,24 @@ You can quote text with a `>`.
 ```markdown
 > To be, or not to be, that is the question
 > 
-> -- William Shakespeare
+> -- Hamlet
 ```
 
 > To be, or not to be, that is the question.
 > 
-> -- William Shakespeare
+> -- Hamlet
 
 ## Links
 
 You can create an inline link by wrapping link text in brackets `[ ]`, and then wrapping the URL in parentheses `( )`.
 
 ```markdown
-[License](/license/index.html)
+[License](/pages/license/index.html)
 
 [GitHub](https://github.com)
 ```
 
-[License](/license/index.html)
+[License](/pages/license/index.html)
 
 [GitHub](https://github.com)
 
@@ -116,7 +116,7 @@ To order your list, precede each line with a number.
 2. Python
 3. Rust
 
-## Nested Lists
+## Nested lists
 
 You can create a nested list by indenting one or more list items below another item.
 

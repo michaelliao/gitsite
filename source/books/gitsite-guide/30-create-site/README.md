@@ -1,4 +1,4 @@
-# Create Site
+# Create site
 
 To create a new site, use:
 

@@ -1,4 +1,4 @@
-# GitSite简介
+# GitSite Introduction
 
 GitSite是一个基于现代Web技术的文档平台，任何个人和团队都可以通过Git组织并编写文档，并自动生成符合HTML5标准的Web网站。
 
