@@ -15,6 +15,9 @@
     {{ blog.htmlContent | safe }}
 </div>
 
+{% set gitPath = blog.git %}
+{% include "__git__.html" %}
+
 <hr class="gsc-border">
 
 <div id="gsi-blog-prev-next" class="flex flex-row mt-4">

@@ -6,6 +6,10 @@
     <div id="gsi-chapter-content">
         {{ chapter.htmlContent | safe }}
     </div>
+
+    {% set gitPath = chapter.git %}
+    {% include "__git__.html" %}
+
     <hr class="gsc-border">
     <div id="gsi-chapter-prev-next" class="flex flex-row mt-4">
         <div id="gsi-chapter-prev" class="basis-1/2 mr-2 text-left">

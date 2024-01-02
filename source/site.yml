@@ -36,6 +36,10 @@ site:
       type: link
       ref: https://github.com/michaelliao/gitsite
       external: true
+  git:
+    base-url: https://github.com/michaelliao/gitsite/blob/main/source
+    # display git link for quick edit:
+    link: true
   comment:
     disqus:
       name: gitsite
