@@ -454,6 +454,38 @@ div.qrcode-wrapper svg {
     @apply bg-gray-300 dark:bg-gray-700;
 }
 
+.svg-mermaid-fill-color-0 {
+    @apply fill-green-300 dark:fill-green-800;
+}
+
+.svg-mermaid-fill-color-1 {
+    @apply fill-yellow-300 dark:fill-yellow-800;
+}
+
+.svg-mermaid-fill-color-2 {
+    @apply fill-sky-300 dark:fill-sky-800;
+}
+
+.svg-mermaid-fill-color-3 {
+    @apply fill-red-300 dark:fill-red-800;
+}
+
+.svg-mermaid-fill-color-4 {
+    @apply fill-teal-300 dark:fill-teal-800;
+}
+
+.svg-mermaid-fill-color-5 {
+    @apply fill-amber-300 dark:fill-amber-800;
+}
+
+.svg-mermaid-fill-color-6 {
+    @apply fill-blue-300 dark:fill-blue-800;
+}
+
+.svg-mermaid-fill-color-7 {
+    @apply fill-pink-300 dark:fill-pink-800;
+}
+
 /* end for apply */
 
 /* mermaid global */
@@ -472,8 +504,6 @@ svg.mermaid .error-icon {
 svg.mermaid .error-text {
     @apply svg-mermaid-fill-red svg-mermaid-stroke-red;
 }
-
-
 
 /* end mermaid global */
 
@@ -576,7 +606,7 @@ svg.mermaid-flowchart .labelBkg {
 }
 
 svg.mermaid-flowchart .cluster rect {
-    @apply svg-mermaid-fill-light svg-mermaid-stroke-yellow;
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
     stroke-width: 1px;
 }
 
@@ -612,114 +642,223 @@ svg.mermaid-flowchart .flowchartTitleText {
 
 /* mermaid sequence diagram */
 
-svg.mermaid-sequencediagram .actor {
-    @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
+svg.mermaid-sequence {
+    @apply svg-mermaid-fill-dark;
 }
 
-svg.mermaid-sequencediagram text.actor>tspan {
+svg.mermaid-sequence .edge-thickness-normal {
+    stroke-width: 2px;
+}
+
+svg.mermaid-sequence .edge-thickness-thick {
+    stroke-width: 3.5px;
+}
+
+svg.mermaid-sequence .edge-pattern-solid {
+    stroke-dasharray: 0;
+}
+
+svg.mermaid-sequence .edge-pattern-dashed {
+    stroke-dasharray: 3;
+}
+
+svg.mermaid-sequence .edge-pattern-dotted {
+    stroke-dasharray: 2;
+}
+
+svg.mermaid-sequence .marker {
+    @apply svg-mermaid-stroke-dark svg-mermaid-fill-dark;
+}
+
+svg.mermaid-sequence .marker.cross {
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequence .actor {
+    @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
+}
+
+svg.mermaid-sequence text.actor>tspan {
     @apply svg-mermaid-fill-dark;
     stroke: none;
 }
 
-svg.mermaid-sequencediagram .actor-line {
+svg.mermaid-sequence .actor-line {
     @apply svg-mermaid-stroke-dark;
 }
 
-svg.mermaid-sequencediagram .messageLine0 {
+svg.mermaid-sequence .messageLine0 {
     stroke-width: 1.5;
     stroke-dasharray: none;
     @apply svg-mermaid-stroke-dark;
 }
 
-svg.mermaid-sequencediagram .messageLine1 {
+svg.mermaid-sequence .messageLine1 {
     stroke-width: 1.5;
     stroke-dasharray: 2, 2;
     @apply svg-mermaid-stroke-dark;
 }
 
-svg.mermaid-sequencediagram #arrowhead path {
-    @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
+svg.mermaid-sequence #arrowhead path {
+    @apply svg-mermaid-stroke-dark svg-mermaid-fill-dark;
 }
 
-svg.mermaid-sequencediagram .sequenceNumber {
-    @apply svg-mermaid-fill-dark;
-}
-
-svg.mermaid-sequencediagram #sequencenumber {
+svg.mermaid-sequence .sequenceNumber {
     @apply svg-mermaid-fill-light;
 }
 
-svg.mermaid-sequencediagram #crosshead path {
-    @apply svg-mermaid-stroke-dark svg-mermaid-fill-light;
+svg.mermaid-sequence #sequencenumber {
+    @apply svg-mermaid-fill-dark;
 }
 
-svg.mermaid-sequencediagram .messageText {
+svg.mermaid-sequence #crosshead path {
+    @apply svg-mermaid-stroke-dark svg-mermaid-fill-dark;
+}
+
+svg.mermaid-sequence .messageText {
     @apply svg-mermaid-fill-dark;
     stroke: none;
 }
 
-svg.mermaid-sequencediagram .labelBox {
+svg.mermaid-sequence .labelBox {
+    @apply svg-mermaid-stroke-light svg-mermaid-fill-light;
+}
+
+svg.mermaid-sequence .labelText,
+svg.mermaid-sequence .labelText>tspan {
+    @apply svg-mermaid-fill-dark;
+    stroke: none;
+}
+
+svg.mermaid-sequence .loopText,
+svg.mermaid-sequence .loopText>tspan {
+    @apply svg-mermaid-fill-dark;
+    stroke: none;
+}
+
+svg.mermaid-sequence .loopLine {
     @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
-}
-
-svg.mermaid-sequencediagram .labelText,
-svg.mermaid-sequencediagram .labelText>tspan {
-    @apply svg-mermaid-fill-light;
-    stroke: none;
-}
-
-svg.mermaid-sequencediagram .loopText,
-svg.mermaid-sequencediagram .loopText>tspan {
-    @apply svg-mermaid-fill-light;
-    stroke: none;
-}
-
-svg.mermaid-sequencediagram .loopLine {
     stroke-width: 2px;
     stroke-dasharray: 4, 2;
-    @apply svg-mermaid-stroke-light svg-mermaid-fill-dark;
 }
 
-svg.mermaid-sequencediagram .note {
+svg.mermaid-sequence .note {
     @apply svg-mermaid-stroke-yellow svg-mermaid-fill-yellow;
 }
 
-svg.mermaid-sequencediagram .noteText,
-svg.mermaid-sequencediagram .noteText>tspan {
+svg.mermaid-sequence .noteText,
+svg.mermaid-sequence .noteText>tspan {
     @apply svg-mermaid-fill-dark;
     stroke: none;
 }
 
-svg.mermaid-sequencediagram .activation0 {
+svg.mermaid-sequence .activation0,
+svg.mermaid-sequence .activation1,
+svg.mermaid-sequence .activation2 {
     @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
 }
 
-svg.mermaid-sequencediagram .activation1 {
-    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-}
-
-svg.mermaid-sequencediagram .activation2 {
-    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-}
-
-svg.mermaid-sequencediagram .actorPopupMenu {
+svg.mermaid-sequence .actorPopupMenu {
     position: absolute;
 }
 
-svg.mermaid-sequencediagram .actorPopupMenuPanel {
-    position: absolute;
+svg.mermaid-sequence .actorPopupMenuPanel {
     @apply svg-mermaid-fill-light;
+    position: absolute;
 }
 
-svg.mermaid-sequencediagram .actor-man line {
-    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
-}
-
-svg.mermaid-sequencediagram .actor-man circle {
+svg.mermaid-sequence .actor-man line {
     @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
 }
 
-svg.mermaid-sequencediagram line {
+svg.mermaid-sequence .actor-man circle {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-sequence line {
     @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
     stroke-width: 2px;
 }
+
+/* end sequence */
+
+/* begin class diagram */
+
+/* end class diagram */
+
+/* begin state diagram */
+
+/* end state diagram */
+
+/* begin er diagram */
+
+/* end er diagram */
+
+/* begin pie chart */
+
+svg.mermaid-pie {
+    fill: currentColor;
+}
+
+svg.mermaid-pie .edge-thickness-normal {
+    stroke-width: 2px;
+}
+
+svg.mermaid-pie .edge-thickness-thick {
+    stroke-width: 3.5px;
+}
+
+svg.mermaid-pie .edge-pattern-solid {
+    stroke-dasharray: 0;
+}
+
+svg.mermaid-pie .edge-pattern-dashed {
+    stroke-dasharray: 3;
+}
+
+svg.mermaid-pie .edge-pattern-dotted {
+    stroke-dasharray: 2;
+}
+
+svg.mermaid-pie .marker {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-pie .marker.cross {
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-pie .pieCircle {
+    @apply svg-mermaid-stroke-dark;
+    stroke-width: 2px;
+    opacity: 0.7;
+}
+
+svg.mermaid-pie .pieOuterCircle {
+    @apply svg-mermaid-stroke-dark;
+    stroke-width: 2px;
+    fill: none;
+}
+
+svg.mermaid-pie .pieTitleText {
+    @apply svg-mermaid-fill-dark;
+    text-anchor: middle;
+    font-size: 25px;
+}
+
+svg.mermaid-pie .slice {
+    @apply svg-mermaid-fill-dark;
+    font-size: 17px;
+}
+
+svg.mermaid-pie .legend text {
+    @apply svg-mermaid-fill-dark;
+    font-size: 17px;
+}
+
+svg.mermaid-pie .legend > rect {
+    @apply svg-mermaid-stroke-dark;
+    stroke-width: 1px;
+}
+
+/* end pie chart */
