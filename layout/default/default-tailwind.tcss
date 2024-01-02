@@ -275,7 +275,7 @@ nav.gsc-nav-main > ul > li > a.gsc-active {
 }
 
 #gsi-content pre {
-    @apply whitespace-pre-wrap break-all my-4 p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
+    @apply whitespace-pre overflow-x-auto my-4 p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
 }
 
 /* begin ascii */
