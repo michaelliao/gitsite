@@ -1290,22 +1290,10 @@ svg.mermaid-er .marker.cross {
     @apply svg-mermaid-stroke-dark;
 }
 
-svg.mermaid-er .attributeBoxOdd {
-    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-    /* @apply fill-purple-50 dark:fill-purple-950;
-    @apply stroke-purple-900 dark:stroke-purple-100; */
-}
-
-svg.mermaid-er .attributeBoxEven {
-    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-    /* @apply fill-purple-100 dark:fill-purple-900;
-    @apply stroke-purple-900 dark:stroke-purple-100; */
-}
-
+svg.mermaid-er .attributeBoxOdd,
+svg.mermaid-er .attributeBoxEven,
 svg.mermaid-er .entityBox {
     @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
-    /* @apply fill-purple-100 dark:fill-purple-900;
-    @apply stroke-purple-900 dark:stroke-purple-100; */
 }
 
 svg.mermaid-er .relationshipLabelBox {
