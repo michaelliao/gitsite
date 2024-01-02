@@ -1,4 +1,4 @@
-# Mathematical expressions
+# Mathematical Expressions
 
 To enable clear communication of mathematical expressions, GitSite supports LaTeX formatted math within Markdown. For more information, see [LaTeX/Mathematics](http://en.wikibooks.org/wiki/LaTeX/Mathematics) in Wikibooks.
 

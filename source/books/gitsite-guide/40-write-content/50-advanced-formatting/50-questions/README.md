@@ -1,6 +1,6 @@
-# Question
+# Questions
 
-## Creating Question
+## Creating Questions
 
 You can create a question form by add identifier `question` and subtype with a code block.
 

@@ -1,4 +1,4 @@
-# Basic syntax
+# Basic Syntax
 
 ## Headings
 
