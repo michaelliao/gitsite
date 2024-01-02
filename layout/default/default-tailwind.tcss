@@ -34,6 +34,10 @@ html {
     @apply bg-gray-50 dark:bg-gray-900;
 }
 
+.gsc-fill {
+    @apply fill-gray-50 dark:fill-gray-900;
+}
+
 .gsc-border {
     @apply border-gray-300 dark:border-gray-600;
 }
@@ -969,9 +973,340 @@ svg.mermaid-classdiagram .classTitleText {
 
 /* begin state diagram */
 
+svg.mermaid-statediagram {
+    fill: currentColor;
+}
+
+svg.mermaid-statediagram .edge-thickness-normal {
+    stroke-width: 2px;
+}
+
+svg.mermaid-statediagram .edge-thickness-thick {
+    stroke-width: 3.5px;
+}
+
+svg.mermaid-statediagram .edge-pattern-solid {
+    stroke-dasharray: 0;
+}
+
+svg.mermaid-statediagram .edge-pattern-dashed {
+    stroke-dasharray: 3;
+}
+
+svg.mermaid-statediagram .edge-pattern-dotted {
+    stroke-dasharray: 2;
+}
+
+svg.mermaid-statediagram defs marker,
+svg.mermaid-statediagram .marker {
+      @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;  
+}
+
+svg.mermaid-statediagram .marker.cross {
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-statediagram defs #statediagram-barbEnd {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-statediagram g.stateGroup text {
+    @apply fill-purple-100 dark:fill-purple-900;
+    stroke: none;
+    font-size: 10px;
+}
+
+svg.mermaid-statediagram g.stateGroup text {
+    @apply svg-mermaid-fill-dark;
+    stroke: none;
+    font-size: 10px;
+}
+
+svg.mermaid-statediagram g.stateGroup .state-title {
+    @apply svg-mermaid-fill-dark;
+    font-weight: bolder;
+}
+
+svg.mermaid-statediagram g.stateGroup rect {
+    @apply svg-mermaid-fill-light;
+    @apply stroke-purple-100 dark:stroke-purple-900;
+    /* fill: #ECECFF; */
+    /* stroke: #9370DB; */
+}
+
+svg.mermaid-statediagram g.stateGroup line {
+    @apply svg-mermaid-stroke-dark;
+    stroke-width: 1;
+}
+
+svg.mermaid-statediagram .transition {
+    @apply svg-mermaid-stroke-dark;
+    stroke-width: 1;
+    fill: none;
+}
+
+svg.mermaid-statediagram .stateGroup .composit {
+    @apply svg-mermaid-fill-light;
+    border-bottom: 1px;
+}
+
+svg.mermaid-statediagram .stateGroup .alt-composit {
+    @apply svg-mermaid-fill-light;
+    border-bottom: 1px;
+}
+
+svg.mermaid-statediagram .state-note {
+    @apply svg-mermaid-fill-yellow svg-mermaid-stroke-yellow;
+}
+
+svg.mermaid-statediagram .state-note text {
+    @apply svg-mermaid-fill-dark;
+    stroke: none;
+    font-size: 10px;
+}
+
+svg.mermaid-statediagram .stateLabel .box {
+    @apply svg-mermaid-fill-light;
+    stroke: none;
+    stroke-width: 0;
+    /* fill: #ECECFF; */
+    opacity: 0.5;
+}
+
+svg.mermaid-statediagram .edgeLabel .label rect {
+    @apply svg-mermaid-fill-light;
+    /* fill: #ECECFF; */
+    opacity: 0.5;
+}
+
+svg.mermaid-statediagram .edgeLabel .label text {
+    @apply svg-mermaid-fill-light;
+}
+
+svg.mermaid-statediagram .label div .edgeLabel {
+    @apply svg-mermaid-text-dark;
+}
+
+svg.mermaid-statediagram .stateLabel text {
+    @apply svg-mermaid-fill-dark;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+svg.mermaid-statediagram .node circle.state-start,
+svg.mermaid-statediagram .node .fork-join {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-statediagram .node circle.state-end {
+    @apply fill-purple-500;
+    /* fill: #9370DB; */
+    @apply svg-mermaid-stroke-light;
+    stroke-width: 1.5;
+}
+
+svg.mermaid-statediagram .end-state-inner {
+    @apply svg-mermaid-fill-light;
+    stroke-width: 1.5;
+}
+
+svg.mermaid-statediagram .node rect {
+    @apply svg-mermaid-fill-light stroke-purple-500;
+    /* fill: #ECECFF; */
+    /* stroke: #9370DB; */
+    stroke-width: 1px;
+}
+
+svg.mermaid-statediagram .node polygon {
+    @apply svg-mermaid-fill-light stroke-purple-500;
+    /* fill: #ECECFF; */
+    /* stroke: #9370DB; */
+    stroke-width: 1px;
+}
+
+svg.mermaid-statediagram #statediagram-barbEnd {
+    @apply svg-mermaid-fill-dark;
+}
+
+svg.mermaid-statediagram .statediagram-cluster rect {
+    @apply svg-mermaid-fill-light stroke-purple-500;
+    /* fill: #ECECFF; */
+    /* stroke: #9370DB; */
+    stroke-width: 1px;
+}
+
+svg.mermaid-statediagram .cluster-label,
+svg.mermaid-statediagram .nodeLabel {
+    @apply svg-mermaid-text-dark;
+}
+
+svg.mermaid-statediagram .statediagram-cluster rect.outer {
+    rx: 5px;
+    ry: 5px;
+}
+
+svg.mermaid-statediagram .statediagram-state .divider {
+    @apply stroke-purple-500;
+    /* stroke: #9370DB; */
+}
+
+svg.mermaid-statediagram .statediagram-state .title-state {
+    rx: 5px;
+    ry: 5px;
+}
+
+svg.mermaid-statediagram .statediagram-cluster.statediagram-cluster .inner {
+    @apply gsc-fill;
+    /* fill: white; */
+}
+
+svg.mermaid-statediagram .statediagram-cluster.statediagram-cluster-alt .inner {
+    @apply svg-mermaid-fill-light;
+    /* fill: #f0f0f0; */
+}
+
+svg.mermaid-statediagram .statediagram-cluster .inner {
+    rx: 0;
+    ry: 0;
+}
+
+svg.mermaid-statediagram .statediagram-state rect.basic {
+    rx: 5px;
+    ry: 5px;
+}
+
+svg.mermaid-statediagram .statediagram-state rect.divider {
+    @apply svg-mermaid-fill-light;
+    stroke-dasharray: 10, 10;
+    /* fill: #f0f0f0; */
+}
+
+svg.mermaid-statediagram .note-edge {
+    stroke-dasharray: 5;
+}
+
+svg.mermaid-statediagram .statediagram-note rect {
+    @apply svg-mermaid-fill-yellow svg-mermaid-stroke-yellow;
+    /* fill: #fff5ad; */
+    /* stroke: #aaaa33; */
+    stroke-width: 1px;
+    rx: 0;
+    ry: 0;
+}
+
+svg.mermaid-statediagram .statediagram-note rect {
+    @apply svg-mermaid-fill-yellow svg-mermaid-stroke-yellow;
+    /* fill: #fff5ad; */
+    /* stroke: #aaaa33; */
+    stroke-width: 1px;
+    rx: 0;
+    ry: 0;
+}
+
+svg.mermaid-statediagram .statediagram-note text {
+    @apply svg-mermaid-fill-dark;
+}
+
+svg.mermaid-statediagram .statediagram-note .nodeLabel {
+    @apply svg-mermaid-text-dark;
+}
+
+svg.mermaid-statediagram .statediagram .edgeLabel {
+    @apply text-red-500;
+    /* color: red; */
+}
+
+svg.mermaid-statediagram #dependencyStart,
+svg.mermaid-statediagram #dependencyEnd {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+    stroke-width: 1;
+}
+
+svg.mermaid-statediagram .statediagramTitleText {
+    @apply svg-mermaid-fill-dark;
+    text-anchor: middle;
+    font-size: 18px;
+}
+
 /* end state diagram */
 
 /* begin er diagram */
+
+svg.mermaid-er {
+    @apply svg-mermaid-fill-dark;
+}
+
+svg.mermaid-er .edge-thickness-normal {
+    stroke-width: 2px;
+}
+
+svg.mermaid-er .edge-thickness-thick {
+    stroke-width: 3.5px;
+}
+
+svg.mermaid-er .edge-pattern-solid {
+    stroke-dasharray: 0;
+}
+
+svg.mermaid-er .edge-pattern-dashed {
+    stroke-dasharray: 3;
+}
+
+svg.mermaid-er .edge-pattern-dotted {
+    stroke-dasharray: 2;
+}
+
+svg.mermaid-er .marker {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-er .marker.cross {
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-er .attributeBoxOdd {
+    @apply fill-purple-50 dark:fill-purple-950;
+    @apply stroke-purple-900 dark:stroke-purple-100;
+}
+
+svg.mermaid-er .attributeBoxEven {
+    @apply fill-purple-100 dark:fill-purple-900;
+    @apply stroke-purple-900 dark:stroke-purple-100;
+}
+
+svg.mermaid-er .entityBox {
+    @apply fill-purple-100 dark:fill-purple-900;
+    @apply stroke-purple-900 dark:stroke-purple-100;
+}
+
+svg.mermaid-er .relationshipLabelBox {
+    @apply svg-mermaid-fill-light gsc-bg;
+    opacity: 0.7;
+}
+
+svg.mermaid-er .relationshipLabelBox rect {
+    opacity: 0.5;
+}
+
+svg.mermaid-er .relationshipLine {
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-er .entityTitleText {
+    @apply svg-mermaid-fill-dark;
+    text-anchor: middle;
+    font-size: 18px;
+}
+
+svg.mermaid-er #MD_PARENT_START {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    stroke-width: 1;
+}
+
+svg.mermaid-er #MD_PARENT_END {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    stroke-width: 1;
+}
 
 /* end er diagram */
 

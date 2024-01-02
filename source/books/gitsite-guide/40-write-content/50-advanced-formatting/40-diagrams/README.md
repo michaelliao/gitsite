@@ -269,18 +269,18 @@ A pie chart is a circular statistical graphic, which is divided into slices to i
     ```mermaid
     pie showData
         title Pie Demo
-        "Apple" : 42.96
-        "Orange" : 50.05
-        "Banana" : 10.01
+        "Apple" : 68
+        "Orange" : 50
+        "Banana" : 10
         "Raspberry" : 5
     ```
 
 ```mermaid
 pie showData
     title Pie Demo
-    "Apple" : 42.96
-    "Orange" : 50.05
-    "Banana" : 10.01
+    "Apple" : 68
+    "Orange" : 50
+    "Banana" : 10
     "Raspberry" : 5
 ```
 
