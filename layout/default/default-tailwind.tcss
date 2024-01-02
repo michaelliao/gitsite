@@ -520,6 +520,7 @@ svg.mermaid {
     font-family: "trebuchet ms", verdana, arial, sans-serif;
     font-size: 16px;
     display: inline-block;
+    max-width: 100%;
     @apply svg-mermaid-fill-light leading-none;
 }
 
@@ -847,7 +848,7 @@ svg.mermaid-classdiagram svg {
 }
 
 svg.mermaid-classdiagram g.classGroup text {
-    @apply fill-purple-900 dark:fill-purple-100;
+    @apply svg-mermaid-text-dark;
     stroke: none;
     font-size: 10px;
 }
@@ -862,7 +863,8 @@ svg.mermaid-classdiagram .edgeLabel {
 }
 
 svg.mermaid-classdiagram .edgeLabel .label rect {
-    @apply fill-purple-100 dark:fill-purple-900;
+    @apply svg-mermaid-fill-light;
+    /* @apply fill-purple-100 dark:fill-purple-900; */
 }
 
 svg.mermaid-classdiagram .label text {
@@ -870,7 +872,8 @@ svg.mermaid-classdiagram .label text {
 }
 
 svg.mermaid-classdiagram .edgeLabel .label span {
-    @apply bg-purple-100 dark:bg-purple-900;
+    @apply gsc-bg;
+    /* @apply bg-purple-100 dark:bg-purple-900; */
 }
 
 svg.mermaid-classdiagram .classTitle {
@@ -882,12 +885,12 @@ svg.mermaid-classdiagram .node circle,
 svg.mermaid-classdiagram .node ellipse,
 svg.mermaid-classdiagram .node polygon,
 svg.mermaid-classdiagram .node path {
-    @apply fill-purple-100 dark:fill-purple-900 stroke-purple-900 dark:stroke-purple-100;
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
     stroke-width: 1px;
 }
 
 svg.mermaid-classdiagram .divider {
-    @apply stroke-purple-900 dark:stroke-purple-100;
+    @apply svg-mermaid-stroke-dark;
     stroke-width: 1;
 }
 
@@ -896,12 +899,12 @@ svg.mermaid-classdiagram g.clickable {
 }
 
 svg.mermaid-classdiagram g.classGroup rect {
-    @apply svg-mermaid-fill-light stroke-purple-500;
+    @apply svg-mermaid-fill-light stroke-gray-500;
     /* stroke: #9370DB; */
 }
 
 svg.mermaid-classdiagram g.classGroup line {
-    @apply stroke-purple-500;
+    @apply stroke-gray-500;
     /* stroke: #9370DB; */
     stroke-width: 1;
 }
@@ -914,7 +917,7 @@ svg.mermaid-classdiagram .classLabel .box {
 }
 
 svg.mermaid-classdiagram .classLabel .label {
-    @apply stroke-purple-500;
+    @apply stroke-gray-500;
     /* fill: #9370DB; */
     font-size: 10px;
 }
@@ -1033,7 +1036,8 @@ svg.mermaid-statediagram defs #statediagram-barbEnd {
 }
 
 svg.mermaid-statediagram g.stateGroup text {
-    @apply fill-purple-100 dark:fill-purple-900;
+    @apply svg-mermaid-fill-light;
+    /* @apply fill-purple-100 dark:fill-purple-900; */
     stroke: none;
     font-size: 10px;
 }
@@ -1121,7 +1125,7 @@ svg.mermaid-statediagram .node .fork-join {
 }
 
 svg.mermaid-statediagram .node circle.state-end {
-    @apply fill-purple-500;
+    @apply fill-gray-500;
     /* fill: #9370DB; */
     @apply svg-mermaid-stroke-light;
     stroke-width: 1.5;
@@ -1133,14 +1137,14 @@ svg.mermaid-statediagram .end-state-inner {
 }
 
 svg.mermaid-statediagram .node rect {
-    @apply svg-mermaid-fill-light stroke-purple-500;
+    @apply svg-mermaid-fill-light stroke-gray-500;
     /* fill: #ECECFF; */
     /* stroke: #9370DB; */
     stroke-width: 1px;
 }
 
 svg.mermaid-statediagram .node polygon {
-    @apply svg-mermaid-fill-light stroke-purple-500;
+    @apply svg-mermaid-fill-light stroke-gray-500;
     /* fill: #ECECFF; */
     /* stroke: #9370DB; */
     stroke-width: 1px;
@@ -1151,7 +1155,7 @@ svg.mermaid-statediagram #statediagram-barbEnd {
 }
 
 svg.mermaid-statediagram .statediagram-cluster rect {
-    @apply svg-mermaid-fill-light stroke-purple-500;
+    @apply svg-mermaid-fill-light stroke-gray-500;
     /* fill: #ECECFF; */
     /* stroke: #9370DB; */
     stroke-width: 1px;
@@ -1168,7 +1172,7 @@ svg.mermaid-statediagram .statediagram-cluster rect.outer {
 }
 
 svg.mermaid-statediagram .statediagram-state .divider {
-    @apply stroke-purple-500;
+    @apply stroke-gray-500;
     /* stroke: #9370DB; */
 }
 
@@ -1287,18 +1291,21 @@ svg.mermaid-er .marker.cross {
 }
 
 svg.mermaid-er .attributeBoxOdd {
-    @apply fill-purple-50 dark:fill-purple-950;
-    @apply stroke-purple-900 dark:stroke-purple-100;
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    /* @apply fill-purple-50 dark:fill-purple-950;
+    @apply stroke-purple-900 dark:stroke-purple-100; */
 }
 
 svg.mermaid-er .attributeBoxEven {
-    @apply fill-purple-100 dark:fill-purple-900;
-    @apply stroke-purple-900 dark:stroke-purple-100;
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    /* @apply fill-purple-100 dark:fill-purple-900;
+    @apply stroke-purple-900 dark:stroke-purple-100; */
 }
 
 svg.mermaid-er .entityBox {
-    @apply fill-purple-100 dark:fill-purple-900;
-    @apply stroke-purple-900 dark:stroke-purple-100;
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    /* @apply fill-purple-100 dark:fill-purple-900;
+    @apply stroke-purple-900 dark:stroke-purple-100; */
 }
 
 svg.mermaid-er .relationshipLabelBox {
