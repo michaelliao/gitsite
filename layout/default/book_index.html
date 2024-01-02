@@ -37,7 +37,7 @@
         let node = gs_find_parent_node(a, 'div');
         while (node !== root) {
             if (node.tagName.toLowerCase() === 'div') {
-                let span_closed = node.querySelector('a span.gsc-index-item-closed');
+                let span_closed = node.querySelector(':scope > a span.gsc-index-item-closed');
                 if (span_closed) {
                     gs_index_item_collapse({ target: span_closed }, 'closed', 'open');
                 }
