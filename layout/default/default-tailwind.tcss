@@ -784,6 +784,187 @@ svg.mermaid-sequence line {
 
 /* begin class diagram */
 
+svg.mermaid-classdiagram {
+    fill: currentColor;
+}
+
+svg.mermaid-classdiagram .edge-thickness-normal {
+    stroke-width: 2px;
+}
+
+svg.mermaid-classdiagram .edge-thickness-thick {
+    stroke-width: 3.5px;
+}
+
+svg.mermaid-classdiagram .edge-pattern-solid {
+    stroke-dasharray: 0;
+}
+
+svg.mermaid-classdiagram .edge-pattern-dashed {
+    stroke-dasharray: 3;
+}
+
+svg.mermaid-classdiagram .edge-pattern-dotted {
+    stroke-dasharray: 2;
+}
+
+svg.mermaid-classdiagram .marker {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-classdiagram .marker.cross {
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-classdiagram svg {
+    font-size: 16px;
+}
+
+svg.mermaid-classdiagram g.classGroup text {
+    @apply fill-purple-900 dark:fill-purple-100;
+    stroke: none;
+    font-size: 10px;
+}
+
+svg.mermaid-classdiagram g.classGroup text .title {
+    font-weight: bolder;
+}
+
+svg.mermaid-classdiagram .nodeLabel,
+svg.mermaid-classdiagram .edgeLabel {
+    @apply svg-mermaid-text-dark;
+}
+
+svg.mermaid-classdiagram .edgeLabel .label rect {
+    @apply fill-purple-100 dark:fill-purple-900;
+}
+
+svg.mermaid-classdiagram .label text {
+    @apply svg-mermaid-fill-dark;
+}
+
+svg.mermaid-classdiagram .edgeLabel .label span {
+    @apply bg-purple-100 dark:bg-purple-900;
+}
+
+svg.mermaid-classdiagram .classTitle {
+    font-weight: bolder;
+}
+
+svg.mermaid-classdiagram .node rect,
+svg.mermaid-classdiagram .node circle,
+svg.mermaid-classdiagram .node ellipse,
+svg.mermaid-classdiagram .node polygon,
+svg.mermaid-classdiagram .node path {
+    @apply fill-purple-100 dark:fill-purple-900 stroke-purple-900 dark:stroke-purple-100;
+    stroke-width: 1px;
+}
+
+svg.mermaid-classdiagram .divider {
+    @apply stroke-purple-900 dark:stroke-purple-100;
+    stroke-width: 1;
+}
+
+svg.mermaid-classdiagram g.clickable {
+    cursor: pointer;
+}
+
+svg.mermaid-classdiagram g.classGroup rect {
+    @apply svg-mermaid-fill-light stroke-purple-500;
+    /* stroke: #9370DB; */
+}
+
+svg.mermaid-classdiagram g.classGroup line {
+    @apply stroke-purple-500;
+    /* stroke: #9370DB; */
+    stroke-width: 1;
+}
+
+svg.mermaid-classdiagram .classLabel .box {
+    @apply svg-mermaid-fill-light;
+    stroke: none;
+    stroke-width: 0;
+    opacity: 0.5;
+}
+
+svg.mermaid-classdiagram .classLabel .label {
+    @apply stroke-purple-500;
+    /* fill: #9370DB; */
+    font-size: 10px;
+}
+
+svg.mermaid-classdiagram .relation {
+    @apply svg-mermaid-stroke-dark;
+    stroke-width: 1;
+    fill: none;
+}
+
+svg.mermaid-classdiagram .dashed-line {
+    stroke-dasharray: 3;
+}
+
+svg.mermaid-classdiagram .dotted-line {
+    stroke-dasharray: 1 2;
+}
+
+svg.mermaid-classdiagram #compositionStart,
+svg.mermaid-classdiagram .composition {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+    stroke-width: 1;
+}
+
+svg.mermaid-classdiagram #compositionEnd,
+svg.mermaid-classdiagram .composition {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+    stroke-width: 1;
+}
+
+svg.mermaid-classdiagram #dependencyStart,
+svg.mermaid-classdiagram .dependency {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+    stroke-width: 1;
+}
+
+svg.mermaid-classdiagram #dependencyStart,
+svg.mermaid-classdiagram .dependency {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+    stroke-width: 1;
+}
+
+svg.mermaid-classdiagram #extensionStart,
+svg.mermaid-classdiagram .extension,
+svg.mermaid-classdiagram #extensionEnd,
+svg.mermaid-classdiagram .extension,
+svg.mermaid-classdiagram #aggregationStart,
+svg.mermaid-classdiagram .aggregation,
+svg.mermaid-classdiagram #aggregationEnd,
+svg.mermaid-classdiagram .aggregation {
+    @apply svg-mermaid-stroke-dark;
+    fill: transparent !important;
+    /* stroke: #333333 !important; */
+    stroke-width: 1;
+}
+
+svg.mermaid-classdiagram #lollipopStart,
+svg.mermaid-classdiagram .lollipop,
+svg.mermaid-classdiagram #lollipopEnd,
+svg.mermaid-classdiagram .lollipop {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-dark;
+    /* fill: #ECECFF !important; */
+    /* stroke: #333333 !important; */
+    stroke-width: 1;
+}
+
+svg.mermaid-classdiagram .edgeTerminals {
+    font-size: 11px;
+}
+
+svg.mermaid-classdiagram .classTitleText {
+    @apply svg-mermaid-fill-dark;
+    text-anchor: middle;
+    font-size: 18px;
+}
+
 /* end class diagram */
 
 /* begin state diagram */
