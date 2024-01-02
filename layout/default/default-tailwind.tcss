@@ -458,37 +458,59 @@ div.qrcode-wrapper svg {
     @apply bg-gray-300 dark:bg-gray-700;
 }
 
-.svg-mermaid-fill-color-0 {
-    @apply fill-green-300 dark:fill-green-800;
-}
+    /* colors */
 
-.svg-mermaid-fill-color-1 {
-    @apply fill-yellow-300 dark:fill-yellow-800;
-}
+    .svg-mermaid-fill-color-0 {
+        @apply fill-green-300 dark:fill-green-800;
+    }
+    .svg-mermaid-fill-color-1 {
+        @apply fill-yellow-300 dark:fill-yellow-800;
+    }
+    .svg-mermaid-fill-color-2 {
+        @apply fill-sky-300 dark:fill-sky-800;
+    }
+    .svg-mermaid-fill-color-3 {
+        @apply fill-red-300 dark:fill-red-800;
+    }
+    .svg-mermaid-fill-color-4 {
+        @apply fill-teal-300 dark:fill-teal-800;
+    }
+    .svg-mermaid-fill-color-5 {
+        @apply fill-amber-300 dark:fill-amber-800;
+    }
+    .svg-mermaid-fill-color-6 {
+        @apply fill-blue-300 dark:fill-blue-800;
+    }
+    .svg-mermaid-fill-color-7 {
+        @apply fill-pink-300 dark:fill-pink-800;
+    }
 
-.svg-mermaid-fill-color-2 {
-    @apply fill-sky-300 dark:fill-sky-800;
-}
+    .svg-mermaid-stroke-color-0 {
+        @apply stroke-green-300 dark:stroke-green-800;
+    }
+    .svg-mermaid-stroke-color-1 {
+        @apply stroke-yellow-300 dark:stroke-yellow-800;
+    }
+    .svg-mermaid-stroke-color-2 {
+        @apply stroke-sky-300 dark:stroke-sky-800;
+    }
+    .svg-mermaid-stroke-color-3 {
+        @apply stroke-red-300 dark:stroke-red-800;
+    }
+    .svg-mermaid-stroke-color-4 {
+        @apply stroke-teal-300 dark:stroke-teal-800;
+    }
+    .svg-mermaid-stroke-color-5 {
+        @apply stroke-amber-300 dark:stroke-amber-800;
+    }
+    .svg-mermaid-stroke-color-6 {
+        @apply stroke-blue-300 dark:stroke-blue-800;
+    }
+    .svg-mermaid-stroke-color-7 {
+        @apply stroke-pink-300 dark:stroke-pink-800;
+    }
 
-.svg-mermaid-fill-color-3 {
-    @apply fill-red-300 dark:fill-red-800;
-}
-
-.svg-mermaid-fill-color-4 {
-    @apply fill-teal-300 dark:fill-teal-800;
-}
-
-.svg-mermaid-fill-color-5 {
-    @apply fill-amber-300 dark:fill-amber-800;
-}
-
-.svg-mermaid-fill-color-6 {
-    @apply fill-blue-300 dark:fill-blue-800;
-}
-
-.svg-mermaid-fill-color-7 {
-    @apply fill-pink-300 dark:fill-pink-800;
-}
+    /* end colors */
 
 /* end for apply */
 
@@ -1378,3 +1400,218 @@ svg.mermaid-pie .legend > rect {
 }
 
 /* end pie chart */
+
+/* begin git graph */
+
+svg.mermaid-gitgraph {
+    @apply svg-mermaid-fill-dark;
+}
+
+svg.mermaid-gitgraph .edge-thickness-normal {
+    stroke-width: 2px;
+}
+
+svg.mermaid-gitgraph .edge-thickness-thick {
+    stroke-width: 3.5px;
+}
+
+svg.mermaid-gitgraph .edge-pattern-solid {
+    stroke-dasharray: 0;
+}
+
+svg.mermaid-gitgraph .edge-pattern-dashed {
+    stroke-dasharray: 3;
+}
+
+svg.mermaid-gitgraph .edge-pattern-dotted {
+    stroke-dasharray: 2;
+}
+
+svg.mermaid-gitgraph .marker {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-gitgraph .marker.cross {
+    @apply svg-mermaid-stroke-dark;
+}
+
+svg.mermaid-gitgraph .commit-id,
+svg.mermaid-gitgraph .commit-msg,
+svg.mermaid-gitgraph .branch-label {
+    @apply svg-mermaid-fill-light svg-mermaid-text-light;
+    /* fill: lightgrey; */
+    /* color: lightgrey; */
+}
+
+svg.mermaid-gitgraph .commit-cherry-pick[r="10"] {
+    @apply svg-mermaid-fill-dark;
+}
+svg.mermaid-gitgraph .commit-cherry-pick {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-light;
+}
+
+svg.mermaid-gitgraph .branch-label0,
+svg.mermaid-gitgraph .branch-label1,
+svg.mermaid-gitgraph .branch-label2,
+svg.mermaid-gitgraph .branch-label3,
+svg.mermaid-gitgraph .branch-label4,
+svg.mermaid-gitgraph .branch-label5,
+svg.mermaid-gitgraph .branch-label6,
+svg.mermaid-gitgraph .branch-label7 {
+    @apply svg-mermaid-fill-dark;
+}
+
+svg.mermaid-gitgraph .commit-highlight0,
+svg.mermaid-gitgraph .commit0 {
+    @apply svg-mermaid-fill-color-0 svg-mermaid-stroke-color-0;
+}
+svg.mermaid-gitgraph .commit-highlight1,
+svg.mermaid-gitgraph .commit1 {
+    @apply svg-mermaid-fill-color-1 svg-mermaid-stroke-color-1;
+}
+svg.mermaid-gitgraph .commit-highlight2,
+svg.mermaid-gitgraph .commit2 {
+    @apply svg-mermaid-fill-color-2 svg-mermaid-stroke-color-2;
+}
+svg.mermaid-gitgraph .commit-highlight3,
+svg.mermaid-gitgraph .commit3 {
+    @apply svg-mermaid-fill-color-3 svg-mermaid-stroke-color-3;
+}
+svg.mermaid-gitgraph .commit-highlight4,
+svg.mermaid-gitgraph .commit4 {
+    @apply svg-mermaid-fill-color-4 svg-mermaid-stroke-color-4;
+}
+svg.mermaid-gitgraph .commit-highlight5,
+svg.mermaid-gitgraph .commit5 {
+    @apply svg-mermaid-fill-color-5 svg-mermaid-stroke-color-5;
+}
+svg.mermaid-gitgraph .commit-highlight6,
+svg.mermaid-gitgraph .commit6 {
+    @apply svg-mermaid-fill-color-6 svg-mermaid-stroke-color-6;
+}
+svg.mermaid-gitgraph .commit-highlight7,
+svg.mermaid-gitgraph .commit7 {
+    @apply svg-mermaid-fill-color-7 svg-mermaid-stroke-color-7;
+}
+
+svg.mermaid-gitgraph .label0 {
+    @apply svg-mermaid-fill-color-0;
+}
+
+svg.mermaid-gitgraph .label1 {
+    @apply svg-mermaid-fill-color-1;
+}
+
+svg.mermaid-gitgraph .label2 {
+    @apply svg-mermaid-fill-color-2;
+}
+
+svg.mermaid-gitgraph .label3 {
+    @apply svg-mermaid-fill-color-3;
+}
+
+svg.mermaid-gitgraph .label4 {
+    @apply svg-mermaid-fill-color-4;
+}
+
+svg.mermaid-gitgraph .label5 {
+    @apply svg-mermaid-fill-color-5;
+}
+
+svg.mermaid-gitgraph .label6 {
+    @apply svg-mermaid-fill-color-6;
+}
+
+svg.mermaid-gitgraph .label7 {
+    @apply svg-mermaid-fill-color-7;
+}
+
+svg.mermaid-gitgraph .arrow0 {
+    @apply svg-mermaid-stroke-color-0;
+}
+svg.mermaid-gitgraph .arrow1 {
+    @apply svg-mermaid-stroke-color-1;
+}
+
+svg.mermaid-gitgraph .arrow2 {
+    @apply svg-mermaid-stroke-color-2;
+}
+
+svg.mermaid-gitgraph .arrow3 {
+    @apply svg-mermaid-stroke-color-3;
+}
+
+svg.mermaid-gitgraph .arrow4 {
+    @apply svg-mermaid-stroke-color-4;
+}
+
+svg.mermaid-gitgraph .arrow5 {
+    @apply svg-mermaid-stroke-color-5;
+}
+
+svg.mermaid-gitgraph .arrow6 {
+    @apply svg-mermaid-stroke-color-6;
+}
+
+svg.mermaid-gitgraph .arrow7 {
+    @apply svg-mermaid-stroke-color-7;
+}
+
+svg.mermaid-gitgraph .branch {
+    @apply svg-mermaid-stroke-dark;
+    stroke-width: 1;
+    stroke-dasharray: 2;
+}
+
+svg.mermaid-gitgraph .commit-label {
+    @apply svg-mermaid-fill-dark;
+    font-size: 10px;
+    /* fill: #000021; */
+}
+
+svg.mermaid-gitgraph .commit-label-bkg {
+    @apply svg-mermaid-fill-light;
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+svg.mermaid-gitgraph .tag-label {
+    @apply svg-mermaid-fill-light svg-mermaid-text-light;
+    font-size: 10px;
+}
+
+svg.mermaid-gitgraph .tag-label-bkg {
+    @apply svg-mermaid-fill-dark svg-mermaid-stroke-light;
+}
+
+svg.mermaid-gitgraph .tag-hole {
+    @apply svg-mermaid-fill-light;
+}
+
+svg.mermaid-gitgraph .commit-merge,
+svg.mermaid-gitgraph .commit-highlight-inner {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-light;
+    /* stroke: #ECECFF; */
+    /* fill: #ECECFF; */
+}
+
+svg.mermaid-gitgraph .commit-reverse {
+    @apply svg-mermaid-fill-light svg-mermaid-stroke-light;
+    /* stroke: #ECECFF; */
+    /* fill: #ECECFF; */
+    stroke-width: 3;
+}
+
+svg.mermaid-gitgraph .arrow {
+    stroke-width: 8;
+    stroke-linecap: round;
+    fill: none;
+}
+
+svg.mermaid-gitgraph .gitTitleText {
+    @apply svg-mermaid-fill-dark;
+    text-anchor: middle;
+    font-size: 18px;
+}
+
+/* end git graph */
