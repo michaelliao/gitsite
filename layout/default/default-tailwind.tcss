@@ -274,6 +274,31 @@ nav.gsc-nav-main > ul > li > a.gsc-active {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#gsi-content pre {
+    @apply whitespace-pre-wrap break-all my-4 p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
+}
+
+/* begin ascii */
+
+#gsi-content pre.ascii {
+    @apply p-0 border-0 bg-transparent;
+    font-family: JetBrainsMono;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#gsi-content pre.ascii>code {
+    font-family: JetBrainsMono;
+}
+
+/* end ascii */
+
+#gsi-content img.gsc-avatar {
+    @apply inline-block w-8 h-8 rounded-full gsc-border border;
+}
+
+/* begin alert */
+
 #gsi-content div.alert {
     @apply border-l-4 border-t border-r border-b rounded px-4 py-2 my-4;
 }
@@ -326,21 +351,7 @@ nav.gsc-nav-main > ul > li > a.gsc-active {
     @apply text-red-700 dark:text-red-500;
 }
 
-
-#gsi-content pre {
-    @apply whitespace-pre-wrap break-all my-4 p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
-}
-
-#gsi-content pre.ascii {
-    @apply p-0 border-0 bg-transparent;
-    font-family: JetBrainsMono;
-    font-size: 14px;
-    line-height: 18px;
-}
-
-#gsi-content pre.ascii>code {
-    font-family: JetBrainsMono;
-}
+/* end alert */
 
 #gsi-content div.question {
     @apply my-4;
