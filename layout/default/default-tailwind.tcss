@@ -282,7 +282,33 @@ nav.gsc-nav-main > ul > li > a.gsc-active {
     @apply whitespace-pre overflow-x-auto my-4 p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
 }
 
-/* begin ascii */
+/********** blogs **********/
+
+#gsi-blog-title {
+    @apply mb-8;
+}
+
+#gsi-blog-content > h1 {
+    @apply first:hidden;
+}
+
+/********** offcanvas **********/
+
+#gsi-offcanvas {
+    @apply z-30 fixed top-0 left-0 right-0 bottom-0;
+}
+
+.gsc-offcanvas-popup {
+    @apply overflow-y-auto border-r fixed top-0 left-[calc(0px-var(--side-bar-width))] bottom-0 w-[var(--side-bar-width)] p-4;
+}
+
+.gsc-offcanvas-popup-show {
+    left: 0 !important;
+}
+
+/********** footer **********/
+
+/********** ascii **********/
 
 #gsi-content pre.ascii {
     @apply p-0 border-0 bg-transparent;
@@ -357,25 +383,25 @@ nav.gsc-nav-main > ul > li > a.gsc-active {
 
 /********** video **********/
 
-div.gsc-video-container {
+#gsi-content div.gsc-video-container {
     @apply relative w-full my-4;
 }
 
-div.gsc-video-container iframe.gsc-video {
+#gsi-content div.gsc-video-container iframe.gsc-video {
     @apply absolute top-0 left-0 w-full h-full border-0;
 }
 
 /********** math **********/
 
-div.math-wrapper-left span.katex-html {
+#gsi-content div.math-wrapper-left span.katex-html {
     @apply text-left;
 }
 
-div.math-wrapper-center span.katex-html {
+#gsi-content div.math-wrapper-center span.katex-html {
     @apply text-center;
 }
 
-div.math-wrapper-right span.katex-html {
+#gsi-content div.math-wrapper-right span.katex-html {
     @apply text-right;
 }
 
@@ -405,35 +431,9 @@ div.math-wrapper-right span.katex-html {
     @apply text-red-800 dark:text-red-500;
 }
 
-/********** blogs **********/
-
-#gsi-blog-title {
-    @apply mb-8;
-}
-
-#gsi-blog-content > h1 {
-    @apply first:hidden;
-}
-
-/********** offcanvas **********/
-
-#gsi-offcanvas {
-    @apply z-30 fixed top-0 left-0 right-0 bottom-0;
-}
-
-.gsc-offcanvas-popup {
-    @apply overflow-y-auto border-r fixed top-0 left-[calc(0px-var(--side-bar-width))] bottom-0 w-[var(--side-bar-width)] p-4;
-}
-
-.gsc-offcanvas-popup-show {
-    left: 0 !important;
-}
-
-/********** footer **********/
-
 /********** begin qrcode **********/
 
-div.qrcode-wrapper svg {
+#gsi-content div.qrcode-wrapper svg {
     display: inline-block;
 }
 
@@ -441,7 +441,7 @@ div.qrcode-wrapper svg {
 
 /********** abcjs **********/
 
-div.abcjs-wrapper {
+#gsi-content div.abcjs-wrapper {
     @apply my-4;
 }
 
@@ -700,59 +700,59 @@ div.abcjs-wrapper {
     @apply bg-gray-300 dark:bg-gray-700;
 }
 
-    /* colors */
+/* colors */
 
-    .svg-mermaid-fill-color-0 {
-        @apply fill-green-300 dark:fill-green-800;
-    }
-    .svg-mermaid-fill-color-1 {
-        @apply fill-yellow-300 dark:fill-yellow-800;
-    }
-    .svg-mermaid-fill-color-2 {
-        @apply fill-sky-300 dark:fill-sky-800;
-    }
-    .svg-mermaid-fill-color-3 {
-        @apply fill-red-300 dark:fill-red-800;
-    }
-    .svg-mermaid-fill-color-4 {
-        @apply fill-teal-300 dark:fill-teal-800;
-    }
-    .svg-mermaid-fill-color-5 {
-        @apply fill-amber-300 dark:fill-amber-800;
-    }
-    .svg-mermaid-fill-color-6 {
-        @apply fill-blue-300 dark:fill-blue-800;
-    }
-    .svg-mermaid-fill-color-7 {
-        @apply fill-pink-300 dark:fill-pink-800;
-    }
+.svg-mermaid-fill-color-0 {
+    @apply fill-green-300 dark:fill-green-800;
+}
+.svg-mermaid-fill-color-1 {
+    @apply fill-yellow-300 dark:fill-yellow-800;
+}
+.svg-mermaid-fill-color-2 {
+    @apply fill-sky-300 dark:fill-sky-800;
+}
+.svg-mermaid-fill-color-3 {
+    @apply fill-red-300 dark:fill-red-800;
+}
+.svg-mermaid-fill-color-4 {
+    @apply fill-teal-300 dark:fill-teal-800;
+}
+.svg-mermaid-fill-color-5 {
+    @apply fill-amber-300 dark:fill-amber-800;
+}
+.svg-mermaid-fill-color-6 {
+    @apply fill-blue-300 dark:fill-blue-800;
+}
+.svg-mermaid-fill-color-7 {
+    @apply fill-pink-300 dark:fill-pink-800;
+}
 
-    .svg-mermaid-stroke-color-0 {
-        @apply stroke-green-300 dark:stroke-green-800;
-    }
-    .svg-mermaid-stroke-color-1 {
-        @apply stroke-yellow-300 dark:stroke-yellow-800;
-    }
-    .svg-mermaid-stroke-color-2 {
-        @apply stroke-sky-300 dark:stroke-sky-800;
-    }
-    .svg-mermaid-stroke-color-3 {
-        @apply stroke-red-300 dark:stroke-red-800;
-    }
-    .svg-mermaid-stroke-color-4 {
-        @apply stroke-teal-300 dark:stroke-teal-800;
-    }
-    .svg-mermaid-stroke-color-5 {
-        @apply stroke-amber-300 dark:stroke-amber-800;
-    }
-    .svg-mermaid-stroke-color-6 {
-        @apply stroke-blue-300 dark:stroke-blue-800;
-    }
-    .svg-mermaid-stroke-color-7 {
-        @apply stroke-pink-300 dark:stroke-pink-800;
-    }
+.svg-mermaid-stroke-color-0 {
+    @apply stroke-green-300 dark:stroke-green-800;
+}
+.svg-mermaid-stroke-color-1 {
+    @apply stroke-yellow-300 dark:stroke-yellow-800;
+}
+.svg-mermaid-stroke-color-2 {
+    @apply stroke-sky-300 dark:stroke-sky-800;
+}
+.svg-mermaid-stroke-color-3 {
+    @apply stroke-red-300 dark:stroke-red-800;
+}
+.svg-mermaid-stroke-color-4 {
+    @apply stroke-teal-300 dark:stroke-teal-800;
+}
+.svg-mermaid-stroke-color-5 {
+    @apply stroke-amber-300 dark:stroke-amber-800;
+}
+.svg-mermaid-stroke-color-6 {
+    @apply stroke-blue-300 dark:stroke-blue-800;
+}
+.svg-mermaid-stroke-color-7 {
+    @apply stroke-pink-300 dark:stroke-pink-800;
+}
 
-    /* end colors */
+/* end colors */
 
 /* end for apply */
 
