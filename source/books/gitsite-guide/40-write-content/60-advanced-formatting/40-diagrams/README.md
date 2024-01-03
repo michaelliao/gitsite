@@ -346,9 +346,9 @@ gitGraph
 
 ## Alignment
 
-To align a Mermaid diagram, add `left`, `center` or `right` after the `mermaid` identifier:
+To align a Mermaid diagram, add `align=left`, `align=center` or `align=right` after the `mermaid` identifier:
 
-    ```mermaid center
+    ```mermaid align=center
     ---
     title: Flowchart in center
     ---
@@ -359,7 +359,7 @@ To align a Mermaid diagram, add `left`, `center` or `right` after the `mermaid` 
         C-->D;
     ```
 
-```mermaid center
+```mermaid align=center
 ---
 title: Flowchart in center
 ---

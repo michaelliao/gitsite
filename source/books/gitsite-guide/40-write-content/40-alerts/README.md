@@ -4,64 +4,64 @@ Alerts are a Markdown extension based on the blockquote syntax that you can use 
 
 Use alerts only when they are crucial for user success and limit them to one or two per article to prevent overloading the reader. Additionally, you should avoid placing alerts consecutively.
 
-To add an alert, add text inside a fenced code block with the `alert <type>` identifier. This is **different** from GitHub which uses a special blockquote line to specify the alert type. Five types of alerts are available:
+To add an alert, add text inside a fenced code block with the `alert type=note` identifier. This is **different** from GitHub which uses a special blockquote line to specify the alert type. Five types of alerts are available:
 
-    ```alert note
+    ```alert type=note
     Useful information that users should know, even when skimming content.
     ```
 
-    ```alert tip
+    ```alert type=tip
     Helpful advice for doing things better or more easily.
     ```
 
-    ```alert important
+    ```alert type=important
     Key information users need to know to achieve their goal.
     ```
 
-    ```alert warning
+    ```alert type=warning
     Urgent info that needs *immediate* user attention to avoid problems.
     ```
 
-    ```alert caution
+    ```alert type=caution
     Advises about **risks** or negative outcomes of certain actions.
     ```
 
-```alert note
+```alert type=note
 Useful information that users should know, even when skimming content.
 ```
 
-```alert tip
+```alert type=tip
 Helpful advice for doing things better or more easily.
 ```
 
-```alert important
+```alert type=important
 Key information users need to know to achieve their goal.
 ```
 
-```alert warning
+```alert type=warning
 Urgent info that needs *immediate* user attention to avoid problems.
 ```
 
-```alert caution
+```alert type=caution
 Advises about **risks** or negative outcomes of certain actions.
 ```
 
 To specify the alert title, use `title=Xyz`:
 
-    ```alert caution title=Error
+    ```alert type=caution title=Error
     There is an ERROR!
     ```
 
-```alert caution title=Error
+```alert type=caution title=Error
 There is an ERROR!
 ```
 
 Title that contains spaces must be quoted with `"`:
 
-    ```alert tip title="Useful Tips"
+    ```alert type=tip title="Useful Tips"
     Helpful advice for doing things better or more easily.
     ```
 
-```alert tip title="Useful Tips"
+```alert type=tip title="Useful Tips"
 Helpful advice for doing things better or more easily.
 ```

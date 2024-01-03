@@ -9,14 +9,34 @@ GitSite's math rendering capability uses [Katex](https://katex.org/): an open so
 You can surround the expression with dollar symbols `$`.
 
 ```markdown
-This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
+This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$.
 ```
 
-This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
+This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$.
 
 ## Writing expressions as blocks
 
-To add a math expression as a block, start a new line and delimit the expression with two dollar symbols `$$`.
+To add a math expression as a block, add expression inside a fenced code block with the `math` identifier.
+
+    ```math
+    \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+    ```
+
+```math
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
+
+You can set the alignment to center or right. For example, use `align=center` to set alignment to center:
+
+    ```math align=center
+    \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+    ```
+
+```math align=center
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
+
+You can still use GitHub-styled math expression block by start a new line and delimit the expression with two dollar symbols `$$`, but you cannot set alignment by this way (always display in center):
 
 ```markdown
 $$
@@ -40,12 +60,10 @@ Chemical equation example: $\ce{CO2 + C -> 2 CO}$.
 
 A complex chemical equation as a block:
 
-```markdown
-$$
-\ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}
-$$
-```
+    ```math
+    \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}
+    ```
 
-$$
+```math
 \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}
-$$
+```

@@ -6,9 +6,9 @@ You can create a question form by add identifier `question` and subtype with a c
 
 ## Creating single selection
 
-Use `question radio` to create a single selection form:
+Use `question type=radio` to create a single selection form:
 
-    ```question radio
+    ```question type=radio
     Which is the first browser that support **JavaScript**?
     ---
         Internet Explorer
@@ -19,7 +19,7 @@ Use `question radio` to create a single selection form:
 
 The question and anwsers are seperated by `---`, and use `[x]` to mark the correct answer.
 
-```question radio
+```question type=radio
 Which is the first browser that support **JavaScript**?
 ---
     Internet Explorer
@@ -30,9 +30,9 @@ Which is the first browser that support **JavaScript**?
 
 ## Creating multiple selections
 
-Use `question checkbox` to create a multiple selection form:
+Use `question type=checkbox` to create a multiple selection form:
 
-    ```question checkbox
+    ```question type=checkbox
     The planets that in the solar system:
     ---
     [x] Earth
@@ -42,7 +42,7 @@ Use `question checkbox` to create a multiple selection form:
     [x] Jupiter
     ```
 
-```question checkbox
+```question type=checkbox
 The planets that in the solar system:
 ---
 [x] Earth
@@ -54,15 +54,15 @@ The planets that in the solar system:
 
 ## Creating text input
 
-Use `question text` to create a text input form:
+Use `question type=text` to create a text input form:
 
-    ```question text
+    ```question type=text
     The largest planet in the solar system is:
     ----
     Jupiter
     ```
 
-```question text
+```question type=text
 The largest planet in the solar system is:
 ----
 Jupiter
@@ -70,7 +70,7 @@ Jupiter
 
 Add `ignorecase` to ignore the case of answer:
 
-    ```question text ignorecase
+    ```question type=text ignorecase
     The largest planet in the solar system is (ignore case):
     ----
     Jupiter
@@ -78,7 +78,7 @@ Add `ignorecase` to ignore the case of answer:
 
 Both `Jupiter` and `jupiter` are correct answer:
 
-```question text ignorecase
+```question type=text ignorecase
 The largest planet in the solar system is (ignore case):
 ----
 Jupiter
@@ -86,9 +86,9 @@ Jupiter
 
 ## Creating date input
 
-Use `question date` to create a date input form:
+Use `question type=date` to create a date input form:
 
-    ```question date
+    ```question type=date
     When were the first modern Olympic Games held? (July 6, 1896)
     ----
     1896-04-06
@@ -96,7 +96,7 @@ Use `question date` to create a date input form:
 
 The provided answer must be [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) date format `yyyy-MM-dd`.
 
-```question date
+```question type=date
 When were the first modern Olympic Games held? (July 6, 1896)
 ----
 1896-04-06
@@ -106,7 +106,7 @@ When were the first modern Olympic Games held? (July 6, 1896)
 
 You can also specify the label of submit, correct and wrong:
 
-    ```question radio submit=Validate correct="Yes, it is correct!" wrong="Sorry, it is wrong!"
+    ```question type=radio submit=Validate correct="Yes, it is correct!" wrong="Sorry, it is wrong!"
     Which is the first browser that support **JavaScript**?
     ---
         Internet Explorer
@@ -115,7 +115,7 @@ You can also specify the label of submit, correct and wrong:
         Google Chrome
     ```
 
-```question radio submit=Validate correct="Yes, it is correct!" wrong="Sorry, it is wrong!"
+```question type=radio submit=Validate correct="Yes, it is correct!" wrong="Sorry, it is wrong!"
 Which is the first browser that support **JavaScript**?
 ---
     Internet Explorer
