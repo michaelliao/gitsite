@@ -365,6 +365,20 @@ div.gsc-video-container iframe.gsc-video {
     @apply absolute top-0 left-0 w-full h-full border-0;
 }
 
+/********** math **********/
+
+div.math-wrapper-left span.katex-html {
+    @apply text-left;
+}
+
+div.math-wrapper-center span.katex-html {
+    @apply text-center;
+}
+
+div.math-wrapper-right span.katex-html {
+    @apply text-right;
+}
+
 /********** question **********/
 
 #gsi-content div.question {
