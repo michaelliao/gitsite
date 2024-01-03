@@ -10,31 +10,12 @@ site:
       ref: gitsite-guide
     - title: Blogs
       type: blog
-    - title: About GitSite
+    - title: About
       type: page
       ref: about
-    - title: Not Found
-      type: link
-      ref: /404
-    - title: Github
-      type: link
-      ref: https://github.com/michaelliao/gitsite
-      external: true
-    - title: Go To GitLab
-      type: link
-      ref: https://github.com/michaelliao/gitsite
-      external: true
-    - title: Build Your Own Sqlite From Scratch
-      type: link
-      ref: https://github.com/michaelliao/gitsite
-      external: true
-    - title: Git Repository
-      type: link
-      ref: https://github.com/michaelliao/gitsite
-      external: true
     - title: Discuss
       type: link
-      ref: https://github.com/michaelliao/gitsite
+      ref: https://github.com/michaelliao/gitsite/discussions
       external: true
   git:
     base-url: https://github.com/michaelliao/gitsite/blob/main/source
