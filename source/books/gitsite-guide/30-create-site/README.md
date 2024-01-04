@@ -3,16 +3,14 @@
 To create a new site, use:
 
 ```bash
-$ npx gitsite-cli new -d site
+$ npx gitsite-cli new -d .
 ```
-
-The `site` directory specified by `-d` argument is created by `gitsite-cli`.
 
 A typical site has the following directories:
 
 ```ascii
 <your-site>
-├── layout         <-- all themes
+├── themes         <-- all themes
 │   └── default    <-- a theme named 'default'
 │
 └── source         <-- contains all markdown docs
