@@ -1,5 +1,5 @@
 <!-- comment -->
-{% if site.comment and site.comment.disqus and site.comment.disqus.name %}
+{% if site.integration and site.integration.disqusComment %}
 <hr class="gsc-border mt-4">
 <div class="mb-4"></div>
 <div id="disqus_thread"></div>
@@ -10,7 +10,7 @@
     };
     (function () {
         var d = document, s = d.createElement('script');
-        s.src = 'https://{{ site.comment.disqus.name }}.disqus.com/embed.js';
+        s.src = 'https://{{ site.integration.disqusComment }}.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
