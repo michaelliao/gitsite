@@ -90,6 +90,7 @@
 
         function showSearch() {
             document.getElementById('gsi-search').classList.remove('hidden');
+            document.getElementById('gsi-search-input').focus();
         }
 
         function hideSearch() {
@@ -470,33 +471,60 @@
     <div id="gsi-search" onclick="hideSearch()" class="hidden gsc-backdrop z-30 fixed top-0 left-0 right-0 bottom-0">
         <div class="gsc-container">
             <div onclick="event.stopPropagation()"
-                class="gsc-popup-container border shadow rounded-md w-[90%] min-h-[90%] mt-[5%] mx-auto">
-                <div class="p-4 sm:p-6 md:p-8 border-b border-slate-200 dark:border-slate-700">
-                    <input type="text"
-                        class="block w-full border-0 bg-transparent text-gray-800 placeholder:text-gray-400 rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:text-sm sm:leading-6"
+                class="gsc-popup-container flex flex-col border shadow rounded-md fixed top-8 left-6 right-6 bottom-8 sd:top-12 sd:left-8 sd:right-8 sd:bottom-12 md:top-16 md:left-12 md:right-12 md:bottom-16">
+                <div class="flex-none p-4 sm:p-6 md:p-8 border-b border-slate-200 dark:border-slate-700">
+                    <input id="gsi-search-input" type="text" class="block w-full"
                         placeholder="Type keywords to search...">
                 </div>
-                <div id="gsi-search-results" class="p-4 sm:p-6 md:p-8">
-                    <div class="gsc-search-result">
-                        <h3>Hello, this is a world wide web</h3>
-                        <p>ok, block w-full border-0 bg-transparent text-gray-800 placeholder:text-gray-400... haha</p>
+                <div id="gsi-search-results" class="px-4 sm:px-6 md:px-8 flex-auto overflow-y-scroll">
+                    <!--
+                    <div>
+                        <a href="uri">title</a>
+                        <p>content</p>
                     </div>
-                    <div class="gsc-search-result">
-                        <h3>Hello, this is a world wide web</h3>
-                        <p>ok, block w-full border-0 bg-transparent text-gray-800 placeholder:text-gray-400... haha</p>
-                    </div>
-                    <div class="gsc-search-result">
-                        <h3>Hello, this is a world wide web</h3>
-                        <p>ok, block w-full border-0 bg-transparent text-gray-800 placeholder:text-gray-400... haha</p>
-                    </div>
+                    -->
                 </div>
             </div>
         </div>
     </div>
     <script>
         window.onsearchready = (searchFn) => {
+            // debug search on console:
             window.__search__ = searchFn;
             console.log('search ready.');
+
+            function delay(callback, ms = 500) {
+                let timer = 0;
+                return function () {
+                    let context = this, args = arguments;
+                    clearTimeout(timer);
+                    timer = setTimeout(function () {
+                        callback.apply(context, args);
+                    }, ms);
+                };
+            }
+
+            function escapeHtml(unsafe) {
+                return unsafe.replaceAll('&', '&amp;')
+                    .replaceAll('<', '&lt;')
+                    .replaceAll('>', '&gt;');
+            }
+
+            let input = document.getElementById('gsi-search-input');
+            let results = document.getElementById('gsi-search-results');
+            input.addEventListener('input', delay(function (e) {
+                let q = e.target.value.trim();
+                console.log(`start search: ${q}`);
+                if (q) {
+                    let rs = searchFn(q);
+                    console.log(rs.length + ' found.');
+                    results.innerHTML = rs.map(r => {
+                        return `<div><a href="${r.uri}">${escapeHtml(r.title)}</a><p>${escapeHtml(r.content)}</p></div>`;
+                    }).join('\n');
+                } else {
+                    results.innerHTML = '';
+                }
+            }, 500));
         };
     </script>
     <script src="/static/flexsearch.bundle.js"></script>
