@@ -66,7 +66,9 @@
     {% for blog in blogs %}
     <div class="gsc-index-item">
         <div class="pt-4">
-            <span class="pl-1 text-sm font-semibold uppercase">{{ blog.date }}</span>
+            <span class="pl-1 text-sm font-semibold uppercase">
+                <time datetime="{{ blog.date }}"></time>
+            </span>
         </div>
         <a href="{{ blog.uri }}" onclick="gs_load_blog('{{ blog.uri }}',true);return false;">
             <span class="gsc-index-item-title">{{ blog.title }}</span>
@@ -76,6 +78,10 @@
     {% endfor %}
 </div>
 <script>
+    Array.from(document.querySelectorAll('#gsi-index time')).forEach(dom => {
+        dom.innerHTML = new Date(dom.getAttribute('datetime')).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    });
+
     gs_set_current_blog_uri(location.pathname);
     window.onpopstate = function (e) {
         console.log(`popstate: ${location.pathname}`);
