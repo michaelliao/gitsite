@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="{{ site.language }}">
 
 <head>
     <meta charset="UTF-8">
@@ -253,21 +253,6 @@
     </script>
     <script src="/static/abcjs-basic.js"></script>
     <script src="/static/abcjs-init.js"></script>
-    <script src="/static/lunr.js"></script>
-    {% if site.search.languages.length > 1 %}
-    <script src="/static/lunr.stemmer.support.js"></script>
-    <script src="/static/lunr.multi.js"></script>
-    <script src="/static/tinyseg.js"></script>
-    {% for lang in site.search.languages %}
-    {% if lang != 'en' %}
-    <script src="/static/lunr.{{ lang }}.js"></script>
-    {% endif %}
-    {% endfor %}
-    {% endif %}
-    <script src="/static/search-index.js?t={{ __timestamp__}}"></script>
-    <script>
-        window.__searcher__ = lunr.Index.load(window.__search__.index);
-    </script>
     {% block script %}
     {% endblock %}
 </head>
@@ -508,6 +493,14 @@
             </div>
         </div>
     </div>
+    <script>
+        window.onsearchready = (searchFn) => {
+            window.__search__ = searchFn;
+            console.log('search ready.');
+        };
+    </script>
+    <script src="/static/flexsearch.bundle.js"></script>
+    <script src="/static/search-index.js?t={{ __timestamp__}}" defer></script>
 </body>
 
 </html>
