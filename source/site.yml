@@ -3,7 +3,7 @@ site:
   description: GitSite is a static web site generator for Git.
   keywords: gitsite, git, static web site, html
   theme: default
-  locale: en-US
+  language: en-US
   navigation:
     - title: User Guide
       type: book
@@ -32,11 +32,10 @@ site:
     index-marker: true
 
   search:
-    # search by lunr or semantic:
-    engine: lunr
-    languages:
-      - en
-      - zh
+    # none = no search
+    # browser = flex search in browser
+    # google = google site search
+    type: browser
 
 build:
   # copy special files under root dir (ignore if not found):
