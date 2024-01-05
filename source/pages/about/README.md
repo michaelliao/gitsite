@@ -2,10 +2,32 @@
 
 Integer ullamcorper nulla ut risus mattis vehicula. Etiam sollicitudin lorem a scelerisque efficitur. Nulla volutpat semper tellus, vel fringilla diam sollicitudin sed. Aenean laoreet sapien eu aliquet pulvinar. Etiam consequat mi non nulla iaculis egestas. Sed a diam euismod, euismod mauris eget, eleifend magna. In consequat a ex vel semper.
 
-```emoji
-Hello, :wave:
-:smile: Haha
-```
+<form action="#" method="get">
+<div>
+<input type="text" placeholder="type for search">
+</div>
+<div>
+<input type="password">
+</div>
+<div>
+<input type="number">
+</div>
+<select>
+<option>apple</option>
+<option>apple</option>
+<option>apple</option>
+</select>
+<br>
+<label><input type="radio" name="hh"> Hehe</label><br>
+<label><input type="radio" name="hh"> xxx</label><br>
+<label><input type="checkbox" name="hhx"> Haha</label><br>
+<input type="submit">Button</input><br>
+<input type="reset">Button</input><br>
+<input type="button">Button</input><br>
+<button type="submit">Hello</button>
+<button type="reset">Hello</button>
+<button type="button">Hello</button>
+</form>
 
 Vivamus ultrices at est eu lacinia. Maecenas sollicitudin a magna sed dictum. Duis finibus suscipit vulputate. Donec id felis et velit placerat ultricies in in ex. Proin sollicitudin pellentesque finibus. Donec in ipsum rhoncus, luctus felis in, vestibulum nisi. Vestibulum eros elit, placerat ut nibh auctor, commodo finibus augue.
 
@@ -13,22 +35,11 @@ Vivamus ultrices at est eu lacinia. Maecenas sollicitudin a magna sed dictum. Du
 
 Vestibulum non blandit ante. Phasellus gravida luctus blandit. Duis quis egestas sem. Sed sagittis odio aliquam gravida hendrerit. Maecenas quis odio sed ex dapibus pretium a at lacus. Aenean consequat eu justo fringilla rutrum. Sed non urna vel leo vestibulum laoreet vulputate nec dolor. Sed ornare a turpis ut facilisis. In tristique vitae ligula a pretium.
 
-```qrcode ecl-m w-256 p-0 info link
+```qrcode ecl-m w-256 p-0 info link image=html5.png
 https://gitsite.org
 ```
 
 Pellentesque molestie elit vel velit tincidunt placerat. In posuere mollis purus commodo lobortis. Morbi ut porttitor odio. Nunc eu erat nec mi viverra vestibulum. Nullam ut auctor lorem, ac sagittis odio. Morbi ultrices tellus ut dui venenatis, iaculis dapibus tellus porttitor. Integer pulvinar arcu a felis rutrum, id ultricies libero elementum. Cras odio urna, tempus a vulputate a, tincidunt at nunc. Mauris et nulla vitae metus suscipit sodales. Sed gravida velit sed risus pharetra cursus. Mauris iaculis vitae enim et vulputate. Donec finibus, sapien vitae rhoncus scelerisque, nisi diam bibendum turpis, a consectetur purus lorem et urna. Sed eleifend eu turpis placerat consequat. Ut bibendum sit amet nunc rhoncus ornare.
-
-| Curabitur | Mauris | Commodo  | Ullamcorper |
-|-----------|--------|----------|-------------|
-| A-10848   | 12,358 | erat     | tellus      |
-| A-91230   | 32,500 | lobortis | eleifend    |
-| B-14182   | 19,026 | ligula   | facilisi    |
-| C-71785   | 9,805  | urna     | gravida     |
-
- Vehicula pulvinar, ut lobortis ut ligula. Proin facilisis tellus dignissim ligula feugiat, id dapibus nisl placerat. Cras interdum rutrum nulla eu tempus. Vestibulum eu libero a dolor vulputate eleifend ut non nisi. Donec mollis, urna id lobortis vehicula, sem justo rhoncus ipsum, et laoreet metus libero eu sem. Nullam lacinia at felis non pharetra. Suspendisse potenti. Integer nisi eros, bibendum eget tellus eu, consequat vehicula tellus. Vivamus placerat bibendum mauris, nec molestie ante porta quis. Duis facilisis sodales augue, rutrum interdum diam eleifend hendrerit.
-
-Mauris dolor magna, luctus non rhoncus vel, efficitur quis tellus. Ut id dapibus massa, vehicula accumsan nibh. Sed venenatis in risus varius condimentum. Nulla mollis tincidunt turpis, laoreet semper ipsum varius vel. Duis mattis purus sit amet fermentum pharetra. Nam tincidunt gravida malesuada. Nulla facilisi. Donec sagittis fringilla enim, at commodo enim porta non. Nunc eu enim enim. Suspendisse potenti.
 
 - Phasellus vel augue non felis efficitur laoreet.
 - Donec bibendum elementum tortor at rhoncus.

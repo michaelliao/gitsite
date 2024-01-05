@@ -163,7 +163,7 @@ nav.gsc-nav-main > ul > li > a.gsc-active {
 /********** form **********/
 
 input[type="text"],input[type="password"],input[type="number"],select {
-    @apply gsc-text bg-gray-100 dark:bg-gray-800 rounded-md border-0 my-2 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-sky-600 dark:focus:ring-sky-400;
+    @apply gsc-text outline-none bg-gray-100 dark:bg-gray-800 rounded-md border-0 my-2 px-2 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-sky-600 dark:focus:ring-sky-400;
 }
 
 input[type="checkbox"],input[type="radio"] {
