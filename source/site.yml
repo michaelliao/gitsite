@@ -10,9 +10,9 @@ site:
       ref: gitsite-guide
     - title: Blogs
       type: blog
-    - title: About
+    - title: License
       type: page
-      ref: about
+      ref: license
     - title: Discuss
       type: link
       ref: https://github.com/michaelliao/gitsite/discussions
@@ -21,8 +21,6 @@ site:
     base-url: https://github.com/michaelliao/gitsite/blob/main/source
     # display git link for quick edit:
     link: true
-  google:
-    analytics: G-5Z40K7NBL5
   contact:
     name: Michael Liao
     github: https://github.com/michaelliao/gitsite
