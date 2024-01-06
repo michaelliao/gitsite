@@ -75,9 +75,9 @@ pages/
 
 Pages are usually serves pages like `About Us`, `Term of Service`, etc.
 
-## README.md
+## Index file
 
-All markdown documents are named `README.md` for this can be viewed on GitHub directly. The first line of `README.md` must be heading 1, which is treated as title, and the rest of lines are content:
+All markdown documents are named `README.md` for this can be viewed on GitHub directly, and build to `index.html`. The first line of `README.md` must be heading 1, which is treated as title, and the rest of lines are content:
 
 ```markdown
 # This is title
