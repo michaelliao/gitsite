@@ -23,6 +23,10 @@
         a.classList.add('gsc-active');
         // set new current uri:
         window.gs_status.current_blog_uri = uri;
+        // scroll into view if first loaded:
+        if (!old_uri) {
+            a.parentNode.scrollIntoView && a.parentNode.scrollIntoView(true);
+        }
     }
 
     function gs_load_blog(uri, shouldPushState) {
