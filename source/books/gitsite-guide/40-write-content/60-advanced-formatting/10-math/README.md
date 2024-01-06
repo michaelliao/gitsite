@@ -48,7 +48,9 @@ $$
 \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
 $$
 
+```alert type=tip
 Use the [visual editor](https://demo.wiris.com/mathtype/en/developers.php#mathml-latex) provided by Wiris can help you write math expressions much easier.
+```
 
 ## Writing chemical equations
 
