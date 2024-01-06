@@ -10,7 +10,9 @@ GitSite don't require Mermaid JavaScript on page because it pre-compile Mermaid 
 
 To create a Mermaid diagram, add Mermaid syntax inside a fenced code block with the `mermaid` identifier.
 
+```alert type=tip
 It is a good practice that use [Mermaid live editor](https://mermaid.live/) to make sure your markdown text can be compiled to Mermaid diagrams successfully.
+```
 
 ## Creating flow chart
 
