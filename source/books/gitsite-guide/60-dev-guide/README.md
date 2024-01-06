@@ -24,3 +24,9 @@ default
 ```
 
 Nunjucks template engine enables the inheritance and referencing of other templates within a single template. This feature proves advantageous for reusing components, allowing for the extraction of common parts such as header and footer.
+
+## Create a new theme
+
+To create a new theme, the best way is copying the `default` theme and rename it, then update the theme setting in `site.yml`. This allows you change the theme progressively.
+
+Themes are version controlled with source in the same repo.
