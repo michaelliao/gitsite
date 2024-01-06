@@ -23,6 +23,4 @@ function documentReady(fn) {
 
 `documentReady()`函数的实现非常简单，因为GitSite是基于HTML5构建的，它仅支持现代浏览器，不支持古老的IE。
 
-![silly](emoji-silly.png)
-
 相比之下，jQuery的`$(document).ready()`更复杂，因为它需要兼容更多的浏览器。
