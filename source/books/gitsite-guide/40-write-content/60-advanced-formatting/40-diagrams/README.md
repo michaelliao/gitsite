@@ -6,9 +6,11 @@ You can create diagrams to convey information through charts and graphs.
 
 Mermaid is a Markdown-inspired tool that renders text into diagrams. For example, Mermaid can render flow charts, sequence diagrams, pie charts and more. For more information, see the [Mermaid documentation](https://mermaid.js.org).
 
-GitSite don't use Mermaid JavaScript because it generates Mermaid diagrams to SVGs which are embeded into HTML.
+GitSite don't require Mermaid JavaScript on page because it pre-compile Mermaid diagrams to SVGs which are embeded into HTML.
 
 To create a Mermaid diagram, add Mermaid syntax inside a fenced code block with the `mermaid` identifier.
+
+It is a good practice that use [Mermaid live editor](https://mermaid.live/) to make sure your markdown text can be compiled to Mermaid diagrams successfully.
 
 ## Creating flow chart
 
