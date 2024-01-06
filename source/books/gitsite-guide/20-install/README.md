@@ -105,3 +105,11 @@ To enable GitHub page, go to repo - Settings - Pages - Build and deployment: sel
 Make a new push to trigger the Action for deployment.
 
 The workflow script file is `.github/workflows/gitsite.yml`. Check the sample [gitsite.yml](https://github.com/michaelliao/gitsite/blob/main/.github/workflows/gitsite.yml).
+
+## Deploy to GitLab page
+
+It is similar to deploy site to GitLab, and GitLab requires a `.gitlab-ci.yml` script. Check the sample [.gitlab-ci.yml](https://gitlab.com/cryptomichael/gitsite/-/blob/main/.gitlab-ci.yml?ref_type=heads).
+
+## Deploy to CloudFlare page
+
+TODO
