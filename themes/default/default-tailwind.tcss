@@ -246,18 +246,15 @@ button[type=submit] {
     @apply text-base list-disc list-inside;
 }
 
-#gsi-content li {
-    @apply leading-6;
-}
-
 #gsi-content ol {
     @apply text-base list-decimal list-inside;
 }
 
-#gsi-content li ul {
-    @apply text-base ml-6;
+#gsi-content li {
+    @apply leading-6 my-2;
 }
 
+#gsi-content li ul,
 #gsi-content li ol {
     @apply text-base ml-6;
 }
