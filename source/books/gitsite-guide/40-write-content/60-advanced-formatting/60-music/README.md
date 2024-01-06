@@ -67,4 +67,6 @@ EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|
 eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 ```
 
-The offical abcjs website provides a [live editor with synth](https://paulrosen.github.io/abcjs/examples/editor-synth.html), so you can edit your sheet and check if has errors.
+```alert type=tip
+The offical abcjs website provides a [live editor with synth](https://paulrosen.github.io/abcjs/examples/editor-synth.html), so you can edit your sheet and check if it has errors.
+```
