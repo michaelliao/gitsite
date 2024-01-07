@@ -21,6 +21,7 @@ flowchart LR
     deploy --> gitlab[GitLab Page]
     deploy --> cloudflare[CloudFlare Page]
     deploy --> s3[S3 Website Hosting]
+    deploy --> vercel[Vercel]
     deploy --> nginx[Self-Hosted Nginx]
 ```
 
