@@ -360,7 +360,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -383,6 +384,8 @@ Temporary Items
 
 #################### Custom.gitignore ####################
 
-# add your custom gitignore here:
+_site/
+_site_*/
+
 !.gitignore
 !.gitsubmodules
