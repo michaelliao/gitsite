@@ -26,3 +26,5 @@ flowchart LR
 ```
 
 ### GitSite supports Markdown documents, embedded videos, mathematical expressions, ASCII art, QR code, diagrams, and even sheet music!
+
+# [Read User Guide »](/books/gitsite-guide/index.html)
