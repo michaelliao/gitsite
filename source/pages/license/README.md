@@ -1,5 +1,3 @@
-# License
-
 # MIT License
 
 Copyright 2023 Michael Liao
