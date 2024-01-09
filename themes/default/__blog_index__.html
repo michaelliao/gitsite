@@ -74,7 +74,8 @@
                 <time datetime="{{ blog.date }}"></time>
             </span>
         </div>
-        <a href="{{ blog.uri }}" onclick="gs_load_blog('{{ blog.uri }}',true);return false;">
+        <a href="/blogs/{{ blog.uri }}/index.html"
+            onclick="gs_load_blog('/blogs/{{ blog.uri }}/index.html',true);return false;">
             <span class="gsc-index-item-title">{{ blog.title }}</span>
         </a>
         <div class="pb-4"></div>
