@@ -110,7 +110,17 @@ The workflow script file is `.github/workflows/gitsite.yml`. Check the sample [g
 
 ## Deploy to GitLab page
 
-It is similar to deploy site to GitLab, and GitLab requires a `.gitlab-ci.yml` script. Check the sample [.gitlab-ci.yml](https://gitlab.com/cryptomichael/gitsite/-/blob/main/.gitlab-ci.yml?ref_type=heads).
+It is similar to deploy site to GitLab, and GitLab requires a `.gitlab-ci.yml` script.
+
+Please make sure the submodule function is enabled by: Project - Settings - CI/CD - Variables - Add variable:
+
+Key: `GIT_SUBMODULE_STRATEGY`
+
+Value: `recursive`
+
+![Variables](ci-cd-vars.png)
+
+Check the sample [.gitlab-ci.yml](https://gitlab.com/cryptomichael/gitsite/-/blob/main/.gitlab-ci.yml?ref_type=heads).
 
 ## Deploy to CloudFlare page
 
