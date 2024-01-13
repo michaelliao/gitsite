@@ -1,12 +1,12 @@
 # How to Execute JavaScript when Using innerHTML
 
-当我们使用AJAX动态加载部分页面时，经常使用innerHTML来更新页面：
+When we use AJAX to dynamically load parts of a page, we often use `innerHTML` to update the page:
 
 ```javascript
 document.getElementById('child').innerHTML = `<p>Hello, this is a dynamic page.</p>`;
 ```
 
-然而，使用innerHTML时，如果加载的HTML片段中含有`<script>`标签，浏览器是不会执行这些JavaScript的：
+However, when using `innerHTML``, if the loaded HTML fragment contains `<script>` tags, the browser will not execute the JavaScript:
 
 ```javascript
 document.getElementById('child').innerHTML = `
@@ -17,11 +17,11 @@ document.getElementById('child').innerHTML = `
 `;
 ```
 
-如果我们确信加载的HTML片段是可信的，也想执行内嵌的JavaScript代码，应该怎么做？
+What should we do if we are sure that the loaded HTML fragment is trustworthy and we also want to execute the inner JavaScript code?
 
-实际上浏览器解析innerHTML后，已经生成了完整的DOM结构，包括`<script>`节点，只是没有执行而已。因此，我们可以通过扫描`<script>`节点，把它们复制一遍，替换旧的`<script>`节点，就可以触发浏览器执行。
+The browser actually parses the innerHTML and generates the complete DOM structure, including the `<script>` node, it just doesn't execute it. Therefore, we can trigger the browser to execute it by scanning the `<script>` nodes, copying them over and replacing the old `<script>` nodes.
 
-以下代码来自Stackoverflow [^stackoverflow]：
+The following code is copied from Stackoverflow [^stackoverflow]：
 
 [^stackoverflow]: Stackoverflow: [Executing script elements inserted with .innerHTML](https://stackoverflow.com/a/47614491)
 
@@ -33,24 +33,24 @@ dom.innerHTML = `
     alert('Hello!');
 </script>
 `;
-// 循环所有<script>节点:
+// loop over all <script> nodes:
 Array.from(dom.querySelectorAll('script'))
     .forEach(oldScriptEl => {
-        // 创建一个新的<script>节点:
+        // create a new <script> node:
         const newScriptEl = document.createElement('script');
-        // 复制attributes:
+        // copy attributes:
         Array.from(oldScriptEl.attributes).forEach(attr => {
             newScriptEl.setAttribute(attr.name, attr.value);
         });
-        // 复制text:
+        // copy text:
         const scriptText = document.createTextNode(oldScriptEl.innerHTML);
-        // 在原始位置替换原始<script>节点:
+        // replace the original <script> node at the original location:
         newScriptEl.appendChild(scriptText);
         oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
     });
 ```
 
-最后，封装一个`setInnerHTML()`函数，我们就获得了一个可执行JavaScript的`innerHTML`版本：
+Finally, we get an executable JavaScript version of `innerHTML` by `setInnerHTML()` function:
 
 ```javascript
 function setInnerHTML(dom, html) {
@@ -67,5 +67,3 @@ function setInnerHTML(dom, html) {
         });
 }
 ```
-
-
