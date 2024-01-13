@@ -55,11 +55,13 @@ awesome/
     │   │   └── ...  <-- more chapters
     │   └── ...  <-- more books
     │
-    ├── blogs/                 <-- all blogs
-    │   ├── 2024-01-01-hello/  <-- blog date and short name
-    │   │   ├── README.md      <-- blog content
-    │   │   └── hello.jpg      <-- static resources used in the blog
-    │   └── ...                <-- more blogs
+    ├── blogs/     <-- all blogs
+    │   ├── tech/  <-- tag
+    │   │   ├── 2024-01-01-hello/  <-- blog date and short name
+    │   │   │   ├── README.md      <-- blog content
+    │   │   │   └── hello.jpg      <-- static resources used in the blog
+    │   │   └── ...                <-- more blogs
+    │   └── ... <-- more tags
     │
     ├── pages/             <-- all pages
     │   ├── license/       <-- about page

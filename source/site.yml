@@ -8,7 +8,7 @@ site:
     - title: User Guide
       uri: /books/gitsite-guide/index.html
     - title: Blogs
-      uri: /blogs/all/index.html
+      uri: /blogs/tech/index.html
     - title: License
       uri: /pages/license/index.html
     - title: Discuss

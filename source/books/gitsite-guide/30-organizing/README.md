@@ -42,24 +42,25 @@ To specify the order, you can add sequence number in the directory name. For exa
 ```ascii
 books/
 └── guide/
-    ├── 10-b/     <-- URL: /books/guide/b/index.html
-    ├── 20-c/     <-- URL: /books/guide/c/index.html
-    └── 30-a/     <-- URL: /books/guide/a/index.html
-       ├── 10-n/  <-- URL: /books/guide/a/n/index.html
-       └── 20-m/  <-- URL: /books/guide/a/m/index.html
+    ├── 10-b/      <-- URL: /books/guide/b/index.html
+    ├── 20-c/      <-- URL: /books/guide/c/index.html
+    └── 30-a/      <-- URL: /books/guide/a/index.html
+        ├── 10-n/  <-- URL: /books/guide/a/n/index.html
+        └── 20-m/  <-- URL: /books/guide/a/m/index.html
 ```
 
 This re-order the index with `b`, `c` and `a`. The sequence number is used for order and will be dropped in URL, so re-order a directory does not change the URL.
 
 ## Blogs
 
-Blogs are simple markdown files organized with a list of directories, and each directory named starts with ISO date format `yyyy-MM-dd`:
+Blogs are simple markdown files organized with a list of tag directories, and each directory named starts with ISO date format `yyyy-MM-dd`:
 
 ```ascii
 blogs/
-├── 2024-01-01-hello/  <-- URL: /blogs/2024-01-01-hello/index.html
-├── 2024-01-05/        <-- URL: /blogs/2024-01-05/index.html
-└── 2024-02-10-style/  <-- URL: /blogs/2024-02-10-style/index.html
+└── tech/                  <-- tag: /blogs/tech/index.html
+    ├── 2024-01-01-hello/  <-- URL: /blogs/tech/2024-01-01-hello/index.html
+    ├── 2024-01-05/        <-- URL: /blogs/tech/2024-01-05/index.html
+    └── 2024-02-10-style/  <-- URL: /blogs/tech/2024-02-10-style/index.html
 ```
 
 ## Pages
