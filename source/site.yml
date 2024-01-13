@@ -6,16 +6,13 @@ site:
   language: en-US
   navigation:
     - title: User Guide
-      type: book
-      ref: gitsite-guide
+      uri: /books/gitsite-guide/index.html
     - title: Blogs
-      type: blog
+      uri: /blogs/all/index.html
     - title: License
-      type: page
-      ref: license
+      uri: /pages/license/index.html
     - title: Discuss
-      type: link
-      ref: https://github.com/michaelliao/gitsite/discussions
+      uri: https://github.com/michaelliao/gitsite/discussions
       external: true
   git:
     base-url: https://github.com/michaelliao/gitsite/blob/main/source
