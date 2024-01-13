@@ -6,7 +6,7 @@ When we use AJAX to dynamically load parts of a page, we often use `innerHTML` t
 document.getElementById('child').innerHTML = `<p>Hello, this is a dynamic page.</p>`;
 ```
 
-However, when using `innerHTML``, if the loaded HTML fragment contains `<script>` tags, the browser will not execute the JavaScript:
+However, when using `innerHTML`, if the loaded HTML fragment contains `<script>` tags, the browser will not execute the JavaScript:
 
 ```javascript
 document.getElementById('child').innerHTML = `

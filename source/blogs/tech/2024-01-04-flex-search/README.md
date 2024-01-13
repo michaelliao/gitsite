@@ -3,9 +3,7 @@
 There are several ways to add a full text search for a website:
 
 1. Using in-site search, such as using Google to search `xyz site:example.com`. The disadvantage is that it is not real-time;
-
 2. Using Elastic Search, which needs a dedicated server, and usually 3 nodes if using cloud service, very expensive;
-
 3. Using Redisearch, which needs a Redis server with plugin, and additional development work.
 
 For small and medium-sized web sites, the number of pages that need to be indexed is not large, it is possible to use a pure JavaScript based search engine to build the index, and provides real-time search.
@@ -126,9 +124,7 @@ This implementation makes English, French, German, Russian, Chinese, Japanese, a
 The above word segmentation algorithm is simple and straightforward, but it still has shortcomings:
 
 1. Chinese word segmentation is not implemented because we do not have a dictionary;
-
 2. Lexical conversion of English words is not implemented because there is no thesaurus;
-
 3. Both English and Chinese stop words are not implemented because there is still no vocabulary library.
 
 However, considering that a feature-rich front-end search is implemented in just a few lines of code, the profit is really high, so let’s call it a day!
