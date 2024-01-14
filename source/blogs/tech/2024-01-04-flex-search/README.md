@@ -26,7 +26,7 @@ So we need to write a more comprehensive algorithm to support both English and C
 
 In JavaScript, every character has a Unicode encoding. Here is a good Unicode encoding reference. [^unicode]
 
-[^unicode]: [Unicode Character Ranges] (https://jrgraphix.net/r/Unicode/)
+[^unicode]: [Unicode Character Ranges](https://jrgraphix.net/r/Unicode/)
 
 We can divide characters into two major categories:
 
