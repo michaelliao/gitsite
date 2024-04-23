@@ -53,11 +53,11 @@ This re-order the index with `b`, `c` and `a`. The sequence number is used for o
 
 ## Blogs
 
-Blogs are simple markdown files organized with a list of tag directories, and each directory named starts with ISO date format `yyyy-MM-dd`:
+Blogs are simple markdown files organized with a list of categories, and each directory named starts with ISO date format `yyyy-MM-dd`:
 
 ```ascii
 blogs/
-└── tech/                  <-- tag: /blogs/tech/index.html
+└── tech/                  <-- category: /blogs/tech/index.html
     ├── 2024-01-01-hello/  <-- URL: /blogs/tech/2024-01-01-hello/index.html
     ├── 2024-01-05/        <-- URL: /blogs/tech/2024-01-05/index.html
     └── 2024-02-10-style/  <-- URL: /blogs/tech/2024-02-10-style/index.html
@@ -74,7 +74,7 @@ pages/
 └── privacy/  <-- URL: /pages/privacy/index.html
 ```
 
-Pages are usually serves pages like `About Us`, `Term of Service`, etc.
+Pages are usually serves pages like `License`, `Term of Service`, etc.
 
 ## Index file
 
