@@ -108,6 +108,16 @@ Make a new push to trigger the Action for deployment.
 
 The workflow script file is `.github/workflows/gitsite.yml`. Check the sample [gitsite.yml](https://github.com/michaelliao/gitsite/blob/main/.github/workflows/gitsite.yml).
 
+You must set the `root-path: /<rootPath>` under which your site is served for GitHub pages deployment without custom domain, it is often `/<projectName>`:
+
+```
+site:
+  # set when your site is served for GitHub pages without custom domain:
+  root-path: /gitsite
+```
+
+Check the sample [site.yml](https://github.com/michaelliao/gitsite/blob/main/source/site.yml).
+
 ## Deploy to GitLab page
 
 It is similar to deploy site to GitLab, and GitLab requires a `.gitlab-ci.yml` script.
@@ -152,18 +162,10 @@ GitSite generates pure HTML files by command `gitsite-cli build`. You can specif
 $ gitsite-cli build -o dist -v
 ```
 
-Copy all files in `dist` to Nginx `www` directory, edit the server configuration:
+You can run Nginx by Docker quickly:
 
+```bash
+$ docker run --rm -p 8000:80 -v /path/to/dist:/usr/share/nginx/html nginx:latest
 ```
-server {
-    listen       80;
-    server_name  change.to.your.server.name;
-    root         /path/to/gitsite/dist;
-    index        index.html;
-    error_page   404 /404.html;
 
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-```
+Site is served and can be previewed at `http://localhost:8000`.
