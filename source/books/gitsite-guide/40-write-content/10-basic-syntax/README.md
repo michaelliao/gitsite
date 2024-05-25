@@ -78,8 +78,6 @@ You can create an inline link by wrapping link text in brackets `[ ]`, and then 
 
 [GitHub](https://github.com)
 
-External links (which has `target="_blank"`) always has a jump icon.
-
 ## Images
 
 You can display an image by adding `!` and wrapping the alt text in `[ ]`. Alt text is a short text equivalent of the information in the image. Then, wrap the link for the image in parentheses `( )`.

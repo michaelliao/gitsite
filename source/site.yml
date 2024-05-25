@@ -32,6 +32,12 @@ site:
     # browser = flex search in browser
     # google = google site search
     type: browser
+  # control styles:
+  style:
+    # display external link icon:
+    display-external-link-icon: false
+    # any custom styles used in theme:
+    # code-font: Monaco
   integration:
     disqus-comment: gitsite
     google-analytics: G-5Z40K7NBL5
