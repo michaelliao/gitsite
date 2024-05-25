@@ -33,9 +33,9 @@ site:
     # google = google site search
     type: browser
   # control styles:
-  style:
-    # display external link icon:
-    display-external-link-icon: false
+  styles:
+    # show 'Edit in Git':
+    display-git-link: true
     # any custom styles used in theme:
     # code-font: Monaco
   integration:
