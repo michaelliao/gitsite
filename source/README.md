@@ -4,7 +4,7 @@
 
 ---
 
-### GitSite build your well-organized Markdown documents and other resources to static web site that can be deployed simply to GitHub page, etc.
+### GitSite can build your well-organized Markdown documents and other resources to static web site deployed to GitHub pages, etc.
 
 ```mermaid
 flowchart LR
