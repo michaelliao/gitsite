@@ -53,11 +53,12 @@ This re-order the index with `b`, `c` and `a`. The sequence number is used for o
 
 ## Blogs
 
-Blogs are simple markdown files organized with a list of categories, and each directory named starts with ISO date format `yyyy-MM-dd`:
+Blogs are simple markdown files organized with a list of categories, and each directory name starts with ISO date format `yyyy-MM-dd`:
 
 ```ascii
 blogs/
 └── tech/                  <-- category: /blogs/tech/index.html
+    ├── index.json         <-- URL: /blogs/tech/index.json
     ├── 2024-01-01-hello/  <-- URL: /blogs/tech/2024-01-01-hello/index.html
     ├── 2024-01-05/        <-- URL: /blogs/tech/2024-01-05/index.html
     └── 2024-02-10-style/  <-- URL: /blogs/tech/2024-02-10-style/index.html
