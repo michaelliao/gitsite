@@ -7,6 +7,8 @@ site:
   # set the /<rootPath> pathname under which your site is served
   # for GitHub pages deployment without a custom domain, it is often '/<projectName>'
   # root-path: /gitsite
+  # set cdn path:
+  cdn-path: https://cdn.jsdelivr.net/npm
   navigation:
     - title: User Guide
       uri: /books/gitsite-guide/index.html
