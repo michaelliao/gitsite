@@ -41,8 +41,12 @@ site:
     # any custom styles used in theme:
     # code-font: Monaco
   integration:
-    disqus-comment: gitsite
-    google-analytics: G-5Z40K7NBL5
+    comment:
+      provider: disqus
+      name: gitsite
+    analytics:
+      provider: google
+      gtag: G-5Z40K7NBL5
 
 build:
   # copy special files under root dir (ignore if not found):
