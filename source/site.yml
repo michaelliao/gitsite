@@ -21,8 +21,6 @@ site:
       external: true
   git:
     base-url: https://github.com/michaelliao/gitsite/blob/main/source
-    # display git link for quick edit:
-    link: true
   contact:
     name: Michael Liao
     github: https://github.com/michaelliao/gitsite
