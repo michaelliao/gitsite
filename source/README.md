@@ -1,6 +1,6 @@
 # Home
 
-# Rapidly build modern websites from Markdown documents in Git</p>
+# Rapidly build modern websites from Markdown documents in Git
 
 ---
 
@@ -27,7 +27,7 @@ flowchart LR
 
 Example:
 
-A GitHub Repo: https://github.com/michaelliao/gitsite can be deployed to:
+A GitHub Repo: [https://github.com/michaelliao/gitsite](https://github.com/michaelliao/gitsite) can be deployed to:
 
 - GitHub: [https://gitsite.org](https://gitsite.org)
 - GitLab: [https://gitlab.gitsite.org](https://gitlab.gitsite.org)
