@@ -29,10 +29,10 @@ Example:
 
 A GitHub Repo: https://github.com/michaelliao/gitsite can be deployed to:
 
-- GitHub: https://gitsite.org
-- GitLab: https://gitlab.gitsite.org
-- Cloudflare: https://cloudflare.gitsite.org
-- Vercel: https://vercel.gitsite.org
+- GitHub: [https://gitsite.org](https://gitsite.org)
+- GitLab: [https://gitlab.gitsite.org](https://gitlab.gitsite.org)
+- Cloudflare: [https://cloudflare.gitsite.org](https://cloudflare.gitsite.org)
+- Vercel: [https://vercel.gitsite.org](https://vercel.gitsite.org)
 
 ### GitSite supports Markdown documents, embedded videos, mathematical expressions, ASCII art, QR code, diagrams, and even sheet music!
 
