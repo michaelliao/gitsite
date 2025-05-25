@@ -8,6 +8,12 @@ Use `npm` to install GitSite command line tool:
 $ npm install -g gitsite-cli
 ```
 
+Use the following command to update the latest version:
+
+```bash
+$ npm update -g gitsite-cli
+```
+
 ## Setup a new site
 
 First create an empty directory which will be used as your site's root directory and also a git repo. Let's name it as `awesome`:

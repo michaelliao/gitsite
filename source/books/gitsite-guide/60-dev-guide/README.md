@@ -18,6 +18,11 @@ default
 ├── book.html         <-- for book chapter page
 ├── book_content.html <-- for book chapter content page
 ├── page.html         <-- for any single document page
+├── pdf.html          <-- for generate PDF content
+├── pdf_front.html    <-- for generate PDF front cover
+├── pdf_back.html     <-- for generate PDF back cover
+├── pdf_header.html   <-- for generate PDF header
+├── pdf_footer.html   <-- for generate PDF footer
 ├── post-build.mjs    <-- (optional) auto executed after build
 ├── pre-build.mjs     <-- (optional) auto executed before build
 └── static            <-- (optional) store static files
