@@ -55,7 +55,6 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: pdf.zip
-          tag: ${{ env.RELEASE_AT }}
-          release_name: pdf.${{ env.RELEASE_AT }}
+          release_name: PDF
           body: Generated PDF for GitSite.
           overwrite: true
