@@ -1,0 +1,58 @@
+# Generate PDF for GitSite
+#
+# To get started with GitSite see: https://gitsite.org
+
+name: Generate PDF
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow release:
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install GitSite
+        run:
+          npm install gitsite-cli -g
+      - name: Start Local GitSite Server
+        run:
+          # run server in the background:
+          gitsite-cli serve &
+      - name: Wait for Server to Start
+        run: |
+          while ! curl -s http://localhost:3000/ > /dev/null; do
+            echo "Waiting for server to start..."
+            sleep 3
+          done
+      - name: Generate PDF
+        run: |
+          # Generate PDF from the GitSite server:
+          curl -o gitsite-guide.pdf http://localhost:3000/books/gitsite-guide/pdf
+          curl -o gitsite-blog.pdf http://localhost:3000/blogs/tech/pdf
+      - name: Shutdown Server
+        run:
+          curl http://localhost:3000/shutdown
+      - name: Release PDF
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: pdf.zip
+          tag: ${{ env.RELEASE_AT }}
+          release_name: pdf.${{ env.RELEASE_AT }}
+          body: Generated PDF for GitSite.
+          overwrite: true
