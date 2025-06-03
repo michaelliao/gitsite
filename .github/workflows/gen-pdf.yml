@@ -47,6 +47,9 @@ jobs:
       - name: Shutdown Server
         run:
           curl http://localhost:3000/shutdown
+      - name: Zip PDF
+        run:
+          zip pdf.zip *.pdf
       - name: Release PDF
         uses: svenstaro/upload-release-action@v2
         with:
