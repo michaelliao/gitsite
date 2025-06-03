@@ -20,9 +20,10 @@ flowchart LR
     deploy --> github[GitHub Page]
     deploy --> gitlab[GitLab Page]
     deploy --> cloudflare[CloudFlare Page]
-    deploy --> s3[S3 Website Hosting]
     deploy --> vercel[Vercel]
+    deploy --> s3[S3 Website Hosting]
     deploy --> nginx[Self-Hosted Nginx]
+    build --> PDF
 ```
 
 Example:
