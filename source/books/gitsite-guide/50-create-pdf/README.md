@@ -10,7 +10,7 @@ $ gitsite-cli serve
 
 To create a PDF based on a book, for example, `gitsite-guide`, just open the url [http://localhost:3000/books/gitsite-guide/pdf](http://localhost:3000/books/gitsite-guide/pdf) in browser and PDF is generated on-the-fly.
 
-You can download the generated PDF [gitsite-guide.pdf](gitsite-guide.pdf) here.
+You can download the generated PDF [https://github.com/michaelliao/gitsite/releases/download/main/pdf.zip](gitsite-guide.pdf).
 
 ## Technical Details
 
