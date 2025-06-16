@@ -26,8 +26,9 @@ jobs:
         with:
           node-version: 20
       - name: Setup PDFtk
-        run:
-          apt install pdftk
+        run: |
+          sudo apt update
+          sudo apt install -y pdftk
       - name: Install GitSite
         run:
           npm install gitsite-cli -g
