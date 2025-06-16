@@ -25,6 +25,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Setup PDFtk
+        run:
+          apt install pdftk
       - name: Install GitSite
         run:
           npm install gitsite-cli -g
