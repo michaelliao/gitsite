@@ -5,7 +5,7 @@
 
 GitSite can build your well-organized Markdown documents and other resources to static web site deployed to GitHub pages, S3 bucket, CloudFlare pages, etc.
 
-### [http://gitsite.puppylab.org/](http://gitsite.puppylab.org/)
+### [https://gitsite.puppylab.org/](https://gitsite.puppylab.org/)
 
 ```mermaid
 flowchart LR
