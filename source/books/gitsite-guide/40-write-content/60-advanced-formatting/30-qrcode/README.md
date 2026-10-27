@@ -5,23 +5,23 @@ To create a QRCode, add text inside a fenced code block with the `qrcode` identi
 GitSite's QRCode rendering capability uses [qrcode-svg](https://github.com/papnkukn/qrcode-svg): an open source, JavaScript-based library.
 
     ```qrcode
-    https://gitsite.org
+    https://gitsite.puppylab.org
     ```
 
 The text inside the fenced code block will be converted to a QRCode:
 
 ```qrcode
-https://gitsite.org
+https://gitsite.puppylab.org
 ```
 
 Image can be set by URL:
 
     ```qrcode image=like.png
-    https://gitsite.org
+    https://gitsite.puppylab.org
     ```
 
 ```qrcode image=like.png
-https://gitsite.org
+https://gitsite.puppylab.org
 ```
 
 You can specify some extra arguments to control the QRCode:
@@ -39,9 +39,9 @@ You can specify some extra arguments to control the QRCode:
 Example:
 
     ```qrcode ecl=m width=300 align=center info link
-    https://gitsite.org
+    https://gitsite.puppylab.org
     ```
 
 ```qrcode ecl=m width=300 align=center info link
-https://gitsite.org
+https://gitsite.puppylab.org
 ```
